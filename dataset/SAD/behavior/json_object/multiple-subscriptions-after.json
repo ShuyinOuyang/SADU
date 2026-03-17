@@ -1,0 +1,130 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Client"
+        },
+        "entity_1": {
+            "name": "Gateway"
+        },
+        "entity_2": {
+            "name": "Azure OpenAI Private Endpoint"
+        },
+        "entity_3": {
+            "name": "Azure OpenAI Private Endpoint"
+        },
+        "entity_4": {
+            "name": "gpt-35-turbo (standard)"
+        },
+        "entity_5": {
+            "name": "Azure OpenAI (Primary)"
+        },
+        "entity_6": {
+            "name": "Azure RBAC for API access"
+        },
+        "entity_7": {
+            "name": "gpt-35-turbo (standard)"
+        },
+        "entity_8": {
+            "name": "Azure OpenAI (Secondary)"
+        },
+        "entity_9": {
+            "name": "Azure RBAC for API access"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "rg-gateway-eastus",
+            "include_entity": [
+                "entity_1",
+                "entity_2",
+                "entity_3"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "Workload gateway subscription",
+            "include_entity": [
+                "entity_1",
+                "entity_2",
+                "entity_3"
+            ],
+            "include_cluster": [
+                "cluster_0"
+            ]
+        },
+        "cluster_2": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_4",
+                "entity_5",
+                "entity_6"
+            ],
+            "include_cluster": []
+        },
+        "cluster_3": {
+            "name": "Workload subscription A",
+            "include_entity": [
+                "entity_4",
+                "entity_5",
+                "entity_6"
+            ],
+            "include_cluster": [
+                "cluster_2"
+            ]
+        },
+        "cluster_4": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_7",
+                "entity_8",
+                "entity_9"
+            ],
+            "include_cluster": []
+        },
+        "cluster_5": {
+            "name": "Workload subscription B",
+            "include_entity": [
+                "entity_7",
+                "entity_8",
+                "entity_9"
+            ],
+            "include_cluster": [
+                "cluster_4"
+            ]
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_7",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "behavior"
+}

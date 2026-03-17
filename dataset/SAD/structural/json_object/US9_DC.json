@@ -1,0 +1,66 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Participant",
+            "attribute": [
+                "Budget"
+            ],
+            "method": [
+                "Participant",
+                "Timer",
+                "Get_budget",
+                "Set_budget"
+            ]
+        },
+        "entity_1": {
+            "name": "Moderator",
+            "attribute": [
+                "Name",
+                "Password",
+                "E-mail",
+                "Username"
+            ],
+            "method": [
+                "Moderator",
+                "Create_game",
+                "Mode_estimate",
+                "Begin_round",
+                "Add_element",
+                "Select_element",
+                "Eliminate_element",
+                "Accept_average",
+                "Get into_budget",
+                "Matter_stories",
+                "Export_transcription",
+                "Eliminate_game"
+            ]
+        },
+        "entity_2": {
+            "name": "Estimator",
+            "attribute": [
+                "Name"
+            ],
+            "method": [
+                "Estimator",
+                "Estimate"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "aggregation"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

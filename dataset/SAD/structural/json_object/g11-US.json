@@ -1,0 +1,259 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Visitor",
+            "color": "green"
+        },
+        "entity_1": {
+            "name": "Transaction",
+            "color": "red"
+        },
+        "entity_2": {
+            "name": "IFA Admin",
+            "color": "green"
+        },
+        "entity_3": {
+            "name": "Fan",
+            "color": "green"
+        },
+        "entity_4": {
+            "name": "Team",
+            "color": "green"
+        },
+        "entity_5": {
+            "name": "Game",
+            "color": "green"
+        },
+        "entity_6": {
+            "name": "League",
+            "color": "red"
+        },
+        "entity_7": {
+            "name": "Player",
+            "color": "green"
+        },
+        "entity_8": {
+            "name": "Data",
+            "color": "red"
+        },
+        "entity_9": {
+            "name": "Notification",
+            "color": "yellow"
+        },
+        "entity_10": {
+            "name": "Team Manager",
+            "color": "green"
+        },
+        "entity_11": {
+            "name": "Social Media",
+            "color": "red"
+        },
+        "entity_12": {
+            "name": "News",
+            "color": "red"
+        },
+        "entity_13": {
+            "name": "Comment",
+            "color": "red"
+        },
+        "entity_14": {
+            "name": "Statistics",
+            "color": "red"
+        },
+        "entity_15": {
+            "name": "Referee",
+            "color": "green"
+        },
+        "entity_16": {
+            "name": "Event",
+            "color": "yellow"
+        },
+        "entity_17": {
+            "name": "Schedule",
+            "color": "yellow"
+        },
+        "entity_18": {
+            "name": "Schedule Rule",
+            "color": "red"
+        },
+        "entity_19": {
+            "name": "Account",
+            "color": "red"
+        },
+        "entity_20": {
+            "name": "Budget",
+            "color": "yellow"
+        },
+        "entity_21": {
+            "name": "Budget Policy",
+            "color": "red"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_19",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_14",
+            "name": "access",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_0",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_21",
+            "name": "determines",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_18",
+            "name": "determines",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_17",
+            "name": "processes",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_0",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_13",
+            "name": "posts",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_9",
+            "name": "registers",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_1",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_20",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_10",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_11",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_16",
+            "name": "consists of",
+            "type": "association"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_8",
+            "name": "is related to",
+            "type": "association"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_0",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_12",
+            "name": "posts",
+            "type": "association"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_12",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_13",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_8",
+            "name": "is related to",
+            "type": "association"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_0",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_16",
+            "name": "reports",
+            "type": "association"
+        },
+        {
+            "source": "entity_17",
+            "target": "entity_5",
+            "name": "consists of",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "difficult"
+}

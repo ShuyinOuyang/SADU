@@ -1,0 +1,95 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Enterprise data sync process"
+        },
+        "entity_1": {
+            "name": "Enterprise data"
+        },
+        "entity_2": {
+            "name": "Storage account"
+        },
+        "entity_3": {
+            "name": "Azure AI Foundry"
+        },
+        "entity_4": {
+            "name": "Azure Cosmos DB"
+        },
+        "entity_5": {
+            "name": "App Service"
+        },
+        "entity_6": {
+            "name": "Azure AI Document Intelligence"
+        },
+        "entity_7": {
+            "name": "Web front end to chat with own data, generate document templates, and export document templates."
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "Model data",
+            "include_entity": [
+                "entity_0",
+                "entity_1",
+                "entity_2",
+                "entity_3",
+                "entity_4",
+                "entity_5",
+                "entity_6"
+            ],
+            "include_cluster": []
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_6",
+            "name": "Load PDF files",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_7",
+            "name": "",
+            "direction": "none"
+        }
+    ],
+    "difficulty": "medium",
+    "diagram_type": "behavior"
+}

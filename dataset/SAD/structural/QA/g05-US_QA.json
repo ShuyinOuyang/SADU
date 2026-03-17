@@ -1,0 +1,190 @@
+[
+    {
+        "question": "How many entities are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            20
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_entity_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relations are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            22
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_relation_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many entities have more than one relation?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            14
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "entities_have_more_than_one_relations",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many clusters are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            0
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_cluster_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many entities are not contained in any cluster?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            20
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_entities_not_in_clusters",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relations have a label?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            22
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_relations_have_label",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many clusters contain at least one sub-cluster (nested clusters)?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            0
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_clusters_have_clusters_within",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relation types appear in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            1
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_relation_types",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "Which entity has a relation with Entity 'Referee'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Game Event",
+            "Notification",
+            "Schedule Preferences"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_statement",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "What is the label on the relation between Entity 'Referee' and Entity 'Game Event'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "reports on"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "label_on_the_relation",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity has a relation with label 'reports on' to Entity 'Game Event'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Referee"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "label_on_the_relation_source",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity has a relation with label 'reports on' from Entity 'Referee'? \nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Game Event"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "label_on_the_relation_target",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "What is the type of the relation between Entity 'Referee' and Entity 'Game Event'? (e.g., association, inheritance, composition, dependency, and aggregation)\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "association"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "type_on_the_relation",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity is the source in a relation to Entity 'Game Event'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Game",
+            "Referee"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_source",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity is the target in a relation from Entity 'Referee'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Game Event",
+            "Notification",
+            "Schedule Preferences"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_target",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which relation(s) carry the label 'reports on'? Please use format [source entity, target entity] to represent certain relation.\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            [
+                "Referee",
+                "Game Event"
+            ]
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "which_relation_has_certain_label",
+            "difficulty": "intermediate"
+        }
+    }
+]

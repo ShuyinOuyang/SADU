@@ -1,0 +1,235 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Trade off analyst",
+            "color": "green"
+        },
+        "entity_1": {
+            "name": "Urban planning  dept head",
+            "color": "green"
+        },
+        "entity_2": {
+            "name": "Vice-mayor",
+            "color": "red"
+        },
+        "entity_3": {
+            "name": "Trade off analysis",
+            "color": "yellow"
+        },
+        "entity_4": {
+            "name": "Urban mobility simulator",
+            "color": "green"
+        },
+        "entity_5": {
+            "name": "Infrastructure change",
+            "color": "yellow"
+        },
+        "entity_6": {
+            "name": "Traffic data",
+            "color": "green"
+        },
+        "entity_7": {
+            "name": "Bottleneck",
+            "color": "red"
+        },
+        "entity_8": {
+            "name": "Report",
+            "color": "green"
+        },
+        "entity_9": {
+            "name": "Scenario",
+            "color": "green"
+        },
+        "entity_10": {
+            "name": "Flow",
+            "color": "yellow"
+        },
+        "entity_11": {
+            "name": "Overhead",
+            "color": "yellow"
+        },
+        "entity_12": {
+            "name": "/Metric/",
+            "color": "white"
+        },
+        "entity_13": {
+            "name": "Change",
+            "color": "red"
+        },
+        "entity_14": {
+            "name": "Traffic light  type",
+            "color": "yellow"
+        },
+        "entity_15": {
+            "name": "Speed limit",
+            "color": "yellow"
+        },
+        "entity_16": {
+            "name": "Crossing type",
+            "color": "yellow"
+        },
+        "entity_17": {
+            "name": "Lane",
+            "color": "yellow"
+        },
+        "entity_18": {
+            "name": "/Target/",
+            "color": "yellow"
+        },
+        "entity_19": {
+            "name": "Large event",
+            "color": "red"
+        },
+        "entity_20": {
+            "name": "Specific crossing",
+            "color": "red"
+        },
+        "entity_21": {
+            "name": "Peak hour traffic",
+            "color": "red"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "sends",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "performs",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_9",
+            "name": "tries",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_6",
+            "name": "loads",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_7",
+            "name": "identifies",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "checks / approves",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "presents",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_5",
+            "name": "suggests",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "considers / approves",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_12",
+            "name": "based on",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_8",
+            "name": "organized in",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_18",
+            "name": "focuses on",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_12",
+            "name": "computes",
+            "type": "association"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_12",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_12",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_9",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_17",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_19",
+            "target": "entity_18",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_20",
+            "target": "entity_18",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_21",
+            "target": "entity_18",
+            "name": "",
+            "type": "inheritance"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "difficult"
+}

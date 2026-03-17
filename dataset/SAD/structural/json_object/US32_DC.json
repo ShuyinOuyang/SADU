@@ -1,0 +1,224 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Doctor",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone",
+                "Id",
+                "Salary",
+                "Area",
+                "Qualification"
+            ],
+            "method": [
+                "Doctor",
+                "Get_name",
+                "Get_last name",
+                "Get_phone",
+                "Get_id",
+                "Get_salary",
+                "Get_area",
+                "Get_qualification",
+                "Access_record_doctor",
+                "Edit_record_doctor",
+                "Add_doctor",
+                "Request_proof",
+                "Add_note",
+                "Assign_importance",
+                "Transfer_history_clinic",
+                "Get into_fact",
+                "Link_device"
+            ]
+        },
+        "entity_1": {
+            "name": "Receptionist",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone",
+                "Id"
+            ],
+            "method": [
+                "Receptionist",
+                "Get_name",
+                "Get_last name",
+                "Get_phone",
+                "Get_id",
+                "Reserve_appointment",
+                "Assign_doctor",
+                "Assign_bed"
+            ]
+        },
+        "entity_2": {
+            "name": "User",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone",
+                "Id"
+            ],
+            "method": [
+                "User",
+                "Get_name",
+                "Get_last name",
+                "Get_phone",
+                "Get_id",
+                "Access",
+                "Create_account"
+            ]
+        },
+        "entity_3": {
+            "name": "Results_evidence",
+            "attribute": [
+                "Date_expedition",
+                "Name_patient",
+                "Signature",
+                "Author",
+                "Result",
+                "Conclusion"
+            ],
+            "method": [
+                "Results_evidence",
+                "Get_date_expedition",
+                "Get_name_patient",
+                "Get_signature",
+                "Get_author",
+                "Get_result",
+                "Get_conclusion"
+            ]
+        },
+        "entity_4": {
+            "name": "Patient",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Eps",
+                "Id",
+                "Symptoms",
+                "Phone",
+                "Date_appointment"
+            ],
+            "method": [
+                "Patient",
+                "Get_name",
+                "Get_last name",
+                "Get_eps",
+                "Get_id",
+                "Get_symptoms",
+                "Get_phone",
+                "Get_date_appointment",
+                "Set_up_privacy",
+                "Link_doctor",
+                "Access_record_doctor",
+                "Edit_data",
+                "Add_fitness",
+                "Link_device",
+                "Authorize",
+                "Create_account",
+                "Start_session",
+                "See_results_laboratory",
+                "See_results_devices_external"
+            ]
+        },
+        "entity_5": {
+            "name": "Specialist_laboratory",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone",
+                "Id",
+                "Salary",
+                "Area",
+                "Qualification"
+            ],
+            "method": [
+                "Specialist_laboratory",
+                "Get_name",
+                "Get_last name",
+                "Get_phone",
+                "Get_id",
+                "Get_salary",
+                "Get_area",
+                "Get_qualification",
+                "Increase_evidence_laboratory",
+                "Add_note",
+                "Link_record_doctor",
+                "Increase_result",
+                "Update_record",
+                "See_evidence"
+            ]
+        },
+        "entity_6": {
+            "name": "Nurse",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone",
+                "Id"
+            ],
+            "method": [
+                "Nurse",
+                "Get_name",
+                "Get_last name",
+                "Get_phone",
+                "Get_id",
+                "Link_device",
+                "Carry_data"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_0",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_3",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_3",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_4",
+            "name": "",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

@@ -1,0 +1,323 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "user",
+            "attribute": [
+                [
+                    "int",
+                    "user_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "user_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "user_mobile",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "user_email",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "user_address",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "login",
+            "attribute": [
+                [
+                    "int",
+                    "login_role_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "user_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "login_username",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "user_password",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "roles",
+            "attribute": [
+                [
+                    "int",
+                    "role_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "role_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "role_desc",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "permission",
+            "attribute": [
+                [
+                    "int",
+                    "role_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "per_role_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "per_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "per_module",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "student",
+            "attribute": [
+                [
+                    "int",
+                    "stu_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "stu_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "stu_pass",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(15)",
+                    "stu_mobile",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "stu_add",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "stu_email",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "course",
+            "attribute": [
+                [
+                    "int",
+                    "crs_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "crs_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "crs_desc",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "crs_type",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "crs_stu_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "collage",
+            "attribute": [
+                [
+                    "int",
+                    "col_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "col_desc",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "col_type",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "registration",
+            "attribute": [
+                [
+                    "int",
+                    "reg_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "reg_stu_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "reg_desc",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "reg_date",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "reg_type",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "user_has_login",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "login_has_role",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "role_has_permissions",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "user_manages_course",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_6",
+            "name": "course_belongs_to_collage",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "student_enrolls_in_course",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_7",
+            "name": "student_has_registration",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_7",
+            "name": "course_linked_to_registration",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

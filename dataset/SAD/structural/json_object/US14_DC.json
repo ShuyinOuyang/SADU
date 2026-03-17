@@ -1,0 +1,100 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Doctor",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Doctor",
+                "Carry_out_video call",
+                "Locate_user",
+                "See_summary",
+                "See_constants",
+                "Verify_medications"
+            ]
+        },
+        "entity_1": {
+            "name": "Informal_caregiver",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Informal_caregiver",
+                "Select_game"
+            ]
+        },
+        "entity_2": {
+            "name": "Person_elderly",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Person_elderly",
+                "Register_meeting",
+                "Register_meeting",
+                "Carry_out_video call",
+                "Carry_out_call",
+                "Carry_out_buys",
+                "Set_up_preferences",
+                "Aid_transport",
+                "See_list_buys",
+                "See_performance",
+                "See_constants",
+                "Verify_medications",
+                "See_recommendations",
+                "Remember_items"
+            ]
+        },
+        "entity_3": {
+            "name": "Developer",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Developer",
+                "Read_sensors"
+            ]
+        },
+        "entity_4": {
+            "name": "Social_caregiver",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Social_caregiver",
+                "Count_steps",
+                "Assess_stress"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_2",
+            "name": "",
+            "type": "aggregation"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

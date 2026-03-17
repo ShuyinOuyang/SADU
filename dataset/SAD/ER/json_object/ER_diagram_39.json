@@ -1,0 +1,853 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "department",
+            "attribute": [
+                [
+                    "int",
+                    "department_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "dept_code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "term",
+            "attribute": [
+                [
+                    "int",
+                    "term_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "student",
+            "attribute": [
+                [
+                    "int",
+                    "student_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "float",
+                    "cgpa",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "credits_earned",
+                    "",
+                    ""
+                ],
+                [
+                    "float",
+                    "grade_points_earned",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "reg_no",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "roll_no",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "section",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "semester",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "department_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "user",
+            "attribute": [
+                [
+                    "int",
+                    "user_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(200)",
+                    "password_digest",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "section",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "semester",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "user_type",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "username",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "department_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "subject",
+            "attribute": [
+                [
+                    "int",
+                    "subject_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "abbreviation",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "credits",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "semester",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "subject_code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "subject_type",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "department_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "exam",
+            "attribute": [
+                [
+                    "int",
+                    "exam_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "date",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "semester",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "uniexam",
+            "attribute": [
+                [
+                    "int",
+                    "uniexam_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "batch",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "exam_type",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "semester",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "students_sem",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "total_credits",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "department_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "attendance_report",
+            "attribute": [
+                [
+                    "int",
+                    "attendance_report_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "no_absent_days",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "total_working_days",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "term_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "student_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_8": {
+            "name": "attendance",
+            "attribute": [
+                [
+                    "int",
+                    "attendance_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "date",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "present",
+                    "",
+                    ""
+                ],
+                [
+                    "boolean",
+                    "present_bool",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "attendance_report_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_9": {
+            "name": "attendance_remark",
+            "attribute": [
+                [
+                    "int",
+                    "attendance_remark_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "remarks",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "attendance_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_10": {
+            "name": "result",
+            "attribute": [
+                [
+                    "int",
+                    "result_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "no_failed",
+                    "",
+                    ""
+                ],
+                [
+                    "float",
+                    "percentage",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "rank",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "result",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "section",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "total",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "student_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "exam_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_11": {
+            "name": "uniexam_performance",
+            "attribute": [
+                [
+                    "int",
+                    "uniexam_performance_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "float",
+                    "gpa",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "semester",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "student_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "uniexam_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_12": {
+            "name": "mark",
+            "attribute": [
+                [
+                    "int",
+                    "mark_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "marks",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(5)",
+                    "result",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "student_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "subject_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "exam_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_13": {
+            "name": "backlog",
+            "attribute": [
+                [
+                    "int",
+                    "backlog_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "boolean",
+                    "cleared",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "cleared_sem",
+                    "",
+                    ""
+                ],
+                [
+                    "float",
+                    "grade_points",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "student_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "subject_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_14": {
+            "name": "uniresult",
+            "attribute": [
+                [
+                    "int",
+                    "uniresult_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "float",
+                    "gpa",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "credits_earned",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "credit_rank",
+                    "",
+                    ""
+                ],
+                [
+                    "float",
+                    "grade_points_earned",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "result",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "section",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "section_rank",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "student_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "uniexam_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_15": {
+            "name": "unimark",
+            "attribute": [
+                [
+                    "int",
+                    "unimark_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "boolean",
+                    "current",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(5)",
+                    "grad_sgpi",
+                    "",
+                    ""
+                ],
+                [
+                    "float",
+                    "grade_points",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(5)",
+                    "result",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "student_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "subject_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "uniexam_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "department_has_students",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "department_has_users",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "department_has_subjects",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_6",
+            "name": "department_runs_uniexams",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_7",
+            "name": "term_has_attendance_reports",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_7",
+            "name": "student_has_attendance_report",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "report_has_attendance_rows",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_9",
+            "name": "attendance_has_remarks",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_10",
+            "name": "exam_has_results",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_10",
+            "name": "student_exam_results",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_12",
+            "name": "student_marks",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_12",
+            "name": "subject_has_marks",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_12",
+            "name": "exam_has_marks",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_13",
+            "name": "student_backlogs",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_13",
+            "name": "subject_in_backlog",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_11",
+            "name": "uniexam_performances",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_11",
+            "name": "student_uniexam_performance",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_14",
+            "name": "uniexam_results",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_14",
+            "name": "student_uniexam_results",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_15",
+            "name": "uniexam_marks",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_15",
+            "name": "subject_unimarks",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_15",
+            "name": "student_unimarks",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

@@ -1,0 +1,350 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "wbs",
+            "attribute": [
+                [
+                    "int",
+                    "wbs_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "wbs_no",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "parent_wbs_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "project_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "statuses",
+            "attribute": [
+                [
+                    "int",
+                    "status_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(60)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "boolean",
+                    "is_open",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "activities_relationships",
+            "attribute": [
+                [
+                    "int",
+                    "activity_relationship_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "activity_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "preceding_activity_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "programs",
+            "attribute": [
+                [
+                    "int",
+                    "program_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "manager_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "status",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "projects",
+            "attribute": [
+                [
+                    "int",
+                    "project_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "project_number",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "program_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "activities",
+            "attribute": [
+                [
+                    "int",
+                    "activity_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "activity_no",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "project_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "wbs_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "project_roles",
+            "attribute": [
+                [
+                    "int",
+                    "project_role_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "project_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "person_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "date",
+                    "valid_from",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "valid_to",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "people",
+            "attribute": [
+                [
+                    "int",
+                    "person_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(60)",
+                    "first_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(120)",
+                    "middle_names",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "department_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_8": {
+            "name": "departments",
+            "attribute": [
+                [
+                    "int",
+                    "department_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_0",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_6",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_6",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_7",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

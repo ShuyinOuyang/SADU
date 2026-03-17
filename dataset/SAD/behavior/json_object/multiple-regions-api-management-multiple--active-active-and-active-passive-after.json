@@ -1,0 +1,196 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Client"
+        },
+        "entity_1": {
+            "name": "Built-in API Management FQDN (uses performance bfased routing)"
+        },
+        "entity_2": {
+            "name": "API Management (gateway and control plane)"
+        },
+        "entity_3": {
+            "name": "API Management (eastus gateway only)"
+        },
+        "entity_4": {
+            "name": "Azure OpenAI Private Endpoint for West US"
+        },
+        "entity_5": {
+            "name": "Azure OpenAI Private Endpoint for East US"
+        },
+        "entity_6": {
+            "name": "gpt-4 (provisioned)"
+        },
+        "entity_7": {
+            "name": "gpt-4 (standard)"
+        },
+        "entity_8": {
+            "name": "Azure OpenAI (Active & Passive)"
+        },
+        "entity_9": {
+            "name": "Azure RBAC for API access"
+        },
+        "entity_10": {
+            "name": "gpt-4 (standard)"
+        },
+        "entity_11": {
+            "name": "gpt-4 (provisioned)"
+        },
+        "entity_12": {
+            "name": "Azure OpenAI (Active & Passive)"
+        },
+        "entity_13": {
+            "name": "Azure RBAC for API access"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "rg-gateway-westus",
+            "include_entity": [
+                "entity_2",
+                "entity_3"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "",
+            "include_entity": [
+                "entity_6",
+                "entity_7",
+                "entity_8",
+                "entity_9"
+            ],
+            "include_cluster": []
+        },
+        "cluster_2": {
+            "name": "rg-aoai-westus",
+            "include_entity": [
+                "entity_4",
+                "entity_6",
+                "entity_7",
+                "entity_8",
+                "entity_9"
+            ],
+            "include_cluster": [
+                "cluster_1"
+            ]
+        },
+        "cluster_3": {
+            "name": "West US",
+            "include_entity": [
+                "entity_2",
+                "entity_4",
+                "entity_6",
+                "entity_7",
+                "entity_8",
+                "entity_9"
+            ],
+            "include_cluster": [
+                "cluster_1",
+                "cluster_2"
+            ]
+        },
+        "cluster_4": {
+            "name": "",
+            "include_entity": [
+                "entity_10",
+                "entity_11",
+                "entity_12",
+                "entity_13"
+            ],
+            "include_cluster": []
+        },
+        "cluster_5": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_5",
+                "entity_10",
+                "entity_11",
+                "entity_12",
+                "entity_13"
+            ],
+            "include_cluster": [
+                "cluster_4"
+            ]
+        },
+        "cluster_6": {
+            "name": "East US",
+            "include_entity": [
+                "entity_2",
+                "entity_5",
+                "entity_10",
+                "entity_11",
+                "entity_12",
+                "entity_13"
+            ],
+            "include_cluster": [
+                "cluster_4",
+                "cluster_5"
+            ]
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "Failover for regional Azure OpenAI outage",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "Failover for regional Azure OpenAI outage",
+            "direction": "single"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_7",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_10",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_11",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "medium",
+    "diagram_type": "behavior"
+}

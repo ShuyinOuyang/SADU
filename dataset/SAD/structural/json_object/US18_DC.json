@@ -1,0 +1,332 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Reuse_data",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Id",
+                "Phone",
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Reuse_data",
+                "Get_name",
+                "Get_last name",
+                "Get_id",
+                "Get_phone",
+                "Get_user",
+                "Get_password",
+                "Modify_language",
+                "Look for_archive",
+                "Examine_archive",
+                "Share_archive",
+                "See_appointment"
+            ]
+        },
+        "entity_1": {
+            "name": "Administrator",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Id",
+                "Phone"
+            ],
+            "method": [
+                "Administrator",
+                "Get_name",
+                "Get_last name",
+                "Get_id",
+                "Get_phone",
+                "Get_user",
+                "Get_password",
+                "Approve_elimination_data",
+                "Consult_archive",
+                "Matter_data",
+                "Carry_out_checks"
+            ]
+        },
+        "entity_2": {
+            "name": "Developer",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Id",
+                "Phone",
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Developer",
+                "Get_name",
+                "Get_last name",
+                "Get_id",
+                "Get_phone",
+                "Get_user",
+                "Get_password",
+                "Deposit_data"
+            ]
+        },
+        "entity_3": {
+            "name": "Fact",
+            "attribute": [
+                "Id",
+                "Guy",
+                "Content",
+                "Author"
+            ],
+            "method": [
+                "Fact",
+                "Get_id",
+                "Get_guy",
+                "Get_content",
+                "Get_author"
+            ]
+        },
+        "entity_4": {
+            "name": "Service_univit",
+            "attribute": [
+                "Name"
+            ],
+            "method": [
+                "Service_univit",
+                "Get_name",
+                "Export_data",
+                "Store_data",
+                "Integrate_archive"
+            ]
+        },
+        "entity_5": {
+            "name": "Editor",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Id",
+                "Phone",
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Editor",
+                "Get_name",
+                "Get_last name",
+                "Get_id",
+                "Get_phone",
+                "Get_user",
+                "Get_password",
+                "Create_links"
+            ]
+        },
+        "entity_6": {
+            "name": "Depositor",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Id",
+                "Phone",
+                "Archives",
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Administrator",
+                "Get_name",
+                "Get_last name",
+                "Get_id",
+                "Get_phone",
+                "Get_archives",
+                "Get_user",
+                "Get_password",
+                "Deposit_data",
+                "Associate_doi",
+                "Give_permits",
+                "Associate_metadata",
+                "Apply_license",
+                "Keep_data",
+                "Link_data",
+                "Continue_interactions"
+            ]
+        },
+        "entity_7": {
+            "name": "Collaborator_external",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Id",
+                "Phone"
+            ],
+            "method": [
+                "Collaborator_external",
+                "Get_name",
+                "Get_last name",
+                "Get_id",
+                "Get_phone",
+                "Access_project"
+            ]
+        },
+        "entity_8": {
+            "name": "Manager_center",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Id",
+                "Phone",
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Manager_center",
+                "Get_name",
+                "Get_last name",
+                "Get_id",
+                "Get_phone",
+                "Get_user",
+                "Get_password",
+                "Deposit_data",
+                "Assign_researcher"
+            ]
+        },
+        "entity_9": {
+            "name": "Manager_information",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Id",
+                "Phone",
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Manager_information",
+                "Get_name",
+                "Get_last name",
+                "Get_id",
+                "Get_phone",
+                "Get_user",
+                "Integrate_archive",
+                "Hold_quotes",
+                "Segment_view",
+                "Discharge_statistics",
+                "Link_set_metadato"
+            ]
+        },
+        "entity_10": {
+            "name": "Entity_financial",
+            "attribute": [
+                "Name",
+                "Phone",
+                "Atte"
+            ],
+            "method": [
+                "Developer",
+                "Get_name",
+                "Get_phone",
+                "Get_input",
+                "See_plans_investigation",
+                "Gather_metadata"
+            ]
+        },
+        "entity_11": {
+            "name": "Coordinator_external",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Id",
+                "Phone"
+            ],
+            "method": [
+                "Collaborator_external",
+                "Get_name",
+                "Get_last name",
+                "Get_id",
+                "Get_phone",
+                "Access_data_collaborator",
+                "Define_license"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_7",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_3",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_7",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_10",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_8",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_9",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_9",
+            "name": "",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

@@ -1,0 +1,150 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Input"
+        },
+        "entity_1": {
+            "name": "Model"
+        },
+        "entity_2": {
+            "name": "Group chat manager"
+        },
+        "entity_3": {
+            "name": "Agent 1"
+        },
+        "entity_4": {
+            "name": "Agent 2"
+        },
+        "entity_5": {
+            "name": "..."
+        },
+        "entity_6": {
+            "name": "Agent n"
+        },
+        "entity_7": {
+            "name": "Model and knowledge"
+        },
+        "entity_8": {
+            "name": "Model and knowledge"
+        },
+        "entity_9": {
+            "name": "Model and knowledge"
+        },
+        "entity_10": {
+            "name": "Chat output from agents"
+        },
+        "entity_11": {
+            "name": "Human chat participant or observer"
+        },
+        "entity_12": {
+            "name": "Accumulating chat thread"
+        },
+        "entity_13": {
+            "name": "Result"
+        },
+        "entity_14": {
+            "name": "New group instructions based on accumulated context"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_12",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_7",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_8",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_9",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_12",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_12",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_12",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_12",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_12",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_13",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "behavior"
+}

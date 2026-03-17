@@ -1,0 +1,318 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "student",
+            "attribute": [
+                [
+                    "int",
+                    "stud_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "stfname",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "stlname",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "stcourse",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "styear",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(15)",
+                    "stcontact",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "stage",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "stbirthdate",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "stgender",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "courses_offered",
+            "attribute": [
+                [
+                    "int",
+                    "course_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "course_desc",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "units",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "course_remarks",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "staff",
+            "attribute": [
+                [
+                    "int",
+                    "staff_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "fname",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "lname",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(15)",
+                    "contact",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "gender",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "staff_department",
+            "attribute": [
+                [
+                    "int",
+                    "staff_id",
+                    "PK,FK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "course_line",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "reports",
+            "attribute": [
+                [
+                    "int",
+                    "report_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "reports_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "student_records",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "transaction_reports",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "student_registration",
+            "attribute": [
+                [
+                    "int",
+                    "registration_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "content",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "registration_date",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "stud_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "project_transactions",
+            "attribute": [
+                [
+                    "int",
+                    "transaction_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "transaction_name",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "stud_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "staff_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "date",
+                    "transaction_date",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_6",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or one"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_6",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_4",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_4",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

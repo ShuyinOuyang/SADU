@@ -1,0 +1,179 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Enterprise data"
+        },
+        "entity_1": {
+            "name": "Third-party metadata"
+        },
+        "entity_2": {
+            "name": "Azure Data Factory"
+        },
+        "entity_3": {
+            "name": "Azure Stream Analytics"
+        },
+        "entity_4": {
+            "name": "Azure Data Lake Storage"
+        },
+        "entity_5": {
+            "name": "Azure Synapse Analytics"
+        },
+        "entity_6": {
+            "name": "Azure SQL Database"
+        },
+        "entity_7": {
+            "name": "Azure Machine Learning"
+        },
+        "entity_8": {
+            "name": "Managed endpoint"
+        },
+        "entity_9": {
+            "name": "Azure Data Lake Storage"
+        },
+        "entity_10": {
+            "name": "Azure Synapse Analytics"
+        },
+        "entity_11": {
+            "name": "Azure SQL Database"
+        },
+        "entity_12": {
+            "name": "Power BI"
+        },
+        "entity_13": {
+            "name": "Web application"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "Model data",
+            "include_entity": [
+                "entity_0",
+                "entity_1"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "Data workload",
+            "include_entity": [
+                "entity_2",
+                "entity_3"
+            ],
+            "include_cluster": []
+        },
+        "cluster_2": {
+            "name": "Staging area",
+            "include_entity": [
+                "entity_4",
+                "entity_5",
+                "entity_6"
+            ],
+            "include_cluster": []
+        },
+        "cluster_3": {
+            "name": "Training",
+            "include_entity": [
+                "entity_7"
+            ],
+            "include_cluster": []
+        },
+        "cluster_4": {
+            "name": "Inference",
+            "include_entity": [
+                "entity_8"
+            ],
+            "include_cluster": []
+        },
+        "cluster_5": {
+            "name": "Artificial intelligence",
+            "include_entity": [
+                "entity_7",
+                "entity_8"
+            ],
+            "include_cluster": [
+                "cluster_3",
+                "cluster_4"
+            ]
+        },
+        "cluster_6": {
+            "name": "Analytical workload",
+            "include_entity": [
+                "entity_9",
+                "entity_10",
+                "entity_11"
+            ],
+            "include_cluster": []
+        },
+        "cluster_7": {
+            "name": "Front end",
+            "include_entity": [
+                "entity_12",
+                "entity_13"
+            ],
+            "include_cluster": []
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "cluster_0",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "cluster_0",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_0",
+            "target": "cluster_1",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_1",
+            "target": "cluster_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_2",
+            "target": "cluster_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_4",
+            "target": "cluster_6",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_6",
+            "target": "cluster_7",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "Batch Create Azure Machine Learning pipelines for training and promotion.",
+            "direction": "single"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "Deploy endpoint",
+            "direction": "single"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "Near real-time",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "medium",
+    "diagram_type": "behavior"
+}

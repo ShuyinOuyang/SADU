@@ -1,0 +1,45 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Person",
+            "attribute": [
+                [
+                    "string",
+                    "firstName",
+                    "",
+                    ""
+                ],
+                [
+                    "string",
+                    "lastName",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "Customer Account",
+            "attribute": [
+                [
+                    "string",
+                    "email",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "has",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or one"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

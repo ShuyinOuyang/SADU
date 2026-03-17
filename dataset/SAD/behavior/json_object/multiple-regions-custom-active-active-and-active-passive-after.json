@@ -1,0 +1,239 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Client"
+        },
+        "entity_1": {
+            "name": "Azure Front Door + Azure WAF"
+        },
+        "entity_2": {
+            "name": "Traffic Manager"
+        },
+        "entity_3": {
+            "name": "Gateway compute (gateway and regional control plane)"
+        },
+        "entity_4": {
+            "name": "Gateway compute (gateway and regional control plane)"
+        },
+        "entity_5": {
+            "name": "Azure OpenAI Private Endpoint for West US"
+        },
+        "entity_6": {
+            "name": "Azure OpenAI Private Endpoint for East US"
+        },
+        "entity_7": {
+            "name": "gpt-4 (provisioned)"
+        },
+        "entity_8": {
+            "name": "gpt-4 (standard)"
+        },
+        "entity_9": {
+            "name": "Azure OpenAI (Active & Passive)"
+        },
+        "entity_10": {
+            "name": "Azure RBAC for API access"
+        },
+        "entity_11": {
+            "name": "gpt-4 (provisioned)"
+        },
+        "entity_12": {
+            "name": "gpt-4 (standard)"
+        },
+        "entity_13": {
+            "name": "Azure OpenAI (Active & Passive)"
+        },
+        "entity_14": {
+            "name": "Azure RBAC for API access"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "rg-gateway-global",
+            "include_entity": [
+                "entity_1",
+                "entity_2"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "Global",
+            "include_entity": [
+                "entity_1",
+                "entity_2"
+            ],
+            "include_cluster": [
+                "cluster_0"
+            ]
+        },
+        "cluster_2": {
+            "name": "rg-gateway-westus",
+            "include_entity": [
+                "entity_3"
+            ],
+            "include_cluster": []
+        },
+        "cluster_3": {
+            "name": "rg-gateway-eastus",
+            "include_entity": [
+                "entity_4"
+            ],
+            "include_cluster": []
+        },
+        "cluster_4": {
+            "name": "",
+            "include_entity": [
+                "entity_7",
+                "entity_8",
+                "entity_9",
+                "entity_10"
+            ],
+            "include_cluster": []
+        },
+        "cluster_5": {
+            "name": "",
+            "include_entity": [
+                "entity_11",
+                "entity_12",
+                "entity_13",
+                "entity_14"
+            ],
+            "include_cluster": []
+        },
+        "cluster_6": {
+            "name": "rg-aoai-westus",
+            "include_entity": [
+                "entity_3",
+                "entity_7",
+                "entity_8",
+                "entity_9",
+                "entity_10"
+            ],
+            "include_cluster": [
+                "cluster_4"
+            ]
+        },
+        "cluster_7": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_4",
+                "entity_11",
+                "entity_12",
+                "entity_13",
+                "entity_14"
+            ],
+            "include_cluster": [
+                "cluster_5"
+            ]
+        },
+        "cluster_8": {
+            "name": "West US",
+            "include_entity": [
+                "entity_3",
+                "entity_7",
+                "entity_8",
+                "entity_9",
+                "entity_10"
+            ],
+            "include_cluster": [
+                "cluster_4",
+                "cluster_6"
+            ]
+        },
+        "cluster_9": {
+            "name": "East US",
+            "include_entity": [
+                "entity_4",
+                "entity_11",
+                "entity_12",
+                "entity_13",
+                "entity_14"
+            ],
+            "include_cluster": [
+                "cluster_5",
+                "cluster_7"
+            ]
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "FQDN + TLS + Anycast",
+            "direction": "single"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "DNS",
+            "direction": "none"
+        },
+        {
+            "source": "entity_0",
+            "target": "cluster_3",
+            "name": "CNAME FQDN + TLS",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "cluster_2",
+            "name": "RegionalFQDN",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "cluster_3",
+            "name": "RegionalFQDN",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_6",
+            "name": "Failover for regional Azure OpenAI outage",
+            "direction": "single"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "Failover for regional Azure OpenAI outage",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_7",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_8",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_11",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_12",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "behavior"
+}

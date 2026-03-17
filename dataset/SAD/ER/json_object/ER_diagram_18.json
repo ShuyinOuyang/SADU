@@ -1,0 +1,201 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Marks",
+            "attribute": [
+                [
+                    "integer",
+                    "markID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "studentID",
+                    "",
+                    ""
+                ],
+                [
+                    "integer",
+                    "subjectID",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "date",
+                    "",
+                    ""
+                ],
+                [
+                    "integer",
+                    "mark",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "Students",
+            "attribute": [
+                [
+                    "integer",
+                    "studentID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "firstName",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "lastName",
+                    "",
+                    ""
+                ],
+                [
+                    "integer",
+                    "groupID",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "Groups",
+            "attribute": [
+                [
+                    "integer",
+                    "groupID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "Subjects",
+            "attribute": [
+                [
+                    "integer",
+                    "subjectID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "title",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "Subject/teacher",
+            "attribute": [
+                [
+                    "integer",
+                    "subjectID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "teacherID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "groupID",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "Teachers",
+            "attribute": [
+                [
+                    "integer",
+                    "teacherID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "firstName",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "lastName",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_0",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

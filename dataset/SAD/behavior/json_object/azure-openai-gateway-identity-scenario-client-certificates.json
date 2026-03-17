@@ -1,0 +1,65 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "User"
+        },
+        "entity_1": {
+            "name": "Client certificate"
+        },
+        "entity_2": {
+            "name": "Intelligent application"
+        },
+        "entity_3": {
+            "name": "API key"
+        },
+        "entity_4": {
+            "name": "gpt-35-turbo"
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "cluster": {
+        "cluster_0": {
+            "name": "Azure OpenAI Service",
+            "include_entity": [
+                "entity_4"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_4"
+            ],
+            "include_cluster": [
+                "cluster_0"
+            ]
+        }
+    },
+    "difficulty": "easy",
+    "diagram_type": "behavior"
+}

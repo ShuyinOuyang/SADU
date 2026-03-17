@@ -1,0 +1,494 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "tblCATEGORIES",
+            "attribute": [
+                [
+                    "int",
+                    "category_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "category_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "category_description",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "category_type",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "tblEQUIP_CAT",
+            "attribute": [
+                [
+                    "int",
+                    "equip_cat_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "category_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "equipment_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "tblEQUIPMENT",
+            "attribute": [
+                [
+                    "int",
+                    "equipment_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "equipment_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "equipment_description",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "equipment_status_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "status_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "tblSTATUS",
+            "attribute": [
+                [
+                    "int",
+                    "status_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "status_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "status_notes",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "tblCONTACT_CAT",
+            "attribute": [
+                [
+                    "int",
+                    "contact_cat_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "category_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "contact_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "project_hr_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "tblCALENDAR",
+            "attribute": [
+                [
+                    "int",
+                    "calendar_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "calendar_date",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "project_hr_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "project_equip_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "invoice_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "bit",
+                    "calendar_date_confirmed",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "tblEQUIP_HIRE_RATES",
+            "attribute": [
+                [
+                    "int",
+                    "equip_hire_rate_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "equipment_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "hire_rate_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "tblCONTACTS",
+            "attribute": [
+                [
+                    "int",
+                    "contact_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "type_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "contact_name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_8": {
+            "name": "tblPROJECT_HR",
+            "attribute": [
+                [
+                    "int",
+                    "project_hr_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "project_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "project_testimonial",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_9": {
+            "name": "tblHIRE_RATES",
+            "attribute": [
+                [
+                    "int",
+                    "hire_rate_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "hire_rate_rate",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "hire_rate_period",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_10": {
+            "name": "tblTYPE",
+            "attribute": [
+                [
+                    "int",
+                    "type_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "type_name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_11": {
+            "name": "tblPROJECTS",
+            "attribute": [
+                [
+                    "int",
+                    "project_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "project_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "project_description",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "project_start_date",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "project_end_date",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "project_owner_id",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "contact_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_12": {
+            "name": "tblPROJECT_EQUIPMENT",
+            "attribute": [
+                [
+                    "int",
+                    "project_equip_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "project_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "equip_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "proj_equip_booking_rate",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_6",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_12",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_4",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_11",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_4",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_5",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_6",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_7",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_8",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_12",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_5",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

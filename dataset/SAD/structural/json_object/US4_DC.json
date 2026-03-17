@@ -1,0 +1,300 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Developer",
+            "attribute": [
+                "Name",
+                "Last name",
+                "E-mail",
+                "Password"
+            ],
+            "method": [
+                "Developer",
+                "Get_name",
+                "Get_last name",
+                "Get_e-mail",
+                "Get_password",
+                "Personalize_name",
+                "Personalize_icon"
+            ]
+        },
+        "entity_1": {
+            "name": "User",
+            "attribute": [
+                "Name",
+                "Last name",
+                "E-mail",
+                "Password",
+                "User"
+            ],
+            "method": [
+                "User",
+                "Get_name",
+                "Get_last name",
+                "Get_e-mail",
+                "Get_password",
+                "Get_user",
+                "Create_account",
+                "Define_name_user"
+            ]
+        },
+        "entity_2": {
+            "name": "Administrator",
+            "attribute": [
+                "Name",
+                "Last name",
+                "E-mail",
+                "Password",
+                "User"
+            ],
+            "method": [
+                "Administrator",
+                "Get_name",
+                "Get_last name",
+                "Get_e-mail",
+                "Get_password",
+                "Get_user",
+                "See_data_published",
+                "Eliminate_set_data",
+                "Disguise_set_data",
+                "Mode_viewfinder"
+            ]
+        },
+        "entity_3": {
+            "name": "User_api",
+            "attribute": [
+                "Name",
+                "Last name",
+                "E-mail",
+                "Password",
+                "User"
+            ],
+            "method": [
+                "User_api",
+                "Get_name",
+                "Get_last name",
+                "Get_e-mail",
+                "Get_password",
+                "Get_user",
+                "Personalize_view",
+                "Normalize_measures",
+                "Consult_region",
+                "See_area_bordering",
+                "See_guy_user",
+                "Obtain_csv",
+                "Request_proligones",
+                "Obtain_multiples_data",
+                "Obtain_multiples_metadata"
+            ]
+        },
+        "entity_4": {
+            "name": "Fact",
+            "attribute": [
+                "Date",
+                "Last_edition",
+                "Content",
+                "Author"
+            ],
+            "method": [
+                "Fact",
+                "Get_date",
+                "Get_last_edition",
+                "Get_content",
+                "Get_author"
+            ]
+        },
+        "entity_5": {
+            "name": "User_publication",
+            "attribute": [
+                "Name",
+                "Last name",
+                "E-mail",
+                "Password",
+                "User"
+            ],
+            "method": [
+                "User_publication",
+                "Get_name",
+                "Get_last name",
+                "Get_e-mail",
+                "Get_password",
+                "Get_user",
+                "Mode_hidden",
+                "Add_set_data",
+                "Matter_model_data",
+                "Edit_model_fact",
+                "Create_set_data",
+                "Disguise_set_data",
+                "Eliminate_set_data",
+                "See_set_data"
+            ]
+        },
+        "entity_6": {
+            "name": "User_data",
+            "attribute": [
+                "Name",
+                "Last name",
+                "E-mail",
+                "Password",
+                "User"
+            ],
+            "method": [
+                "User_data",
+                "Get_name",
+                "Get_last name",
+                "Get_e-mail",
+                "Get_password",
+                "Get_user",
+                "Look for_set_data",
+                "Change_measures_monetary",
+                "Trigger_state_views",
+                "Share_image",
+                "Share_url",
+                "Discharge_csv",
+                "See_description",
+                "Create_set_data"
+            ]
+        },
+        "entity_7": {
+            "name": "Member",
+            "attribute": [
+                "Name",
+                "Last name",
+                "E-mail",
+                "Password"
+            ],
+            "method": [
+                "Member",
+                "Get_name",
+                "Get_last name",
+                "Get_e-mail",
+                "Get_password",
+                "See_examples_data",
+                "See_blog_projects"
+            ]
+        },
+        "entity_8": {
+            "name": "Model_fact",
+            "attribute": [
+                "Name",
+                "Extension"
+            ],
+            "method": [
+                "Model_fact",
+                "Get_name",
+                "Get_extension"
+            ]
+        },
+        "entity_9": {
+            "name": "Json",
+            "attribute": [
+                "Group"
+            ],
+            "method": [
+                "Json",
+                "Get_group"
+            ]
+        },
+        "entity_10": {
+            "name": "Google_sheets",
+            "attribute": [
+                "Url"
+            ],
+            "method": [
+                "Google_sheets",
+                "Get_url"
+            ]
+        },
+        "entity_11": {
+            "name": "Excel",
+            "attribute": [
+                "Row",
+                "Column",
+                "Cell"
+            ],
+            "method": [
+                "Excel",
+                "Get_row",
+                "Get_column",
+                "Get_cell"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_8",
+            "target": "entity_9",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_11",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_8",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_4",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_4",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_4",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

@@ -1,0 +1,345 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "stop",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "job_category",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "description",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "job_platform",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "desc",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "process_step",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "step_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "process_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "status",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "priority",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "job",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "date_published",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "job_start_date",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "no_of_vacancies",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "job_category_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "position_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "job_platform_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "org_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "process_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "job_position",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "position_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "description",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "process",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "recruiter_id",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "organization",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "description",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

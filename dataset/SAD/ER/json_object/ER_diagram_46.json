@@ -1,0 +1,312 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "votergroup",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(70)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "voting_power",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "creation_date",
+                    "",
+                    ""
+                ],
+                [
+                    "bit",
+                    "is_active",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "voter",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(200)",
+                    "email",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(70)",
+                    "first_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(70)",
+                    "last_name",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "voter_group_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "registration_date",
+                    "",
+                    ""
+                ],
+                [
+                    "bit",
+                    "is_active",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "voting",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(140)",
+                    "subject",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "active_from",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "active_to",
+                    "",
+                    ""
+                ],
+                [
+                    "bit",
+                    "is_allowed_for_all",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "status_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "votingoption",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "voting_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "text",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "order_index",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "votervote",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "voter_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "voting_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "voting_option_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "voted_date",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "weight",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "allowedvotergroup",
+            "attribute": [
+                [
+                    "int",
+                    "voting_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "voter_group_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "votingstatus",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(70)",
+                    "name",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

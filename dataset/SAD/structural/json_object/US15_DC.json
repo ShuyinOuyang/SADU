@@ -1,0 +1,185 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "User_registered",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "User_registered",
+                "Carry_out_pay",
+                "Update_data",
+                "Send_session",
+                "See_jobs"
+            ]
+        },
+        "entity_1": {
+            "name": "User_anonymous",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "User_anonymous",
+                "See_schedules",
+                "See_chairs",
+                "See_information",
+                "See_sponsors",
+                "See_summits",
+                "Record"
+            ]
+        },
+        "entity_2": {
+            "name": "Assistant",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Assistant",
+                "Detail_event",
+                "Register_chair"
+            ]
+        },
+        "entity_3": {
+            "name": "Coordinator_summit",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Coordinator_summit",
+                "List_assistants",
+                "List_sponsors",
+                "See_agenda"
+            ]
+        },
+        "entity_4": {
+            "name": "Coordinator_entertainment",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Guy_method",
+                "List_students"
+            ]
+        },
+        "entity_5": {
+            "name": "Sponsor",
+            "attribute": [
+                "User:"
+            ],
+            "method": [
+                "Sponsor",
+                "See_summits",
+                "Personalize_page",
+                "Add_offers"
+            ]
+        },
+        "entity_6": {
+            "name": "Coordinator_training",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Coordiniandor_training",
+                "Define_date_limit",
+                "Contact_trainers",
+                "Verify_assistant"
+            ]
+        },
+        "entity_7": {
+            "name": "Administrator",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Administrator",
+                "Approve_session",
+                "Close_session",
+                "Reimburse",
+                "Assign_sponsors",
+                "Assign_place"
+            ]
+        },
+        "entity_8": {
+            "name": "Trainer",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Trainer",
+                "List_assistants",
+                "Add_assistants",
+                "Edit_training"
+            ]
+        },
+        "entity_9": {
+            "name": "Apprentice",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Apprentice",
+                "Accept_terms",
+                "Agendar_event"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_6",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_5",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_6",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_8",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_8",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_0",
+            "name": "",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

@@ -1,0 +1,217 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "professor",
+            "attribute": [
+                [
+                    "integer",
+                    "prof_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "prof_lname",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "prof_fname",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "class",
+            "attribute": [
+                [
+                    "integer",
+                    "class_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "class_name",
+                    "",
+                    ""
+                ],
+                [
+                    "integer",
+                    "prof_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "course_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "room_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "course",
+            "attribute": [
+                [
+                    "integer",
+                    "course_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "course_name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "student",
+            "attribute": [
+                [
+                    "integer",
+                    "stud_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "stud_fname",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "stud_lname",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "stud_street",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "stud_city",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "stud_zip",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "enroll",
+            "attribute": [
+                [
+                    "integer",
+                    "stud_id",
+                    "PK,FK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "class_id",
+                    "PK,FK",
+                    ""
+                ],
+                [
+                    "varchar(3)",
+                    "grade",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "room",
+            "attribute": [
+                [
+                    "integer",
+                    "room_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "room_loc",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "room_cap",
+                    "",
+                    ""
+                ],
+                [
+                    "integer",
+                    "class_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

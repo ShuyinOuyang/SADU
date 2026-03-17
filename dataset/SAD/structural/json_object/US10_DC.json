@@ -1,0 +1,110 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Visitor",
+            "attribute": [
+                "Account"
+            ],
+            "method": [
+                "Visitor",
+                "Create_account"
+            ]
+        },
+        "entity_1": {
+            "name": "Consumer",
+            "attribute": [
+                "Customer"
+            ],
+            "method": [
+                "Consumer",
+                "Look for",
+                "Carry_packages",
+                "Discharge_package"
+            ]
+        },
+        "entity_2": {
+            "name": "Analyst",
+            "attribute": [
+                "Customer"
+            ],
+            "method": [
+                "Analyst",
+                "Update_package",
+                "Disargage_package"
+            ]
+        },
+        "entity_3": {
+            "name": "Editor",
+            "attribute": [
+                "Customer"
+            ],
+            "method": [
+                "Editor",
+                "Create_package",
+                "Label_package",
+                "Eliminate_package",
+                "Restore_package",
+                "Create_account"
+            ]
+        },
+        "entity_4": {
+            "name": "Administrator",
+            "attribute": [
+                "Password"
+            ],
+            "method": [
+                "Administrator",
+                "See_metric",
+                "Invite_contribute",
+                "Set_up_price"
+            ]
+        },
+        "entity_5": {
+            "name": "Owner",
+            "attribute": [
+                "Customer"
+            ],
+            "method": [
+                "Owner",
+                "Inviteeditor",
+                "Promote_user",
+                "List_organization"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "",
+            "type": "aggregation"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

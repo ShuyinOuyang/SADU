@@ -1,0 +1,48 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "User"
+        },
+        "entity_1": {
+            "name": "Intelligent application"
+        },
+        "entity_2": {
+            "name": "Identity provider"
+        },
+        "entity_3": {
+            "name": "Azure OpenAI Service"
+        },
+        "entity_4": {
+            "name": "AI Search and Blob Storage"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "behavior"
+}

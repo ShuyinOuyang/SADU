@@ -1,0 +1,100 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Developer_application",
+            "attribute": [
+                "Customer"
+            ],
+            "method": [
+                "Developer_application",
+                "Create_set",
+                "New_version",
+                "Verify_version",
+                "Create_dependence",
+                "Modify_instance",
+                "Share_set",
+                "Instanacio_set"
+            ]
+        },
+        "entity_1": {
+            "name": "User",
+            "attribute": [
+                "Customer"
+            ],
+            "method": [
+                "User",
+                "Create_canalization",
+                "Create_scheme",
+                "Select_set",
+                "Migrate_data"
+            ]
+        },
+        "entity_2": {
+            "name": "Developer_channel",
+            "attribute": [
+                "Customer"
+            ],
+            "method": [
+                "Developer_channel",
+                "Edit_set"
+            ]
+        },
+        "entity_3": {
+            "name": "Developer_sets",
+            "attribute": [
+                "Customer"
+            ],
+            "method": [
+                "Developer_set",
+                "Create_set",
+                "Assign_version",
+                "Create_version",
+                "Eliminate_version",
+                "Enumerate_stays",
+                "Separate_interface",
+                "Migrate_set",
+                "Update_set",
+                "Disconnect_set"
+            ]
+        },
+        "entity_4": {
+            "name": "Developer_complement",
+            "attribute": [
+                "Customer"
+            ],
+            "method": [
+                "Developer_complement",
+                "Wear_data"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

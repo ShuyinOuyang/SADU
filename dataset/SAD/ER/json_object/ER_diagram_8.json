@@ -1,0 +1,279 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Author",
+            "attribute": [
+                [
+                    "varchar(255)",
+                    "Name",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "URL",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "Publisher",
+            "attribute": [
+                [
+                    "varchar(255)",
+                    "Name",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "URL",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Phone",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "Book",
+            "attribute": [
+                [
+                    "varchar(255)",
+                    "ISBN",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "PublisherName",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "AuthorName",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "AuthorAddress",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Year",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Title",
+                    "",
+                    ""
+                ],
+                [
+                    "numeric",
+                    "Price",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "Warehouse_Book",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "WarehouseCode",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "BookISBN",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Count",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "Warehouse",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "Code",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Phone",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Address",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "ShoppingBasket_Book",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ShoppingBasketID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "BookISBN",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Count",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "Customer",
+            "attribute": [
+                [
+                    "varchar(255)",
+                    "Email",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Name",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Phone",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Address",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "ShoppingBasket",
+            "attribute": [
+                [
+                    "varchar(255)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "CustomerEmail",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_7",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

@@ -1,0 +1,205 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Fact",
+            "attribute": [
+                "Content",
+                "Author"
+            ],
+            "method": [
+                "Fact",
+                "Get_content",
+                "Get_author"
+            ]
+        },
+        "entity_1": {
+            "name": "Level_environmental",
+            "attribute": [
+                "Extent",
+                "Time"
+            ],
+            "method": [
+                "Level_environmental",
+                "Get_extent",
+                "Get_time"
+            ]
+        },
+        "entity_2": {
+            "name": "Historical_traffic",
+            "attribute": [
+                "Dates"
+            ],
+            "method": [
+                "Historical_traffic",
+                "Get_dates"
+            ]
+        },
+        "entity_3": {
+            "name": "Indicator",
+            "attribute": [
+                "Name",
+                "Location"
+            ],
+            "method": [
+                "Indicator",
+                "Get_name",
+                "Get_location"
+            ]
+        },
+        "entity_4": {
+            "name": "Level_noise",
+            "attribute": [
+                "Decibel"
+            ],
+            "method": [
+                "Level_noise",
+                "Get_decibel"
+            ]
+        },
+        "entity_5": {
+            "name": "Emission_co2",
+            "attribute": [
+                "Amount"
+            ],
+            "method": [
+                "Emission_co2",
+                "Get_amount"
+            ]
+        },
+        "entity_6": {
+            "name": "Level_pollution",
+            "attribute": [
+                "Amount"
+            ],
+            "method": [
+                "Level_pollution",
+                "Get_amount"
+            ]
+        },
+        "entity_7": {
+            "name": "Map_traffic",
+            "attribute": [],
+            "method": [
+                "Map_traffic",
+                "Get_name"
+            ]
+        },
+        "entity_8": {
+            "name": "Map",
+            "attribute": [
+                "Name"
+            ],
+            "method": [
+                "Map",
+                "Get_name"
+            ]
+        },
+        "entity_9": {
+            "name": "Map_heat",
+            "attribute": [],
+            "method": [
+                "Map",
+                "Get_name"
+            ]
+        },
+        "entity_10": {
+            "name": "Employee",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone",
+                "E-mail",
+                "Id",
+                "Salary"
+            ],
+            "method": [
+                "Employee",
+                "Get_name",
+                "Get_last name",
+                "Get_phone",
+                "Get_e-mail",
+                "Get_id",
+                "Get_salary",
+                "Add_new_sources",
+                "Wear_sources",
+                "Add_measures_sensory",
+                "Compare_data",
+                "Do_predictions_traffic",
+                "Keep_levels_environmental",
+                "Carry_levels_environmental",
+                "See_indicators",
+                "Keep_simulation",
+                "Change_planning",
+                "Predict_consequences",
+                "See_reliability",
+                "Select_period",
+                "See_maps_street"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_0",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_8",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_7",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_9",
+            "name": "",
+            "type": "inheritance"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

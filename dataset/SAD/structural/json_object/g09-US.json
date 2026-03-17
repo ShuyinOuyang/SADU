@@ -1,0 +1,231 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "UMD employee",
+            "color": "yellow"
+        },
+        "entity_1": {
+            "name": "Current traffic  situation",
+            "color": "yellow"
+        },
+        "entity_2": {
+            "name": "City map",
+            "color": "green"
+        },
+        "entity_3": {
+            "name": "Traffic sensor",
+            "color": "green"
+        },
+        "entity_4": {
+            "name": "Congestions",
+            "color": "red"
+        },
+        "entity_5": {
+            "name": "Environmental measure",
+            "color": "red"
+        },
+        "entity_6": {
+            "name": "Overall CO2 emissions",
+            "color": "yellow"
+        },
+        "entity_7": {
+            "name": "Level of noise",
+            "color": "yellow"
+        },
+        "entity_8": {
+            "name": "Level of  air pollution",
+            "color": "yellow"
+        },
+        "entity_9": {
+            "name": "Measurement point",
+            "color": "green"
+        },
+        "entity_10": {
+            "name": "Overall measure",
+            "color": "white"
+        },
+        "entity_11": {
+            "name": "Area-specific measure",
+            "color": "white"
+        },
+        "entity_12": {
+            "name": "Historical  data",
+            "color": "yellow"
+        },
+        "entity_13": {
+            "name": "Historical traffic situation",
+            "color": "red"
+        },
+        "entity_14": {
+            "name": "Repeatable analysis",
+            "color": "red"
+        },
+        "entity_15": {
+            "name": "Traffic  situation",
+            "color": "yellow"
+        },
+        "entity_16": {
+            "name": "Future traffic situation",
+            "color": "red"
+        },
+        "entity_17": {
+            "name": "Solution / change",
+            "color": "red"
+        },
+        "entity_18": {
+            "name": "Credibility",
+            "color": "yellow"
+        },
+        "entity_19": {
+            "name": "Predicted env. level",
+            "color": "red"
+        },
+        "entity_20": {
+            "name": "Snapshot",
+            "color": "red"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_16",
+            "name": "predicts",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_17",
+            "name": "works on",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_19",
+            "name": "compares",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "sees",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "sees",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_14",
+            "name": "performs",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_12",
+            "name": "saves",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_13",
+            "name": "compares",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_15",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "gathered from",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "plotted over",
+            "type": "association"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_11",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_11",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_9",
+            "name": "collected per",
+            "type": "association"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_15",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_4",
+            "name": "show",
+            "type": "association"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_15",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_18",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_20",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "difficult"
+}

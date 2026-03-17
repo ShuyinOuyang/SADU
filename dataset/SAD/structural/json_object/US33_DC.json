@@ -1,0 +1,411 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Person",
+            "attribute": [
+                "Name",
+                "Id",
+                "Sex",
+                "Stature",
+                "Date_birth"
+            ],
+            "method": []
+        },
+        "entity_1": {
+            "name": "Authenticate_system_ifa",
+            "attribute": [
+                "User",
+                "Clue"
+            ],
+            "method": [
+                "Access_system"
+            ]
+        },
+        "entity_2": {
+            "name": "Fan",
+            "attribute": [
+                "Event"
+            ],
+            "method": [
+                "Access_system",
+                "Notify_changes",
+                "Choose_events_notification",
+                "Inform_events_alive"
+            ]
+        },
+        "entity_3": {
+            "name": "Official_game",
+            "attribute": [
+                "Schedule",
+                "Date",
+                "Place"
+            ],
+            "method": [
+                "Access_system",
+                "Establish_stripes_tours",
+                "Notify_changes_calendar",
+                "Inform_events_alive"
+            ]
+        },
+        "entity_4": {
+            "name": "Employee_ifa",
+            "attribute": [],
+            "method": [
+                "Access_system",
+                "Automate_programming",
+                "Automate_assignment_officers"
+            ]
+        },
+        "entity_5": {
+            "name": "Member_staff_equipment",
+            "attribute": [],
+            "method": [
+                "Access_system",
+                "Access_statistics"
+            ]
+        },
+        "entity_6": {
+            "name": "Manager_equipment",
+            "attribute": [
+                "Finanza"
+            ],
+            "method": [
+                "Access_system",
+                "Manage_finance",
+                "Assign_roles"
+            ]
+        },
+        "entity_7": {
+            "name": "Amateur",
+            "attribute": [],
+            "method": [
+                "Find out_statistics_parties",
+                "Find out_statistics_players"
+            ]
+        },
+        "entity_8": {
+            "name": "Auditor_budgets_ifa",
+            "attribute": [],
+            "method": [
+                "Check_management_budget",
+                "Audit_management_budget",
+                "Obtain_report_budget"
+            ]
+        },
+        "entity_9": {
+            "name": "Administrator_ifa",
+            "attribute": [],
+            "method": [
+                "Add_suspenders",
+                "Register_new_equipment"
+            ]
+        },
+        "entity_10": {
+            "name": "Manager_ifa",
+            "attribute": [],
+            "method": [
+                "Approve_new_equipment",
+                "Approve_new_suspenders"
+            ]
+        },
+        "entity_11": {
+            "name": "Player",
+            "attribute": [
+                "Goals",
+                "Assistance",
+                "Position_game",
+                "Weight",
+                "Passes",
+                "Cards"
+            ],
+            "method": []
+        },
+        "entity_12": {
+            "name": "League",
+            "attribute": [
+                "Equipment",
+                "Board_positions",
+                "Tournament",
+                "Sponsor",
+                "Parties_total",
+                "Results",
+                "Signings"
+            ],
+            "method": []
+        },
+        "entity_13": {
+            "name": "Game",
+            "attribute": [
+                "Marker",
+                "Shots",
+                "Training",
+                "Minutes_played",
+                "Stadium"
+            ],
+            "method": []
+        },
+        "entity_14": {
+            "name": "System_ifa",
+            "attribute": [
+                "Number_people",
+                "Rules",
+                "Transaction"
+            ],
+            "method": [
+                "Bind_different_systems",
+                "Drive_languages",
+                "Rely_system",
+                "Obtain_access_tools",
+                "Manage_suspenders",
+                "Get into_set_rules",
+                "Avoid_biases",
+                "Apply_rules_league",
+                "Avoid_conflicts_schedules",
+                "Annular_schedule",
+                "Get into_transaction",
+                "Notify_event_game",
+                "Inform_officers",
+                "Trigger_statistics"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_7",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_11",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_9",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_14",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_13",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_13",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_13",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_11",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_13",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_11",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_12",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_12",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_12",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_13",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_2",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_3",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_4",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_5",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_6",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_7",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_8",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_11",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_13",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_12",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_9",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_10",
+            "name": "",
+            "type": "composition"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "medium"
+}

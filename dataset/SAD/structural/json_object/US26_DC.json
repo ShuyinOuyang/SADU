@@ -1,0 +1,383 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "New_equipment",
+            "attribute": [
+                "Name",
+                "Shield",
+                "Place",
+                "League",
+                "Division",
+                "Player",
+                "Coach",
+                "Administrator"
+            ],
+            "method": [
+                "New_equipment",
+                "Register_equipment"
+            ]
+        },
+        "entity_1": {
+            "name": "Ifa",
+            "attribute": [
+                "Director",
+                "Treasurer",
+                "Administration",
+                "Resource"
+            ],
+            "method": [
+                "Ifa",
+                "Get_director",
+                "Get_treasurer",
+                "Get_administration",
+                "Get_resource",
+                "See_budget_equipment",
+                "Restrict_access",
+                "See_record_equipment",
+                "See_event",
+                "Show_information",
+                "Modify_schedule",
+                "Update_information_game",
+                "Trigger_statistics",
+                "Recruit_referee",
+                "Trigger_calendar"
+            ]
+        },
+        "entity_2": {
+            "name": "Manager",
+            "attribute": [
+                "Area"
+            ],
+            "method": [
+                "Manager",
+                "Get_area",
+                "Connect_system"
+            ]
+        },
+        "entity_3": {
+            "name": "Referee",
+            "attribute": [
+                "Contract"
+            ],
+            "method": [
+                "Referee",
+                "Warn_change_calendar",
+                "Report_preference_time"
+            ]
+        },
+        "entity_4": {
+            "name": "Referee_central",
+            "attribute": [
+                "Location"
+            ],
+            "method": [
+                "Referee_central",
+                "Inform_events"
+            ]
+        },
+        "entity_5": {
+            "name": "Referee_side",
+            "attribute": [
+                "Location"
+            ],
+            "method": [
+                "Referee_side",
+                "Inform_events"
+            ]
+        },
+        "entity_6": {
+            "name": "Statistics",
+            "attribute": [
+                "Data"
+            ],
+            "method": [
+                "Statistics",
+                "Get_data"
+            ]
+        },
+        "entity_7": {
+            "name": "Information",
+            "attribute": [
+                "Date_rise",
+                "State"
+            ],
+            "method": [
+                "Information",
+                "Get_date_rise",
+                "Get_state"
+            ]
+        },
+        "entity_8": {
+            "name": "Game",
+            "attribute": [
+                "Equipment"
+            ],
+            "method": [
+                "Game",
+                "Obtain_game"
+            ]
+        },
+        "entity_9": {
+            "name": "Result",
+            "attribute": [
+                "Marker"
+            ],
+            "method": [
+                "Result",
+                "Obtain_result"
+            ]
+        },
+        "entity_10": {
+            "name": "Equipment",
+            "attribute": [
+                "Players",
+                "Body_technical"
+            ],
+            "method": [
+                "Equipment",
+                "Get_players",
+                "Get_body_technical"
+            ]
+        },
+        "entity_11": {
+            "name": "Individual",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Date_birth",
+                "E-mail",
+                "Password",
+                "User",
+                "Id",
+                "Id"
+            ],
+            "method": [
+                "Individual",
+                "Get_name",
+                "Get_last name",
+                "Get_date_birth",
+                "Get_e-mail",
+                "Get_password",
+                "Get_user",
+                "Get_id",
+                "Get_id"
+            ]
+        },
+        "entity_12": {
+            "name": "Director",
+            "attribute": [
+                "Equipment"
+            ],
+            "method": [
+                "Director",
+                "Get_equipment",
+                "Add_player",
+                "Edit_player",
+                "Eliminate_data_player"
+            ]
+        },
+        "entity_13": {
+            "name": "Player",
+            "attribute": [
+                "Equipment"
+            ],
+            "method": [
+                "Player",
+                "Get_equipment",
+                "Create_profile",
+                "Update_profile"
+            ]
+        },
+        "entity_14": {
+            "name": "User",
+            "attribute": [
+                "Name"
+            ],
+            "method": [
+                "User",
+                "Obtain_name_user"
+            ]
+        },
+        "entity_15": {
+            "name": "User_guest",
+            "attribute": [],
+            "method": [
+                "User_guest",
+                "See_information",
+                "Trigger_statistics"
+            ]
+        },
+        "entity_16": {
+            "name": "User_registered",
+            "attribute": [
+                "Notifications"
+            ],
+            "method": [
+                "User_registered",
+                "Get_notifications",
+                "Continue_equipment",
+                "Continue_player",
+                "Continue_game"
+            ]
+        },
+        "entity_17": {
+            "name": "Journalist",
+            "attribute": [
+                "Platform"
+            ],
+            "method": [
+                "Journalist",
+                "Export_information"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_7",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_6",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_14",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_14",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_17",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_12",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_15",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_16",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_6",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_7",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_9",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_13",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_10",
+            "name": "",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "medium"
+}

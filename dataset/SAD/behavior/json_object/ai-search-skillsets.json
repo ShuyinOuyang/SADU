@@ -1,0 +1,171 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Documents"
+        },
+        "entity_1": {
+            "name": "Images"
+        },
+        "entity_2": {
+            "name": "Document cracking"
+        },
+        "entity_3": {
+            "name": "Text analytics"
+        },
+        "entity_4": {
+            "name": "Translator"
+        },
+        "entity_5": {
+            "name": "Vision"
+        },
+        "entity_6": {
+            "name": "Azure Functions"
+        },
+        "entity_7": {
+            "name": "AI DocumentIntelligence"
+        },
+        "entity_8": {
+            "name": "Azure Machine Learning"
+        },
+        "entity_9": {
+            "name": "Enriched documents"
+        },
+        "entity_10": {
+            "name": "Search index"
+        },
+        "entity_11": {
+            "name": "Web application"
+        },
+        "entity_12": {
+            "name": "Blob Storage"
+        },
+        "entity_13": {
+            "name": "Table Storage"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "Unstructured data",
+            "include_entity": [
+                "entity_0",
+                "entity_1"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "Blob Storage",
+            "include_entity": [
+                "entity_0",
+                "entity_1"
+            ],
+            "include_cluster": [
+                "cluster_0"
+            ]
+        },
+        "cluster_2": {
+            "name": "Built-in skills",
+            "include_entity": [
+                "entity_3",
+                "entity_4",
+                "entity_5"
+            ],
+            "include_cluster": []
+        },
+        "cluster_3": {
+            "name": "Custom skills",
+            "include_entity": [
+                "entity_6",
+                "entity_7",
+                "entity_8"
+            ],
+            "include_cluster": []
+        },
+        "cluster_4": {
+            "name": "AI enrichment",
+            "include_entity": [
+                "entity_3",
+                "entity_4",
+                "entity_5",
+                "entity_6",
+                "entity_7",
+                "entity_8"
+            ],
+            "include_cluster": [
+                "cluster_2",
+                "cluster_3"
+            ]
+        },
+        "cluster_5": {
+            "name": "AI Search",
+            "include_entity": [
+                "entity_3",
+                "entity_4",
+                "entity_5",
+                "entity_6",
+                "entity_7",
+                "entity_8",
+                "entity_9",
+                "entity_10"
+            ],
+            "include_cluster": [
+                "cluster_2",
+                "cluster_3",
+                "cluster_4"
+            ]
+        },
+        "cluster_6": {
+            "name": "Knowledge store",
+            "include_entity": [
+                "entity_12",
+                "entity_13"
+            ],
+            "include_cluster": []
+        }
+    },
+    "relation": [
+        {
+            "source": "cluster_1",
+            "target": "entity_2",
+            "name": "Ingestion",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "cluster_4",
+            "name": "Enrich",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_4",
+            "target": "entity_9",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_10",
+            "name": "Index",
+            "direction": "single"
+        },
+        {
+            "source": "entity_9",
+            "target": "cluster_6",
+            "name": "Projections",
+            "direction": "single"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_10",
+            "name": "Query",
+            "direction": "single"
+        },
+        {
+            "source": "entity_11",
+            "target": "cluster_6",
+            "name": "Query",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "medium",
+    "diagram_type": "behavior"
+}

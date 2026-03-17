@@ -1,0 +1,221 @@
+[
+    {
+        "question": "How many entities are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            12
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_entity_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relations are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            8
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_relation_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many entities have more than one relation?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            5
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "entities_have_more_than_one_relations",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many clusters are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            3
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_cluster_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many entities are not contained in any cluster?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            1
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_entities_not_in_clusters",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relations have a label?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            7
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_relations_have_label",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many clusters contain at least one sub-cluster (nested clusters)?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            1
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_clusters_have_clusters_within",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many entities are contained in Cluster 'Azure AI Foundry'?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            2
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_entities_does_certain_cluster_have",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relation types appear in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            1
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_relation_types",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "Which entity has a relation with Entity 'Client <Browser>'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Content processor API Container Apps",
+            "Power BI"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_statement",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "Which entities are contained in cluster 'Azure AI Foundry'? \nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Azure AI Content Understanding",
+            "Azure OpenAI in Foundry Models"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "certain_cluster_contains_entity",
+            "difficulty": "intermediate"
+        }
+    },
+    {
+        "question": "What is the label on the relation between Entity 'Client <Browser>' and Entity 'Content processor API Container Apps'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Upload file"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "label_on_the_relation",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity has a relation with label 'Upload file' to Entity 'Content processor API Container Apps'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Client <Browser>"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "label_on_the_relation_source",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity has a relation with label 'Upload file' from Entity 'Client <Browser>'? \nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Content processor API Container Apps"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "label_on_the_relation_target",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which cluster(s) contain Entity 'Azure OpenAI in Foundry Models'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Azure AI Foundry"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "cluster_contains_certain_entity",
+            "difficulty": "intermediate"
+        }
+    },
+    {
+        "question": "What is the directionality of the relation between Entity 'Client <Browser>' and Entity 'Content processor API Container Apps'? (e.g. single, double, and none)\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "single"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "type_on_the_relation",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity is the source in a relation to Entity 'Content processor API Container Apps'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Client <Browser>"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_source",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity is the target in a relation from Entity 'Client <Browser>'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Content processor API Container Apps",
+            "Power BI"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_target",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which relation(s) carry the label 'Upload file'? Please use format [source entity, target entity] to represent certain relation.\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            [
+                "Client <Browser>",
+                "Content processor API Container Apps"
+            ]
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "which_relation_has_certain_label",
+            "difficulty": "intermediate"
+        }
+    }
+]

@@ -1,0 +1,159 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Client A"
+        },
+        "entity_1": {
+            "name": "Client B"
+        },
+        "entity_2": {
+            "name": "Gateway"
+        },
+        "entity_3": {
+            "name": "Azure OpenAI Private Endpoint"
+        },
+        "entity_4": {
+            "name": "Azure OpenAI Private Endpoint"
+        },
+        "entity_5": {
+            "name": "Azure OpenAI Private Endpoint"
+        },
+        "entity_6": {
+            "name": "gpt-4"
+        },
+        "entity_7": {
+            "name": "Azure OpenAI | Client A (Provisioned primary)"
+        },
+        "entity_8": {
+            "name": "Azure RBAC for API access"
+        },
+        "entity_9": {
+            "name": "gpt-4"
+        },
+        "entity_10": {
+            "name": "Azure OpenAI | Client A (Standard spillover)"
+        },
+        "entity_11": {
+            "name": "Azure RBAC for API access"
+        },
+        "entity_12": {
+            "name": "gpt-4"
+        },
+        "entity_13": {
+            "name": "Azure OpenAI | Client A (Provisioned)"
+        },
+        "entity_14": {
+            "name": "Azure RBAC for API access"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "rg-gateway-eastus",
+            "include_entity": [
+                "entity_2",
+                "entity_3",
+                "entity_4",
+                "entity_5"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "",
+            "include_entity": [
+                "entity_2",
+                "entity_3",
+                "entity_4"
+            ],
+            "include_cluster": []
+        },
+        "cluster_2": {
+            "name": "",
+            "include_entity": [
+                "entity_5",
+                "entity_6",
+                "entity_7"
+            ],
+            "include_cluster": []
+        },
+        "cluster_3": {
+            "name": "",
+            "include_entity": [
+                "entity_8",
+                "entity_9",
+                "entity_10"
+            ],
+            "include_cluster": []
+        },
+        "cluster_4": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_2",
+                "entity_3",
+                "entity_4",
+                "entity_5",
+                "entity_6",
+                "entity_7",
+                "entity_8",
+                "entity_9",
+                "entity_10"
+            ],
+            "include_cluster": [
+                "cluster_1",
+                "cluster_2",
+                "cluster_3"
+            ]
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_9",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_12",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "medium",
+    "diagram_type": "behavior"
+}

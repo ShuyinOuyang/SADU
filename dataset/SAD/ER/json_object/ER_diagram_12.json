@@ -1,0 +1,329 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Loan_Request",
+            "attribute": [
+                [
+                    "date",
+                    "Date",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "BorrowerID",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "Deadline",
+                    "",
+                    ""
+                ],
+                [
+                    "numeric",
+                    "Amount",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Description",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "Payday",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "Loan_Request_Lender",
+            "attribute": [
+                [
+                    "date",
+                    "Loan_Request_Date",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "LenderID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "numeric",
+                    "Amount",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "Payment",
+            "attribute": [
+                [
+                    "date",
+                    "Date",
+                    "PK",
+                    ""
+                ],
+                [
+                    "numeric",
+                    "Amount",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "Borrower",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "AddresseeID",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "Lender_Borrower",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "BorrowerID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "LenderID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "date",
+                    "LoanDate",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Percentage",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "Loan",
+            "attribute": [
+                [
+                    "date",
+                    "Date",
+                    "PK",
+                    ""
+                ],
+                [
+                    "date",
+                    "DeadlineAgreed_Date",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "RepaymentDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "Addressee",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Address",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "Lender",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "AddresseeID",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_8": {
+            "name": "Deadline",
+            "attribute": [
+                [
+                    "date",
+                    "Agreed_Date",
+                    "PK",
+                    ""
+                ]
+            ]
+        },
+        "entity_9": {
+            "name": "Intermediary",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "AddresseeID",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "LoanDate",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_0",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_6",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_4",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_9",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_7",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_9",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_5",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "ER"
+}

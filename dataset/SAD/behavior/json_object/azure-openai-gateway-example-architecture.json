@@ -1,0 +1,173 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Intelligent Application"
+        },
+        "entity_1": {
+            "name": "Azure API Management(gateway only)"
+        },
+        "entity_2": {
+            "name": "Managed Identity"
+        },
+        "entity_3": {
+            "name": "Azure API Management"
+        },
+        "entity_4": {
+            "name": "Managed Identity"
+        },
+        "entity_5": {
+            "name": "Azure Event Hubs"
+        },
+        "entity_6": {
+            "name": "Azure Function"
+        },
+        "entity_7": {
+            "name": "Azure OpenAI"
+        },
+        "entity_8": {
+            "name": "Azure OpenAI Instance"
+        },
+        "entity_9": {
+            "name": "Azure OpenAI Instance"
+        },
+        "entity_10": {
+            "name": "Microsoft Entra ID"
+        },
+        "entity_11": {
+            "name": "Azure Traffic Manager"
+        },
+        "entity_12": {
+            "name": "Application Insights"
+        },
+        "entity_13": {
+            "name": "Azure Monitor"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "",
+            "include_entity": [
+                "entity_1",
+                "entity_2"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "Region B",
+            "include_entity": [
+                "entity_1",
+                "entity_2",
+                "entity_7"
+            ],
+            "include_cluster": [
+                "cluster_1"
+            ]
+        },
+        "cluster_2": {
+            "name": "",
+            "include_entity": [
+                "entity_3",
+                "entity_4"
+            ],
+            "include_cluster": []
+        },
+        "cluster_3": {
+            "name": "Region A",
+            "include_entity": [
+                "entity_3",
+                "entity_4",
+                "entity_5",
+                "entity_6",
+                "entity_8",
+                "entity_9"
+            ],
+            "include_cluster": [
+                "cluster_2"
+            ]
+        },
+        "cluster_4": {
+            "name": "Monitoring",
+            "include_entity": [
+                "entity_12",
+                "entity_13"
+            ],
+            "include_cluster": []
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "cluster_0",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_0",
+            "target": "cluster_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_0",
+            "target": "entity_7",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_0",
+            "target": "entity_8",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_0",
+            "target": "entity_9",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_2",
+            "target": "entity_7",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_2",
+            "target": "entity_8",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_2",
+            "target": "entity_9",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_2",
+            "target": "entity_5",
+            "name": "Batch request",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_2",
+            "target": "entity_6",
+            "name": "Compute service",
+            "direction": "single"
+        },
+        {
+            "source": "entity_6",
+            "target": "cluster_2",
+            "name": "Replay batched request",
+            "direction": "single"
+        },
+        {
+            "source": "entity_6",
+            "target": "cluster_2",
+            "name": "Batched request",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "behavior"
+}

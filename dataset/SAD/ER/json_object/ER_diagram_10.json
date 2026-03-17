@@ -1,0 +1,174 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Customer",
+            "attribute": [
+                [
+                    "integer",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Address",
+                    "",
+                    ""
+                ],
+                [
+                    "char(1)",
+                    "Gender",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "Date_of_Birth",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "Purchase_Order",
+            "attribute": [
+                [
+                    "integer",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "CustomerID",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Date",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Total",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "Order_Product",
+            "attribute": [
+                [
+                    "integer",
+                    "OrderID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "ProductID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "qty",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "Product",
+            "attribute": [
+                [
+                    "integer",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "SupplierID",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "Supplier",
+            "attribute": [
+                [
+                    "integer",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Contact",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_3",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

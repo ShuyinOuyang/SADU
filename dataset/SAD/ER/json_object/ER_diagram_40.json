@@ -1,0 +1,309 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "department",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "employees",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "department_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "supervisor",
+                    "FK",
+                    ""
+                ],
+                [
+                    "date",
+                    "anniversary_date",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "assessments",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "department_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "title",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "assessment_versions",
+            "attribute": [
+                [
+                    "int",
+                    "assessment_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "version",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "frequency_id",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "sections",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "assessment_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "version",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "title",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "questions",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "section_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "text",
+                    "text",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "employee_assessments",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "employee_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "assessment_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "version",
+                    "FK",
+                    ""
+                ],
+                [
+                    "date",
+                    "date_completed",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "responses",
+            "attribute": [
+                [
+                    "int",
+                    "instance_id",
+                    "PK,FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "question_id",
+                    "PK,FK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "value",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "comment",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "id",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "department_has_employees",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_1",
+            "name": "employee_supervisor_relationship",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "department_has_assessments",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "assessment_has_versions",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "version_has_sections",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "section_has_questions",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_6",
+            "name": "employee_takes_assessments",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_6",
+            "name": "assessment_instances",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_7",
+            "name": "employee_responses",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_7",
+            "name": "question_responses",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

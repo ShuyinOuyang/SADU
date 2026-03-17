@@ -1,0 +1,599 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "film_actor",
+            "attribute": [
+                [
+                    "smallint",
+                    "actor_id",
+                    "PK,FK",
+                    ""
+                ],
+                [
+                    "smallint",
+                    "film_id",
+                    "PK,FK",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "last_update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "actor",
+            "attribute": [
+                [
+                    "smallint",
+                    "actor_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(45)",
+                    "first_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(45)",
+                    "last_name",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "last_update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "film_category",
+            "attribute": [
+                [
+                    "smallint",
+                    "film_id",
+                    "PK,FK",
+                    ""
+                ],
+                [
+                    "tinyint",
+                    "category_id",
+                    "PK,FK",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "last_update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "category",
+            "attribute": [
+                [
+                    "smallint",
+                    "category_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(25)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "last_update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "film",
+            "attribute": [
+                [
+                    "smallint",
+                    "film_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "title",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "YEAR",
+                    "release_year",
+                    "",
+                    ""
+                ],
+                [
+                    "tinyint",
+                    "language_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "tinyint",
+                    "original_language_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "tinyint",
+                    "rental_duration",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "rental_rate",
+                    "",
+                    ""
+                ],
+                [
+                    "smallint",
+                    "length",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "replacement_cost",
+                    "",
+                    ""
+                ],
+                [
+                    "enum",
+                    "rating",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "special_features",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "last_update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "language",
+            "attribute": [
+                [
+                    "tinyint",
+                    "language_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "char(20)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "last_update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "staff",
+            "attribute": [
+                [
+                    "tinyint",
+                    "staff_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(45)",
+                    "first_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(45)",
+                    "last_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "email",
+                    "",
+                    ""
+                ],
+                [
+                    "tinyint",
+                    "store_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "boolean",
+                    "active",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(16)",
+                    "username",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(40)",
+                    "password",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "last_update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "inventory",
+            "attribute": [
+                [
+                    "mediumint",
+                    "inventory_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "smallint",
+                    "film_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "tinyint",
+                    "store_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "last_update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_8": {
+            "name": "store",
+            "attribute": [
+                [
+                    "tinyint",
+                    "store_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "tinyint",
+                    "manager_staff_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "last_update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_9": {
+            "name": "payment",
+            "attribute": [
+                [
+                    "smallint",
+                    "payment_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "smallint",
+                    "customer_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "tinyint",
+                    "staff_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "INT",
+                    "rental_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "amount",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "payment_date",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "last_update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_10": {
+            "name": "rental",
+            "attribute": [
+                [
+                    "INT",
+                    "rental_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "rental_date",
+                    "",
+                    ""
+                ],
+                [
+                    "mediumint",
+                    "inventory_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "smallint",
+                    "customer_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "return_date",
+                    "",
+                    ""
+                ],
+                [
+                    "tinyint",
+                    "staff_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "last_update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_11": {
+            "name": "customer",
+            "attribute": [
+                [
+                    "smallint",
+                    "customer_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "tinyint",
+                    "store_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(45)",
+                    "first_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(45)",
+                    "last_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "email",
+                    "",
+                    ""
+                ],
+                [
+                    "boolean",
+                    "active",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "create_date",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "last_update",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_0",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_7",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_9",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_10",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_8",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_10",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_6",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_7",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_11",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_9",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_9",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_10",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

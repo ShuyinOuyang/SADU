@@ -1,0 +1,465 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Person",
+            "attribute": [
+                "Name",
+                "Id",
+                "Sex",
+                "Stature",
+                "Date_birth"
+            ],
+            "method": []
+        },
+        "entity_1": {
+            "name": "Owner_collection",
+            "attribute": [
+                "Id_owner"
+            ],
+            "method": [
+                "Validate_modification_collection"
+            ]
+        },
+        "entity_2": {
+            "name": "Member_faculty",
+            "attribute": [
+                "Id_member",
+                "Clue"
+            ],
+            "method": [
+                "Add_demilitator",
+                "Limit_search",
+                "Return_results",
+                "Manage_members",
+                "Grant_permits",
+                "See_confirmation",
+                "Eliminate_permits",
+                "Set up_start",
+                "Set up_dates"
+            ]
+        },
+        "entity_3": {
+            "name": "Curator_collections",
+            "attribute": [
+                "Date",
+                "Clue"
+            ],
+            "method": [
+                "Establish_date_expiration",
+                "Map_items",
+                "Get up_embargo",
+                "Create_form",
+                "Establish_date_embargo",
+                "Control_author",
+                "Move_element",
+                "Summary_shipment",
+                "Change_metadata",
+                "Create_groups_user",
+                "Restrict_access_collection",
+                "Request_access",
+                "Change_permission",
+                "Authenticate",
+                "See_permits"
+            ]
+        },
+        "entity_4": {
+            "name": "Curator_collection",
+            "attribute": [
+                "Date",
+                "Clue",
+                "Id_author"
+            ],
+            "method": [
+                "See_date_elimination",
+                "Encrypt_clue",
+                "See_metadata",
+                "Identify_author",
+                "See_referents"
+            ]
+        },
+        "entity_5": {
+            "name": "Researcher",
+            "attribute": [
+                "Id_researcher",
+                "Clue"
+            ],
+            "method": [
+                "Describe_equipment",
+                "Edit_metadata"
+            ]
+        },
+        "entity_6": {
+            "name": "Repoadmin",
+            "attribute": [
+                "Id_repoadmin",
+                "Clue"
+            ],
+            "method": [
+                "Use_services",
+                "Update",
+                "Migrate",
+                "Introduce_license",
+                "Deny_deposit",
+                "Register_license",
+                "Expose_content",
+                "Provide_sla",
+                "Provide_interface",
+                "Communicate",
+                "Integrate",
+                "Instantance",
+                "Select_license"
+            ]
+        },
+        "entity_7": {
+            "name": "Developer",
+            "attribute": [
+                "Id_developer",
+                "Clue"
+            ],
+            "method": [
+                "Use_services",
+                "Migrate",
+                "Update"
+            ]
+        },
+        "entity_8": {
+            "name": "Archivist",
+            "attribute": [
+                "Id_archivist",
+                "Clue"
+            ],
+            "method": [
+                "Process_lots",
+                "Ingest_lots",
+                "See_metadata",
+                "Discharge_archives",
+                "Get up_embargoes",
+                "Establish_controls_access",
+                "Add_people_cabbage_esp",
+                "Eliminate_people_cabbage_esp",
+                "Deposit_groups",
+                "Grant_permission_depositor",
+                "Expose_record",
+                "Grant_permission_admin",
+                "Add_people_indv_dep",
+                "Eliminate_people_indv_dep",
+                "Edit_duration_embargo"
+            ]
+        },
+        "entity_9": {
+            "name": "Superusutory",
+            "attribute": [
+                "Id_superuser",
+                "Clue"
+            ],
+            "method": [
+                "Enter",
+                "Go out"
+            ]
+        },
+        "entity_10": {
+            "name": "Sender_lots",
+            "attribute": [
+                "Id_sender",
+                "Clue"
+            ],
+            "method": [
+                "Provide_data",
+                "Provide_metadata",
+                "Access_documentation"
+            ]
+        },
+        "entity_11": {
+            "name": "Visitor",
+            "attribute": [],
+            "method": [
+                "See_state"
+            ]
+        },
+        "entity_12": {
+            "name": "Depositor",
+            "attribute": [
+                "E-mail"
+            ],
+            "method": [
+                "Receive_comments",
+                "See_things_repository",
+                "See_formats",
+                "Find_information_doi"
+            ]
+        },
+        "entity_13": {
+            "name": "Person_contact",
+            "attribute": [
+                "Phone",
+                "Mail",
+                "Post",
+                "Address"
+            ],
+            "method": []
+        },
+        "entity_14": {
+            "name": "Collection",
+            "attribute": [
+                "Date",
+                "Author",
+                "Qualification",
+                "Editorial",
+                "Description",
+                "Language",
+                "Isbn"
+            ],
+            "method": []
+        },
+        "entity_15": {
+            "name": "Administrator",
+            "attribute": [],
+            "method": [
+                "Execute_report",
+                "Specify_policy",
+                "Replicate",
+                "See_users",
+                "See_duplicates",
+                "See_statistics",
+                "Update_index",
+                "See_versions_available"
+            ]
+        },
+        "entity_16": {
+            "name": "Repository",
+            "attribute": [
+                "Element",
+                "Num_element",
+                "Component",
+                "Service",
+                "Activity"
+            ],
+            "method": [
+                "Replicate_remote",
+                "Insert",
+                "Clean",
+                "Obtain_domain"
+            ]
+        },
+        "entity_17": {
+            "name": "Dpc",
+            "attribute": [],
+            "method": [
+                "Create_event",
+                "Register"
+            ]
+        },
+        "entity_18": {
+            "name": "Staff",
+            "attribute": [],
+            "method": [
+                "Show",
+                "Restore"
+            ]
+        },
+        "entity_19": {
+            "name": "Publishes",
+            "attribute": [],
+            "method": [
+                "Access"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_7",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_9",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_11",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_12",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_1",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_3",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_4",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_15",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_14",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_15",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_6",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_17",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_8",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_0",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_19",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_16",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_16",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_16",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_16",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_16",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_16",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_16",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_4",
+            "name": "",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "medium"
+}

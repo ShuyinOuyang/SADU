@@ -1,0 +1,49 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Customer",
+            "attribute": []
+        },
+        "entity_1": {
+            "name": "Order",
+            "attribute": []
+        },
+        "entity_2": {
+            "name": "Delivery-Address",
+            "attribute": []
+        },
+        "entity_3": {
+            "name": "Line-item",
+            "attribute": []
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "uses",
+            "type": "non-identifying",
+            "source_cardinality": "one or more",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "places",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "places",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

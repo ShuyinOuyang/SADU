@@ -1,0 +1,237 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Amateur",
+            "attribute": [
+                "Equipment_continued",
+                "Balance",
+                "Language",
+                "Currency"
+            ],
+            "method": [
+                "Amateur",
+                "Register",
+                "Add_equipment",
+                "Set_equipment_continued",
+                "Change_language",
+                "Change_currency"
+            ]
+        },
+        "entity_1": {
+            "name": "Individual",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Date_birth",
+                "E-mail",
+                "Password",
+                "User",
+                "Id",
+                "Id"
+            ],
+            "method": [
+                "Individual",
+                "Get_name",
+                "Get_last name",
+                "Get_date_birth",
+                "Get_e-mail",
+                "Get_password",
+                "Get_user",
+                "Get_id",
+                "Get_id"
+            ]
+        },
+        "entity_2": {
+            "name": "Organization",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Place"
+            ],
+            "method": [
+                "Organization",
+                "Get_name",
+                "Get_last name",
+                "Get_place"
+            ]
+        },
+        "entity_3": {
+            "name": "Fan",
+            "attribute": [
+                "Player_continued"
+            ],
+            "method": [
+                "Fan",
+                "Start_session",
+                "Continue_player",
+                "See_schedule",
+                "Receive_notifications",
+                "See_events"
+            ]
+        },
+        "entity_4": {
+            "name": "Event",
+            "attribute": [
+                "Schedule",
+                "Name",
+                "Participants"
+            ],
+            "method": [
+                "Event",
+                "Get_schedule",
+                "Get_name",
+                "Get_participants"
+            ]
+        },
+        "entity_5": {
+            "name": "Schedule",
+            "attribute": [
+                "Day",
+                "Month",
+                "Year",
+                "Hour"
+            ],
+            "method": [
+                "Schedule",
+                "Get_day",
+                "Get_month",
+                "Get_year",
+                "Get_hour"
+            ]
+        },
+        "entity_6": {
+            "name": "Referee",
+            "attribute": [
+                "Contract",
+                "Events_registered"
+            ],
+            "method": [
+                "Referee",
+                "Register_event",
+                "Set_up_schedules",
+                "Communicate"
+            ]
+        },
+        "entity_7": {
+            "name": "Ifa",
+            "attribute": [
+                "Director",
+                "Treasurer",
+                "Administration",
+                "Resource"
+            ],
+            "method": [
+                "Ifa",
+                "Define_policy",
+                "Modify_policy",
+                "Assign_referee",
+                "Engrave_event",
+                "See_use_resource",
+                "Communicate"
+            ]
+        },
+        "entity_8": {
+            "name": "Equipment",
+            "attribute": [
+                "League",
+                "Division",
+                "Player",
+                "Coach",
+                "Administrator"
+            ],
+            "method": [
+                "Equipment",
+                "Manage_resources",
+                "Create_networks_social_player",
+                "Create_networks_social_coach",
+                "Look for_player",
+                "Register_transaction",
+                "Assign_administrator",
+                "Communicate"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_5",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_4",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_5",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_6",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_0",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_7",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

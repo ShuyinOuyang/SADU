@@ -1,0 +1,254 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Fan",
+            "attribute": [
+                "Comment"
+            ],
+            "method": [
+                "Fan",
+                "Add_comment",
+                "Change_language",
+                "Modify_preference"
+            ]
+        },
+        "entity_1": {
+            "name": "Referee",
+            "attribute": [
+                "Contract"
+            ],
+            "method": [
+                "Referee",
+                "See_games_assigned",
+                "Warning_postponement",
+                "List_possible_events",
+                "Report_event"
+            ]
+        },
+        "entity_2": {
+            "name": "Administrator_ifa",
+            "attribute": [
+                "Permits"
+            ],
+            "method": [
+                "Administrator_ifa",
+                "Allow_access",
+                "Create_form",
+                "Determine_policy",
+                "Issue_eviso_breach",
+                "Rules_programming",
+                "Adjust_area_time",
+                "See_budget_equipment",
+                "See_information_equipment",
+                "Communication_part_interested",
+                "Restrict_creation_budgets",
+                "Create_statistics_events"
+            ]
+        },
+        "entity_3": {
+            "name": "Individual",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Date_birth",
+                "E-mail",
+                "Password",
+                "User",
+                "Id",
+                "Id"
+            ],
+            "method": [
+                "Individual",
+                "Get_name",
+                "Get_last name",
+                "Get_date_birth",
+                "Get_e-mail",
+                "Get_password",
+                "Get_user",
+                "Get_id",
+                "Get_id"
+            ]
+        },
+        "entity_4": {
+            "name": "Visitor",
+            "attribute": [
+                "New_user",
+                "New_password"
+            ],
+            "method": [
+                "Visitor",
+                "Create_account"
+            ]
+        },
+        "entity_5": {
+            "name": "Amateur",
+            "attribute": [],
+            "method": [
+                "Amateur",
+                "Notify_game",
+                "Notify_equipment",
+                "Notify_league",
+                "See_information_entrance",
+                "See_statistics_game",
+                "See_analysis_equipment"
+            ]
+        },
+        "entity_6": {
+            "name": "Cio",
+            "attribute": [],
+            "method": [
+                "Cio",
+                "Fuse_systems"
+            ]
+        },
+        "entity_7": {
+            "name": "Representative_ifa",
+            "attribute": [
+                "Code"
+            ],
+            "method": [
+                "Representative_ifa",
+                "See_schedule",
+                "Approve_schedule",
+                "See_reason_reprogramming",
+                "Approve_reprogramming"
+            ]
+        },
+        "entity_8": {
+            "name": "Organization",
+            "attribute": [
+                "Name",
+                "Shield",
+                "Place"
+            ],
+            "method": [
+                "Organization",
+                "Get_name",
+                "Get_shield",
+                "Get_place"
+            ]
+        },
+        "entity_9": {
+            "name": "League",
+            "attribute": [
+                "Director",
+                "Treasurer",
+                "Administration",
+                "Resource"
+            ],
+            "method": [
+                "League",
+                "Change_schedule"
+            ]
+        },
+        "entity_10": {
+            "name": "Equipment",
+            "attribute": [
+                "League",
+                "Division",
+                "Player",
+                "Coach",
+                "Administrator"
+            ],
+            "method": [
+                "Equipment",
+                "Post_news",
+                "Assign_cm",
+                "Restrict_dates"
+            ]
+        },
+        "entity_11": {
+            "name": "Schedule",
+            "attribute": [
+                "Day",
+                "Month",
+                "Year",
+                "Hour"
+            ],
+            "method": [
+                "Schedule",
+                "Get_day",
+                "Get_month",
+                "Get_year",
+                "Get_hour"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_3",
+            "target": "entity_0",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_1",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_7",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_9",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_10",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_11",
+            "name": "",
+            "type": "composition"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

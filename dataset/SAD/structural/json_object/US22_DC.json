@@ -1,0 +1,320 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Person",
+            "attribute": [
+                "Name",
+                "Id",
+                "Sex",
+                "Stature",
+                "Date_birth"
+            ],
+            "method": []
+        },
+        "entity_1": {
+            "name": "Id_content",
+            "attribute": [
+                "Name",
+                "Qualification",
+                "Description"
+            ],
+            "method": []
+        },
+        "entity_2": {
+            "name": "User",
+            "attribute": [
+                "Login",
+                "Clue",
+                "Fingerprint_dactilar",
+                "Id_content",
+                "Product",
+                "Logo",
+                "Brand"
+            ],
+            "method": [
+                "Look for_music",
+                "Look for_music_profile",
+                "Look for_music_user_similar",
+                "Look for_similarity_content",
+                "Find_artist",
+                "Find_new_gender",
+                "Increase_videos_tagged",
+                "See_sequences_miniature",
+                "Obtain_information_element_video",
+                "Obtain_information_element_video_per",
+                "Receive_content_profiles",
+                "Receive_content_events_area",
+                "Identify_people_videos",
+                "Receive_information_people",
+                "Identify_products_videos",
+                "Receive_infor_products",
+                "Identify_logos_videos",
+                "Receive_information_logos",
+                "Identify_brands_videos",
+                "Receive_information_brands",
+                "Increase_photo",
+                "Access_content_map_geographical",
+                "Look for_element_voice"
+            ]
+        },
+        "entity_3": {
+            "name": "Metadata",
+            "attribute": [
+                "Name_artist",
+                "Qualification_song",
+                "Qualification_album",
+                "Date_launch",
+                "Name_composer",
+                "Producer_musical",
+                "Seal_disagraphic",
+                "Gender"
+            ],
+            "method": [
+                "Add",
+                "Modify"
+            ]
+        },
+        "entity_4": {
+            "name": "Administrator",
+            "attribute": [
+                "Login_administrator",
+                "Clue"
+            ],
+            "method": [
+                "See_segmentation_videos",
+                "Validate_segmentation_videos",
+                "Edit_segmentation_videos",
+                "Write down_segments_videos",
+                "Extract_issue_segment",
+                "Filter_videos_to_v",
+                "Classify_videos_to_v",
+                "Obtain_assessment",
+                "Filter_content_naked",
+                "Filter_search_low_level",
+                "Validate_content_rights_author",
+                "Filter_search_high_level",
+                "See_summary_articles"
+            ]
+        },
+        "entity_5": {
+            "name": "Administrator_zooniverse",
+            "attribute": [
+                "Login_administrator",
+                "Clue"
+            ],
+            "method": [
+                "Assess_content",
+                "Detect_talk",
+                "Identify_volunteers",
+                "Preclassify_images_zoo",
+                "Detect_images_snapshot",
+                "Carry_out_detection_automatic_images",
+                "Carry_out_preclassification_automatic_species",
+                "Carry_out_preclassification_attribute_animal",
+                "Detect_automatic_number_animal",
+                "Segment_car_plankton",
+                "Detect_automatic_image_plankton",
+                "Detect_automatic_size_plankton",
+                "Preclassify_automatic_species_plankton",
+                "Analysis_automatic_mov_worm",
+                "Detect_automatic_hour_wwl",
+                "Characteristics_image_satellite",
+                "Assess_probability",
+                "Filtered_previous",
+                "Detect_object_mov",
+                "Eliminate_noise",
+                "Group_whales",
+                "Identify_amount_whales",
+                "Interrupt_volunteer",
+                "Know_interrupt_volun",
+                "Educate_volunteer",
+                "Know_educate_volun",
+                "Guy_edu_volunteer",
+                "Comment_volunteer_interest",
+                "Comment_zoonibot",
+                "Zoonibot_volunteer",
+                "Group_by_similarity"
+            ]
+        },
+        "entity_6": {
+            "name": "Volunteer",
+            "attribute": [
+                "Id_volunteer"
+            ],
+            "method": []
+        },
+        "entity_7": {
+            "name": "Music",
+            "attribute": [
+                "Qualification",
+                "Label",
+                "Duration",
+                "Playlist",
+                "Artist",
+                "Gender",
+                "Album",
+                "Collaborator"
+            ],
+            "method": [
+                "Pausar",
+                "Reproduce",
+                "Pass",
+                "Back",
+                "Repeat",
+                "Modify"
+            ]
+        },
+        "entity_8": {
+            "name": "Profile",
+            "attribute": [
+                "Name",
+                "Description",
+                "Playlist",
+                "Number_playlist"
+            ],
+            "method": [
+                "Edit",
+                "Set_up",
+                "Modify",
+                "Eliminate",
+                "Update",
+                "Look for",
+                "Explore"
+            ]
+        },
+        "entity_9": {
+            "name": "Video",
+            "attribute": [
+                "Qualification",
+                "Label",
+                "Duration",
+                "Speed_data"
+            ],
+            "method": [
+                "Pausar",
+                "Reproduce",
+                "Pass",
+                "Back",
+                "Repeat"
+            ]
+        },
+        "entity_10": {
+            "name": "Image",
+            "attribute": [
+                "Qualification",
+                "Label",
+                "High",
+                "Broad",
+                "Resolution"
+            ],
+            "method": []
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_2",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_2",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_2",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_7",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_8",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_8",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_2",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_9",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_5",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_5",
+            "name": "",
+            "type": "composition"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "medium"
+}

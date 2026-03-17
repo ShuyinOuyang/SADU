@@ -1,0 +1,53 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "On-premises hosted intelligent application"
+        },
+        "entity_1": {
+            "name": "Alternative cloud-hosted intelligent application"
+        },
+        "entity_2": {
+            "name": "Shared API key"
+        },
+        "entity_3": {
+            "name": "Shared API key"
+        },
+        "entity_4": {
+            "name": "gpt-35-turbo"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "Azure OpenAI Service",
+            "include_entity": [
+                "entity_4"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_4"
+            ],
+            "include_cluster": [
+                "cluster_0"
+            ]
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "behavior"
+}

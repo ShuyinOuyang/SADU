@@ -1,0 +1,183 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Ticker symbol"
+        },
+        "entity_1": {
+            "name": "Model, Exchange symbol mapping knowledge"
+        },
+        "entity_2": {
+            "name": "Stock analysis agent"
+        },
+        "entity_3": {
+            "name": "Decision with supporting evidence based on combined intermediate results"
+        },
+        "entity_4": {
+            "name": "Model"
+        },
+        "entity_5": {
+            "name": "Fundamental analysis agent"
+        },
+        "entity_6": {
+            "name": "Intermediate result"
+        },
+        "entity_7": {
+            "name": "Technical analysis agent"
+        },
+        "entity_8": {
+            "name": "Intermediate result"
+        },
+        "entity_9": {
+            "name": "Sentiment analysis agent"
+        },
+        "entity_10": {
+            "name": "Intermediate result"
+        },
+        "entity_11": {
+            "name": "ESG agent"
+        },
+        "entity_12": {
+            "name": "Intermediate result"
+        },
+        "entity_13": {
+            "name": "Financials and revenue analysis agent"
+        },
+        "entity_14": {
+            "name": "Competitive analysis agent"
+        },
+        "entity_15": {
+            "name": "Model, reported financials knowledge"
+        },
+        "entity_16": {
+            "name": "Model, competitive knowledge"
+        },
+        "entity_17": {
+            "name": "Fine-tuned model, market APIs"
+        },
+        "entity_18": {
+            "name": "Model, social APIs, news APIs"
+        },
+        "entity_19": {
+            "name": "Model, ESG knowledge"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_7",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_9",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_11",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_4",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_13",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_14",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_17",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_18",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_10",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_19",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_12",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_15",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_16",
+            "name": "",
+            "direction": "none"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "behavior"
+}

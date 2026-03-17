@@ -1,0 +1,551 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Package_data",
+            "attribute": [
+                "Guy_package",
+                "Size",
+                "Validity",
+                "Timeout",
+                "Fact"
+            ],
+            "method": [
+                "Analyze",
+                "Visualize"
+            ]
+        },
+        "entity_1": {
+            "name": "Data_packaged",
+            "attribute": [
+                "Pipeline"
+            ],
+            "method": [
+                "Integrate"
+            ]
+        },
+        "entity_2": {
+            "name": "Set_data",
+            "attribute": [
+                "Fact"
+            ],
+            "method": [
+                "Self -mplete",
+                "Translate",
+                "Matter",
+                "Store",
+                "Reference",
+                "Add",
+                "Map"
+            ]
+        },
+        "entity_3": {
+            "name": "Developer",
+            "attribute": [],
+            "method": [
+                "Obtain_paq_node data",
+                "Obtain_paq_popython data",
+                "Obtain_paq_dataclojure",
+                "Obtain_paq_julia data",
+                "Obtain_paq_cmas data",
+                "Establish_complementjquery",
+                "Analyze_explor data",
+                "Integrate_elasticsearch",
+                "Integrate_spss",
+                "Integrate_eprints",
+                "Integrate_mongo",
+                "Integrate_dat",
+                "Integrate_dspace",
+                "Integrate_feather",
+                "Integrate_hdf5",
+                "Connect_refoke data",
+                "Personalize_existent assistant",
+                "Create_protocol_connectionweb"
+            ]
+        },
+        "entity_4": {
+            "name": "Researcher",
+            "attribute": [],
+            "method": [
+                "Obtain_paq_datar",
+                "Obtain_paq_excele data",
+                "Obtain_paq_sssss data",
+                "Obtain_paq_state data",
+                "Obtain_paq_julia data",
+                "Obtain_paq_data_l_either_office",
+                "Keep_new visualizations",
+                "Translate_conjuncts",
+                "Include_hojacalculo_excel",
+                "Reference_vocabulariocontrol",
+                "Integrate_microsoftbi",
+                "Integrate_netcdf",
+                "Integrate_datamendeley",
+                "Trigger_basic statistics",
+                "Trigger_puntofinalapi",
+                "Create_data packages_proxy"
+            ]
+        },
+        "entity_5": {
+            "name": "Editor",
+            "attribute": [],
+            "method": [
+                "Add_information",
+                "Provide_display",
+                "Integrate_openrefine",
+                "Integrate_excel",
+                "Store_line data",
+                "Find out_update",
+                "Embed_vistaprevia",
+                "Embed_btnvistaprevia",
+                "Obtainnum_users_vistaprevia",
+                "Add_conjuncts",
+                "Package_reproducible steps",
+                "Verify_persistent"
+            ]
+        },
+        "entity_6": {
+            "name": "Researchpublisher",
+            "attribute": [],
+            "method": [
+                "Adjust_profile_paqdatos",
+                "Grasp_invalidal data",
+                "Integrate_zenodo",
+                "Post_packagedatosckan",
+                "Validate_data"
+            ]
+        },
+        "entity_7": {
+            "name": "Expert_learning_automatic",
+            "attribute": [],
+            "method": [
+                "Package_sets"
+            ]
+        },
+        "entity_8": {
+            "name": "Person",
+            "attribute": [
+                "Name",
+                "Id",
+                "Sex",
+                "Stature",
+                "Date_birth",
+                "User",
+                "Clue"
+            ],
+            "method": []
+        },
+        "entity_9": {
+            "name": "Activist_technology_civic",
+            "attribute": [],
+            "method": [
+                "Ease_evaluacianaci\u00f3ndatos"
+            ]
+        },
+        "entity_10": {
+            "name": "Developerdatawrangler",
+            "attribute": [],
+            "method": [
+                "Store_paqdatosgithub"
+            ]
+        },
+        "entity_11": {
+            "name": "Developerwrangler",
+            "attribute": [],
+            "method": [
+                "Store_github"
+            ]
+        },
+        "entity_12": {
+            "name": "Developerpublisher",
+            "attribute": [],
+            "method": [
+                "Create_summarize"
+            ]
+        },
+        "entity_13": {
+            "name": "Repositerymanagerresearcher",
+            "attribute": [],
+            "method": [
+                "Match_package"
+            ]
+        },
+        "entity_14": {
+            "name": "Researcher_editor",
+            "attribute": [],
+            "method": [
+                "Specify_financing",
+                "Add_doi_conjuncts"
+            ]
+        },
+        "entity_15": {
+            "name": "Editor_government",
+            "attribute": [],
+            "method": [
+                "Ease_tests"
+            ]
+        },
+        "entity_16": {
+            "name": "Unveil_wrangler",
+            "attribute": [],
+            "method": [
+                "Allow_metvalidardatos"
+            ]
+        },
+        "entity_17": {
+            "name": "Administrator_repositories",
+            "attribute": [],
+            "method": [
+                "Add_metadatosicos"
+            ]
+        },
+        "entity_18": {
+            "name": "Researdeveloper",
+            "attribute": [],
+            "method": [
+                "Matter_sql",
+                "Export_sql"
+            ]
+        },
+        "entity_19": {
+            "name": "Editor_researchgovernment",
+            "attribute": [],
+            "method": [
+                "Add_data reference",
+                "Add_namespass",
+                "Add_reference inflation",
+                "Map_lineasconjuntos"
+            ]
+        },
+        "entity_20": {
+            "name": "Package_proxy",
+            "attribute": [],
+            "method": [
+                "Create"
+            ]
+        },
+        "entity_21": {
+            "name": "Statistics_basic",
+            "attribute": [],
+            "method": [
+                "Trigger"
+            ]
+        },
+        "entity_22": {
+            "name": "Spot_end_api",
+            "attribute": [],
+            "method": [
+                "Trigger"
+            ]
+        },
+        "entity_23": {
+            "name": "Vistaprevia",
+            "attribute": [],
+            "method": [
+                "Embed"
+            ]
+        },
+        "entity_24": {
+            "name": "Persistence",
+            "attribute": [],
+            "method": [
+                "Verify"
+            ]
+        },
+        "entity_25": {
+            "name": "Summary_data",
+            "attribute": [],
+            "method": [
+                "Create"
+            ]
+        },
+        "entity_26": {
+            "name": "Service_pairing",
+            "attribute": [],
+            "method": [
+                "Package"
+            ]
+        },
+        "entity_27": {
+            "name": "Line_command",
+            "attribute": [],
+            "method": [
+                "Validate"
+            ]
+        },
+        "entity_28": {
+            "name": "Researcher_users",
+            "attribute": [],
+            "method": [
+                "Add"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_6",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_10",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_5",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_6",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_0",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_7",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_10",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_19",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_6",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_20",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_21",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_22",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_23",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_24",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_15",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_25",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_26",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_2",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_27",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_17",
+            "target": "entity_28",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_0",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_17",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_19",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "difficult"
+}

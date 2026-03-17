@@ -1,0 +1,377 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "UHOPE Employee",
+            "color": "green"
+        },
+        "entity_1": {
+            "name": "Patient",
+            "color": "green"
+        },
+        "entity_2": {
+            "name": "Medical Record",
+            "color": "yellow"
+        },
+        "entity_3": {
+            "name": "Patient Information",
+            "color": "yellow"
+        },
+        "entity_4": {
+            "name": "Appointment",
+            "color": "green"
+        },
+        "entity_5": {
+            "name": "Department",
+            "color": "yellow"
+        },
+        "entity_6": {
+            "name": "Receptionist",
+            "color": "green"
+        },
+        "entity_7": {
+            "name": "Doctor",
+            "color": "green"
+        },
+        "entity_8": {
+            "name": "Person",
+            "color": "white"
+        },
+        "entity_9": {
+            "name": "Test Results",
+            "color": "yellow"
+        },
+        "entity_10": {
+            "name": "Medical History",
+            "color": "yellow"
+        },
+        "entity_11": {
+            "name": "Mobile Phone",
+            "color": "green"
+        },
+        "entity_12": {
+            "name": "Tablet",
+            "color": "green"
+        },
+        "entity_13": {
+            "name": "Mobile Hospital Device",
+            "color": "green"
+        },
+        "entity_14": {
+            "name": "Device",
+            "color": "green"
+        },
+        "entity_15": {
+            "name": "Schedule",
+            "color": "green"
+        },
+        "entity_16": {
+            "name": "Nurse",
+            "color": "green"
+        },
+        "entity_17": {
+            "name": "Room",
+            "color": "yellow"
+        },
+        "entity_18": {
+            "name": "Bill",
+            "color": "yellow"
+        },
+        "entity_19": {
+            "name": "Billing Employee",
+            "color": "green"
+        },
+        "entity_20": {
+            "name": "Hospital Management System",
+            "color": "yellow"
+        },
+        "entity_21": {
+            "name": "GDPR Regulations",
+            "color": "red"
+        },
+        "entity_22": {
+            "name": "System Administrator",
+            "color": "red"
+        },
+        "entity_23": {
+            "name": "User",
+            "color": "red"
+        },
+        "entity_24": {
+            "name": "Time Slot",
+            "color": "yellow"
+        },
+        "entity_25": {
+            "name": "Uneraged Child",
+            "color": "green"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "adds",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "belongs to",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "analyzes",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_14",
+            "name": "uses",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "accesses",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_9",
+            "name": "views",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "edits",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_25",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_18",
+            "name": "receives",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "cancels",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_25",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_16",
+            "name": "assigned to",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_15",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_0",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_15",
+            "name": "views",
+            "type": "association"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_4",
+            "name": "schedules, changes, disapproves",
+            "type": "association"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_2",
+            "name": "searches, edits",
+            "type": "association"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_0",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_20",
+            "name": "modifies",
+            "type": "association"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_15",
+            "name": "views",
+            "type": "association"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_1",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_2",
+            "name": "edits",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_15",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_23",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_2",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_2",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_14",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_14",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_14",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_3",
+            "name": "transfers",
+            "type": "association"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_17",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_2",
+            "name": "views",
+            "type": "association"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_0",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_4",
+            "name": "based on",
+            "type": "association"
+        },
+        {
+            "source": "entity_19",
+            "target": "entity_18",
+            "name": "checks",
+            "type": "association"
+        },
+        {
+            "source": "entity_19",
+            "target": "entity_0",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_20",
+            "target": "entity_21",
+            "name": "compliant with",
+            "type": "association"
+        },
+        {
+            "source": "entity_22",
+            "target": "entity_0",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_23",
+            "target": "entity_20",
+            "name": "uses",
+            "type": "association"
+        },
+        {
+            "source": "entity_24",
+            "target": "entity_15",
+            "name": "",
+            "type": "aggregation"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "difficult"
+}

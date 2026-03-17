@@ -1,0 +1,217 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Trainer",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Trainer",
+                "Create_course",
+                "Create_event",
+                "Update_activity",
+                "Eliminate_activity",
+                "List_classes",
+                "Update_profile",
+                "Show_qualification"
+            ]
+        },
+        "entity_1": {
+            "name": "Administrator",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Administrator",
+                "See_earrings",
+                "Approve_ads",
+                "Edit_ads",
+                "Eliminate_ads",
+                "Edit_user",
+                "Move_members",
+                "Approve_application",
+                "Decline_application",
+                "See_coach",
+                "Create_event",
+                "Create_course",
+                "Define_fee"
+            ]
+        },
+        "entity_2": {
+            "name": "Editor",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Assistant",
+                "Increase_data",
+                "List_downloads",
+                "See_forms",
+                "Increase_documents"
+            ]
+        },
+        "entity_3": {
+            "name": "Visitor",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Visitor",
+                "Restore_password",
+                "Look for_archive",
+                "Open_archive",
+                "Request_analogs",
+                "Create_cluster",
+                "Create_report",
+                "Share_report"
+            ]
+        },
+        "entity_4": {
+            "name": "Member",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Member",
+                "See_news",
+                "See_faqs",
+                "Post_comment",
+                "Subscribe",
+                "Look for_article",
+                "List_scrum_master",
+                "Discharge_presentation"
+            ]
+        },
+        "entity_5": {
+            "name": "Company",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Company",
+                "Create_account",
+                "Acquire_member"
+            ]
+        },
+        "entity_6": {
+            "name": "Coach",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Coach",
+                "Carry_excel",
+                "See_exclusive"
+            ]
+        },
+        "entity_7": {
+            "name": "Formator",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Formator",
+                "See_survey",
+                "Create_course",
+                "Create_template"
+            ]
+        },
+        "entity_8": {
+            "name": "Recruiter",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Recruiter",
+                "Create_advertisement",
+                "Extend_advertisement"
+            ]
+        },
+        "entity_9": {
+            "name": "Practicing",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Practicing",
+                "Write_article",
+                "Edit_profile"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_7",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_9",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_1",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_1",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_0",
+            "name": "",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

@@ -1,0 +1,186 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Administrator",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Administrator",
+                "Create_user",
+                "Restore_password"
+            ]
+        },
+        "entity_1": {
+            "name": "Administrator_applications",
+            "attribute": [],
+            "method": [
+                "Administrator_applications",
+                "Change_url",
+                "Review_permits"
+            ]
+        },
+        "entity_2": {
+            "name": "Administrator_repository",
+            "attribute": [],
+            "method": [
+                "Administrator_applications",
+                "Add_record",
+                "Update_record",
+                "Add_description",
+                "Edit_description",
+                "Update_description"
+            ]
+        },
+        "entity_3": {
+            "name": "Administrator_systems",
+            "attribute": [],
+            "method": [
+                "Administrator_repository",
+                "Assign_role"
+            ]
+        },
+        "entity_4": {
+            "name": "Migration",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Migration",
+                "Store_id"
+            ]
+        },
+        "entity_5": {
+            "name": "User",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "User",
+                "Authenticate",
+                "Add_property",
+                "Start_session"
+            ]
+        },
+        "entity_6": {
+            "name": "User_basic_data_entry",
+            "attribute": [],
+            "method": [
+                "User_basic_data_entry",
+                "Add_information",
+                "Edit_information"
+            ]
+        },
+        "entity_7": {
+            "name": "User_readonly",
+            "attribute": [],
+            "method": [
+                "User_readonly",
+                "See_information"
+            ]
+        },
+        "entity_8": {
+            "name": "Researcher",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Researcher",
+                "Look for"
+            ]
+        },
+        "entity_9": {
+            "name": "Archivist",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Archivist",
+                "Matter_archive",
+                "Store_id",
+                "Associate_header",
+                "Matter_information",
+                "Export_record",
+                "See_reason",
+                "Access_repository",
+                "Add_note",
+                "Look for_in_repository",
+                "Create_record",
+                "Edit_record",
+                "Export_archive",
+                "Assign_rights",
+                "Edit_rights"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_7",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_0",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_9",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_9",
+            "name": "",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

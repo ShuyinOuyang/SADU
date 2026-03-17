@@ -1,0 +1,453 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "User"
+        },
+        "entity_1": {
+            "name": "Private DNS zones"
+        },
+        "entity_2": {
+            "name": "Microsoft Entra ID"
+        },
+        "entity_3": {
+            "name": "Application Insights"
+        },
+        "entity_4": {
+            "name": "Azure Monitor"
+        },
+        "entity_5": {
+            "name": "Application Gateway with Azure WAF"
+        },
+        "entity_6": {
+            "name": "App Service private endpoint"
+        },
+        "entity_7": {
+            "name": "Managed identity"
+        },
+        "entity_8": {
+            "name": "App Service"
+        },
+        "entity_9": {
+            "name": "App Service instance"
+        },
+        "entity_10": {
+            "name": "App Service instance"
+        },
+        "entity_11": {
+            "name": "App Service instance"
+        },
+        "entity_12": {
+            "name": "Key Vault private endpoint"
+        },
+        "entity_13": {
+            "name": "Azure Key Vault"
+        },
+        "entity_14": {
+            "name": "Virtual interface"
+        },
+        "entity_15": {
+            "name": "Storage private endpoint"
+        },
+        "entity_16": {
+            "name": "Azure Storage"
+        },
+        "entity_17": {
+            "name": "Azure AI Foundry private endpoint"
+        },
+        "entity_18": {
+            "name": "Virtual interface"
+        },
+        "entity_19": {
+            "name": "Azure AI Search private endpoint"
+        },
+        "entity_20": {
+            "name": "Azure AI Search"
+        },
+        "entity_21": {
+            "name": "Azure Cosmos DB private endpoint"
+        },
+        "entity_22": {
+            "name": "Azure Cosmos DB"
+        },
+        "entity_23": {
+            "name": "Internet sources"
+        },
+        "entity_24": {
+            "name": "Azure Firewall"
+        },
+        "entity_25": {
+            "name": "Storage private endpoint"
+        },
+        "entity_26": {
+            "name": "Azure Storage"
+        },
+        "entity_27": {
+            "name": "Azure Bastion"
+        },
+        "entity_28": {
+            "name": "Jump box"
+        },
+        "entity_29": {
+            "name": "Knowledge store private endpoint"
+        },
+        "entity_30": {
+            "name": "Azure AI Search"
+        },
+        "entity_31": {
+            "name": "Build agents"
+        },
+        "entity_32": {
+            "name": "Azure AI Foundry account"
+        },
+        "entity_33": {
+            "name": "Foundry Agent Service"
+        },
+        "entity_34": {
+            "name": "Managed identities"
+        },
+        "entity_35": {
+            "name": "Azure OpenAI model"
+        },
+        "entity_36": {
+            "name": "DDoS Protection"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "Monitoring",
+            "include_entity": [
+                "entity_3",
+                "entity_4"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "Application Gateway subnet",
+            "include_entity": [
+                "entity_5"
+            ],
+            "include_cluster": []
+        },
+        "cluster_2": {
+            "name": "App Service integration subnet",
+            "include_entity": [
+                "entity_14"
+            ],
+            "include_cluster": []
+        },
+        "cluster_3": {
+            "name": "Azure AI agent integration subnet",
+            "include_entity": [
+                "entity_18"
+            ],
+            "include_cluster": []
+        },
+        "cluster_4": {
+            "name": "Azure firewall subnet",
+            "include_entity": [
+                "entity_24"
+            ],
+            "include_cluster": []
+        },
+        "cluster_5": {
+            "name": "Azure Bastion subnet",
+            "include_entity": [
+                "entity_27"
+            ],
+            "include_cluster": []
+        },
+        "cluster_6": {
+            "name": "Jump box subnet",
+            "include_entity": [
+                "entity_28"
+            ],
+            "include_cluster": []
+        },
+        "cluster_7": {
+            "name": "Build agents subnet",
+            "include_entity": [
+                "entity_31"
+            ],
+            "include_cluster": []
+        },
+        "cluster_8": {
+            "name": "Private endpoint subnet",
+            "include_entity": [
+                "entity_6",
+                "entity_12",
+                "entity_15",
+                "entity_17",
+                "entity_21",
+                "entity_25",
+                "entity_29"
+            ],
+            "include_cluster": []
+        },
+        "cluster_9": {
+            "name": "Virtual network",
+            "include_entity": [
+                "entity_5",
+                "entity_6",
+                "entity_12",
+                "entity_14",
+                "entity_15",
+                "entity_17",
+                "entity_18",
+                "entity_21",
+                "entity_24",
+                "entity_25",
+                "entity_27",
+                "entity_28",
+                "entity_29",
+                "entity_31"
+            ],
+            "include_cluster": [
+                "cluster_1",
+                "cluster_2",
+                "cluster_3",
+                "cluster_4",
+                "cluster_5",
+                "cluster_6",
+                "cluster_7",
+                "cluster_8"
+            ]
+        },
+        "cluster_10": {
+            "name": "",
+            "include_entity": [
+                "entity_13"
+            ],
+            "include_cluster": []
+        },
+        "cluster_11": {
+            "name": "Storage for client app deployment",
+            "include_entity": [
+                "entity_16"
+            ],
+            "include_cluster": []
+        },
+        "cluster_12": {
+            "name": "Foundry Agent Service dependencies",
+            "include_entity": [
+                "entity_20",
+                "entity_22",
+                "entity_26"
+            ],
+            "include_cluster": []
+        },
+        "cluster_13": {
+            "name": "Azure AI Foundry project",
+            "include_entity": [
+                "entity_33",
+                "entity_34"
+            ],
+            "include_cluster": []
+        },
+        "cluster_14": {
+            "name": "Azure AI Foundry",
+            "include_entity": [
+                "entity_32",
+                "entity_33",
+                "entity_34",
+                "entity_35"
+            ],
+            "include_cluster": [
+                "cluster_13"
+            ]
+        },
+        "cluster_15": {
+            "name": "Zone1",
+            "include_entity": [
+                "entity_9"
+            ],
+            "include_cluster": []
+        },
+        "cluster_16": {
+            "name": "Zone2",
+            "include_entity": [
+                "entity_10"
+            ],
+            "include_cluster": []
+        },
+        "cluster_17": {
+            "name": "Zone3",
+            "include_entity": [
+                "entity_11"
+            ],
+            "include_cluster": []
+        },
+        "cluster_18": {
+            "name": "",
+            "include_entity": [
+                "entity_9",
+                "entity_10",
+                "entity_11"
+            ],
+            "include_cluster": [
+                "cluster_15",
+                "cluster_16",
+                "cluster_17"
+            ]
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "cluster_1",
+            "name": "linked",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_12",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_6",
+            "target": "cluster_18",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_18",
+            "target": "entity_14",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_13",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_15",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_15",
+            "target": "cluster_16",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_17",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_17",
+            "target": "cluster_13",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_17",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_24",
+            "name": "Outbound traffic",
+            "direction": "single"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_19",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_19",
+            "target": "entity_20",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_21",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_21",
+            "target": "entity_22",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_25",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_25",
+            "target": "entity_26",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_29",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_29",
+            "target": "entity_30",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_24",
+            "target": "entity_23",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_6",
+            "target": "entity_17",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_33",
+            "target": "entity_18",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_32",
+            "target": "entity_33",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_33",
+            "target": "entity_35",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "behavior"
+}

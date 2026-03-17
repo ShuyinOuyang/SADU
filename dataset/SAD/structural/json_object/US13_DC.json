@@ -1,0 +1,138 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Researcher",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Researcher",
+                "Open_archives",
+                "Attach_archives",
+                "Add_review",
+                "Create_page",
+                "Carry_archive",
+                "Look for_data",
+                "Restrict_use",
+                "Discharge_archives"
+            ]
+        },
+        "entity_1": {
+            "name": "Administrator",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Administrator",
+                "Create_template",
+                "Migrate, data",
+                "Manage_strain"
+            ]
+        },
+        "entity_2": {
+            "name": "User",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "User",
+                "Define_search",
+                "Create_board",
+                "Attach_archives",
+                "Assign_metadata",
+                "Label_data",
+                "Associate_archives",
+                "Link_calendar",
+                "Link_twitter"
+            ]
+        },
+        "entity_3": {
+            "name": "Supervisor",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Supervisor",
+                "Create_form"
+            ]
+        },
+        "entity_4": {
+            "name": "Operator",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Operator",
+                "Register_answer"
+            ]
+        },
+        "entity_5": {
+            "name": "Member",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Member",
+                "See_items"
+            ]
+        },
+        "entity_6": {
+            "name": "Engineer_versions",
+            "attribute": [
+                "User"
+            ],
+            "method": [
+                "Engineer_versions",
+                "Define_complilations",
+                "Migrate_data"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

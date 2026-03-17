@@ -1,0 +1,120 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Administrator",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Administrator",
+                "Assign_rights",
+                "Assign_users",
+                "Create_cluster",
+                "Create_user",
+                "Assign_roles",
+                "Enable_credentials",
+                "Restrict_data"
+            ]
+        },
+        "entity_1": {
+            "name": "Archivist",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Archivist",
+                "List_inventories",
+                "See_inventory",
+                "Manage_loans",
+                "Scan",
+                "Edit_scanning",
+                "Increase_archives",
+                "Look for_archives",
+                "Look for_images",
+                "Restrict_archives",
+                "Read_metadata",
+                "Define_time_restriction"
+            ]
+        },
+        "entity_2": {
+            "name": "Assistant",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Assistant",
+                "Increase_data",
+                "List_downloads",
+                "See_forms",
+                "Increase_documents"
+            ]
+        },
+        "entity_3": {
+            "name": "Researcher",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Researcher",
+                "Restore_password",
+                "Look for_archive",
+                "Open_archive",
+                "Request_analogs",
+                "Create_cluster",
+                "Create_report",
+                "Share_report"
+            ]
+        },
+        "entity_4": {
+            "name": "Representative",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Representative",
+                "Create_collection",
+                "List_downloads"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

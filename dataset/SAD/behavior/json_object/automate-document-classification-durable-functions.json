@@ -1,0 +1,164 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Azure web app"
+        },
+        "entity_1": {
+            "name": "Azure Service Bus queue"
+        },
+        "entity_2": {
+            "name": "Analyze activity"
+        },
+        "entity_3": {
+            "name": "Metadata store activity"
+        },
+        "entity_4": {
+            "name": "Embedding activity"
+        },
+        "entity_5": {
+            "name": "Azure Blob Storage"
+        },
+        "entity_6": {
+            "name": "Azure AI Document Intelligence"
+        },
+        "entity_7": {
+            "name": "Azure Cosmos DB"
+        },
+        "entity_8": {
+            "name": "Azure AI Search (Vector store)"
+        },
+        "entity_9": {
+            "name": "Azure OpenAI Service"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "Ingestion",
+            "include_entity": [
+                "entity_0"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "Activation",
+            "include_entity": [
+                "entity_1"
+            ],
+            "include_cluster": []
+        },
+        "cluster_2": {
+            "name": "Azure Functions orchestration",
+            "include_entity": [
+                "entity_2",
+                "entity_3",
+                "entity_4"
+            ],
+            "include_cluster": []
+        },
+        "cluster_3": {
+            "name": "Document store",
+            "include_entity": [
+                "entity_5"
+            ],
+            "include_cluster": []
+        },
+        "cluster_4": {
+            "name": "Document processing",
+            "include_entity": [
+                "entity_6"
+            ],
+            "include_cluster": []
+        },
+        "cluster_5": {
+            "name": "Document metadata collection",
+            "include_entity": [
+                "entity_7"
+            ],
+            "include_cluster": []
+        },
+        "cluster_6": {
+            "name": "Vectorize and index",
+            "include_entity": [
+                "entity_8"
+            ],
+            "include_cluster": []
+        },
+        "cluster_7": {
+            "name": "Chat with your data",
+            "include_entity": [
+                "entity_9"
+            ],
+            "include_cluster": []
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_7",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_8",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_0",
+            "target": "cluster_6",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_0",
+            "target": "cluster_7",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "medium",
+    "diagram_type": "behavior"
+}

@@ -1,0 +1,37 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Car",
+            "attribute": []
+        },
+        "entity_1": {
+            "name": "Person",
+            "attribute": []
+        },
+        "entity_2": {
+            "name": "Named-Driver",
+            "attribute": []
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "allows",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "is",
+            "type": "non-identifying",
+            "source_cardinality": "zero or more",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

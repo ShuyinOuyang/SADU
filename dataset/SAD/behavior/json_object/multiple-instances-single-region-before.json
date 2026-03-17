@@ -1,0 +1,107 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Client A"
+        },
+        "entity_1": {
+            "name": "Client B"
+        },
+        "entity_2": {
+            "name": "gpt-4"
+        },
+        "entity_3": {
+            "name": "Azure OpenAI | Client A (provisioned primary)"
+        },
+        "entity_4": {
+            "name": "Azure RBAC for API access"
+        },
+        "entity_5": {
+            "name": "gpt-4"
+        },
+        "entity_6": {
+            "name": "Azure OpenAI | Client A (standard spillover)"
+        },
+        "entity_7": {
+            "name": "Azure RBAC for API access"
+        },
+        "entity_8": {
+            "name": "gpt-4"
+        },
+        "entity_9": {
+            "name": "Azure OpenAI | Client A (provisioned)"
+        },
+        "entity_10": {
+            "name": "Azure RBAC for API access"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "",
+            "include_entity": [
+                "entity_2",
+                "entity_3",
+                "entity_4"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "",
+            "include_entity": [
+                "entity_5",
+                "entity_6",
+                "entity_7"
+            ],
+            "include_cluster": []
+        },
+        "cluster_2": {
+            "name": "",
+            "include_entity": [
+                "entity_8",
+                "entity_9",
+                "entity_10"
+            ],
+            "include_cluster": []
+        },
+        "cluster_3": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_2",
+                "entity_3",
+                "entity_4",
+                "entity_5",
+                "entity_6",
+                "entity_7",
+                "entity_8",
+                "entity_9",
+                "entity_10"
+            ],
+            "include_cluster": [
+                "cluster_0",
+                "cluster_1",
+                "cluster_2"
+            ]
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_8",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "medium",
+    "diagram_type": "behavior"
+}

@@ -1,0 +1,217 @@
+[
+    {
+        "question": "How many entities are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            6
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_entity_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relations are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            6
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_relation_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many entities have more than one relation?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            4
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "entities_have_more_than_one_relations",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many clusters are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            0
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_cluster_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many entities are not contained in any cluster?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            6
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_entities_not_in_clusters",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relations have a label?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            6
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_relations_have_label",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many clusters contain at least one sub-cluster (nested clusters)?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            0
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_clusters_have_clusters_within",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relation types appear in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            1
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_relation_types",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "Which entity has a relation with Entity 'customer'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "order_header",
+            "payment"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_statement",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "What is the label on the relation between Entity 'customer' and Entity 'order_header'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "customer_places_orders"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "label_on_the_relation",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity has a relation with label 'customer_places_orders' to Entity 'order_header'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "customer"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "label_on_the_relation_source",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity has a relation with label 'customer_places_orders' from Entity 'customer'? \nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "order_header"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "label_on_the_relation_target",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "What attributes does Entity 'customer' have?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "address",
+            "customer_id",
+            "email",
+            "fname",
+            "lname",
+            "phone"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "entity_contains_certain_attribute",
+            "difficulty": "intermediate"
+        }
+    },
+    {
+        "question": "How many attributes does Entity 'customer' have?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            6
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_attributes_certain_entity_has",
+            "difficulty": "intermediate"
+        }
+    },
+    {
+        "question": "What is the cardinality on both sides of the relation between Entity 'customer' and Entity 'order_header'? (For each side of the relation, please return 'zero or one', 'exactly one', 'one or more', and 'zero or more')\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            [
+                "exactly one",
+                "zero or more"
+            ]
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "type_on_the_relation",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity is the source in a relation to Entity 'order_header'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "customer"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_source",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity is the target in a relation from Entity 'customer'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "order_header",
+            "payment"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_target",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which relation(s) carry the label 'customer_places_orders'? Please use format [source entity, target entity] to represent certain relation.\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            [
+                "customer",
+                "order_header"
+            ]
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "which_relation_has_certain_label",
+            "difficulty": "intermediate"
+        }
+    }
+]

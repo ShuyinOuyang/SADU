@@ -1,0 +1,101 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Intelligent application"
+        },
+        "entity_1": {
+            "name": "JWT and dedicated subscription key 1"
+        },
+        "entity_2": {
+            "name": "Identity provider"
+        },
+        "entity_3": {
+            "name": "Gateway"
+        },
+        "entity_4": {
+            "name": "Azure managed identity"
+        },
+        "entity_5": {
+            "name": "gpt-35-turbo(1106 | 30K TPM)"
+        },
+        "entity_6": {
+            "name": "gpt-35-turbo(1106 | 30K TPM)"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "rg-gateway",
+            "include_entity": [
+                "entity_3",
+                "entity_4"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "Azure OpenAI Service",
+            "include_entity": [
+                "entity_5"
+            ],
+            "include_cluster": []
+        },
+        "cluster_2": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_5"
+            ],
+            "include_cluster": [
+                "cluster_1"
+            ]
+        },
+        "cluster_3": {
+            "name": "Azure OpenAI Service",
+            "include_entity": [
+                "entity_6"
+            ],
+            "include_cluster": []
+        },
+        "cluster_4": {
+            "name": "rg-aoai-westus",
+            "include_entity": [
+                "entity_6"
+            ],
+            "include_cluster": [
+                "cluster_3"
+            ]
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "direction": "double"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "Validate JWT",
+            "direction": "double"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "behavior"
+}

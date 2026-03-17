@@ -1,0 +1,112 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Shipment",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "date",
+                    "S_Date",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Ship_ID",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "Courier",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Salary",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Address",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "Order",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Shipment_ID",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "CourierID",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "DeliveryAddress",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "CreateDate",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "ships",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "deliver",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

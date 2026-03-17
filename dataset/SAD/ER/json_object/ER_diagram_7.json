@@ -1,0 +1,101 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Customer",
+            "attribute": []
+        },
+        "entity_1": {
+            "name": "Delivered-Address",
+            "attribute": []
+        },
+        "entity_2": {
+            "name": "Order",
+            "attribute": []
+        },
+        "entity_3": {
+            "name": "Invoice",
+            "attribute": []
+        },
+        "entity_4": {
+            "name": "Product-Category",
+            "attribute": []
+        },
+        "entity_5": {
+            "name": "Product",
+            "attribute": []
+        },
+        "entity_6": {
+            "name": "Order-Item",
+            "attribute": []
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "has",
+            "type": "non-identifying",
+            "source_cardinality": "one or more",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "places",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "liable for",
+            "type": "identifying",
+            "source_cardinality": "zero or more",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "receives",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "covers",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_6",
+            "name": "includes",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "contains",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_6",
+            "name": "ordered in",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

@@ -1,0 +1,375 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "products",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "sku",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "price",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "weight",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "descriptions",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "thumbnail",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "image",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "category",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "create_date",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "stock",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "order_details",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "order_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "product_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "price",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "sku",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "quantity",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "product_options",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "option_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "product_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "product_categories",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "product_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "category_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "orders",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "customer_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "amount",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "shipping_address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "order_address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "order_email",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "order_date",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "order_status",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "options",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "option_name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "categories",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "thumbnail",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "customers",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "email",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "password",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "full_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "billing_address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "default_shipping_address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "country",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "phone",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_0",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

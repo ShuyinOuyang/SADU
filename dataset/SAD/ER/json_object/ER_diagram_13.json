@@ -1,0 +1,379 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Productline",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "DescInText",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "DescInHTML",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "Image",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "Employee",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "OfficeCode",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "reportsTo",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "FirstName",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "LastName",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Extension",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Email",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "JobTitle",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "Office",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "Code",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "City",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Phone",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Address1",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Address2",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "State",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Country",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "PostalCode",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(200)",
+                    "Territory",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "Product",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "Code",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "ProductlineID",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Scale",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Vendor",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "PdtDescription",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "QtyInStock",
+                    "",
+                    ""
+                ],
+                [
+                    "numeric",
+                    "BuyPrice",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "MSRP",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "Customer",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "salesRepEmployeeNum",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "FirstName",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "LastName",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Phone",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Address1",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Address2",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "City",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "State",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "PostalCode",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Country",
+                    "",
+                    ""
+                ],
+                [
+                    "numeric",
+                    "CreditLimit",
+                    "",
+                    ""
+                ]
+            ]
+        },
+      "entity_5": {
+        "name": "OrderDetail",
+        "attribute": [
+          ["integer(10)", "OrderID", "PK", ""],
+          ["integer(10)", "ProductCode", "PK", ""],
+          ["integer(10)", "QuantityOrdered", "", ""],
+          ["numeric", "PriceEach", "", ""],
+          ["integer(10)", "OrderLineNumber", "", ""]
+        ]
+      },
+      "entity_6": {
+        "name": "Order",
+        "attribute": [
+        ["integer(10)", "ID", "PK", ""],
+        ["date", "OrderDate", "", ""],
+        ["date", "RequiredDate", "", ""],
+        ["date", "ShippedDate", "", ""],
+        ["varchar(50)", "Status", "", ""],
+        ["varchar(255)", "Comments", "", ""],
+        ["integer(10)", "CustomerID", "", ""]
+        ]
+      },
+      "entity_7": {
+      "name": "Payment",
+      "attribute": [
+      ["integer(10)", "CustomerID", "PK", ""],
+      ["varchar(64)", "CheckNumber", "PK", ""],
+      ["numeric", "Amount", "", ""],
+      ["date", "PaymentDate", "", ""]
+      ]
+      }
+      },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_6",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_7",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "ER"
+}

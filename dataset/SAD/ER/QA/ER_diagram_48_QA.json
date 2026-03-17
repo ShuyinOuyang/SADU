@@ -1,0 +1,221 @@
+[
+    {
+        "question": "How many entities are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            9
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_entity_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relations are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            9
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_relation_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many entities have more than one relation?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            6
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "entities_have_more_than_one_relations",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many clusters are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            0
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_cluster_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many entities are not contained in any cluster?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            9
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_entities_not_in_clusters",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relations have a label?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            9
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_relations_have_label",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many clusters contain at least one sub-cluster (nested clusters)?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            0
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_clusters_have_clusters_within",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relation types appear in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            2
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_relation_types",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "Which entity has a relation with Entity 'patient'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "bills",
+            "doctor",
+            "rooms",
+            "test_report"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_statement",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "What is the label on the relation between Entity 'patient' and Entity 'doctor'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "patient_consults_doctor"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "label_on_the_relation",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity has a relation with label 'patient_consults_doctor' to Entity 'doctor'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "patient"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "label_on_the_relation_source",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity has a relation with label 'patient_consults_doctor' from Entity 'patient'? \nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "doctor"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "label_on_the_relation_target",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "What attributes does Entity 'patient' have?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "age",
+            "dob",
+            "gender",
+            "mob_no",
+            "name",
+            "p_id"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "entity_contains_certain_attribute",
+            "difficulty": "intermediate"
+        }
+    },
+    {
+        "question": "How many attributes does Entity 'patient' have?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            6
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_attributes_certain_entity_has",
+            "difficulty": "intermediate"
+        }
+    },
+    {
+        "question": "What is the cardinality on both sides of the relation between Entity 'patient' and Entity 'doctor'? (For each side of the relation, please return 'zero or one', 'exactly one', 'one or more', and 'zero or more')\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            [
+                "one or more",
+                "one or more"
+            ]
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "type_on_the_relation",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity is the source in a relation to Entity 'doctor'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "patient"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_source",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity is the target in a relation from Entity 'patient'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "bills",
+            "doctor",
+            "rooms",
+            "test_report"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_target",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which relation(s) carry the label 'patient_consults_doctor'? Please use format [source entity, target entity] to represent certain relation.\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            [
+                "patient",
+                "doctor"
+            ]
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "which_relation_has_certain_label",
+            "difficulty": "intermediate"
+        }
+    }
+]

@@ -1,0 +1,87 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Input"
+        },
+        "entity_1": {
+            "name": "Agent 1"
+        },
+        "entity_2": {
+            "name": "Model, knowledge, and tools"
+        },
+        "entity_3": {
+            "name": "Agent 2"
+        },
+        "entity_4": {
+            "name": "Model, knowledge, and tools"
+        },
+        "entity_5": {
+            "name": "..."
+        },
+        "entity_6": {
+            "name": "Agent n"
+        },
+        "entity_7": {
+            "name": "Model, knowledge, and tools"
+        },
+        "entity_8": {
+            "name": "Common state"
+        },
+        "entity_9": {
+            "name": "Result"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_7",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_9",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "medium",
+    "diagram_type": "behavior"
+}

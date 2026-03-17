@@ -1,0 +1,231 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "department",
+            "attribute": [
+                [
+                    "int",
+                    "department_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "budget",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "program_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "program",
+            "attribute": [
+                [
+                    "int",
+                    "program_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "description",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "project",
+            "attribute": [
+                [
+                    "int",
+                    "project_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "program_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "allocation",
+            "attribute": [
+                [
+                    "int",
+                    "allocation_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "date",
+                    "allocation_date",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "amount",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "department_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "program_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "employee",
+            "attribute": [
+                [
+                    "int",
+                    "employee_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "position",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "expense",
+            "attribute": [
+                [
+                    "int",
+                    "expense_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "date",
+                    "expense_date",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "amount",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "project_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "employee_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

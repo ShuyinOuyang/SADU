@@ -1,0 +1,285 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Document",
+            "attribute": [
+                "Date_expedition",
+                "Author",
+                "Signature",
+                "Name_patient"
+            ],
+            "method": [
+                "Document",
+                "Get_date_expedition",
+                "Get_author",
+                "Get_signature",
+                "Get_name_patient"
+            ]
+        },
+        "entity_1": {
+            "name": "Results_evidence",
+            "attribute": [
+                "Resuida",
+                "Conclusion"
+            ],
+            "method": [
+                "Results_evidence",
+                "Get_result",
+                "Get_conclusion"
+            ]
+        },
+        "entity_2": {
+            "name": "Recipe",
+            "attribute": [
+                "Date_limit",
+                "Medicine"
+            ],
+            "method": [
+                "Recipe",
+                "Get_date_limit",
+                "Get_medicine"
+            ]
+        },
+        "entity_3": {
+            "name": "Nurse",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone",
+                "Id"
+            ],
+            "method": [
+                "Nurse",
+                "Get_name",
+                "Get_last name",
+                "Get_phone",
+                "Get_id",
+                "See_record_doctor",
+                "See_data_personal",
+                "Take_note_patient"
+            ]
+        },
+        "entity_4": {
+            "name": "Patient",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Eps",
+                "Id",
+                "Symptoms",
+                "Phone",
+                "Date_appointment"
+            ],
+            "method": [
+                "Patient",
+                "Get_name",
+                "Get_last name",
+                "Get_eps",
+                "Get_id",
+                "Get_symptoms",
+                "Get_phone",
+                "Get_date_appointment",
+                "See_results_proof",
+                "Program_appointment",
+                "Request_recipe",
+                "Edit_data_personal",
+                "See_emr",
+                "Access_components"
+            ]
+        },
+        "entity_5": {
+            "name": "Pharmacist",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Id",
+                "Phone",
+                "Location"
+            ],
+            "method": [
+                "Pharmacist",
+                "Get_name",
+                "Get_last name",
+                "Get_id",
+                "Get_phone",
+                "See_recipe"
+            ]
+        },
+        "entity_6": {
+            "name": "Doctor",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone",
+                "Id",
+                "Salary",
+                "Area",
+                "Qualification"
+            ],
+            "method": [
+                "Doctor",
+                "Get_name",
+                "Get_last name",
+                "Get_phone",
+                "Get_id",
+                "Get_salary",
+                "Get_area",
+                "Get_qualification",
+                "Write_recipe",
+                "See_record_doctor",
+                "See_data_personal",
+                "Transfer_recipe"
+            ]
+        },
+        "entity_7": {
+            "name": "Receptionist",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone",
+                "Id"
+            ],
+            "method": [
+                "Receptionist",
+                "Get_name",
+                "Get_last name",
+                "Get_phone",
+                "Get_id",
+                "Program_appointment",
+                "See_emr_patient"
+            ]
+        },
+        "entity_8": {
+            "name": "Administrator",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Password",
+                "User",
+                "Id",
+                "Phone"
+            ],
+            "method": [
+                "Administrator",
+                "Get_name",
+                "Get_last name",
+                "Get_user",
+                "Get_password",
+                "Get_id",
+                "Get_phone",
+                "Grant_level_access",
+                "Restrict_components",
+                "Integrate_emr",
+                "Store_data"
+            ]
+        },
+        "entity_9": {
+            "name": "Analyst",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone",
+                "Id",
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Analyst",
+                "Get_name",
+                "Get_last name",
+                "Get_id",
+                "Get_phone",
+                "Get_user",
+                "Get_password",
+                "See_programming_salas",
+                "See_data_clinics",
+                "See_rate_occupation_beds",
+                "See_schedule_employees",
+                "Register_date_appointment"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_8",
+            "target": "entity_9",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_6",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_7",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_4",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_2",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_4",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_4",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_2",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_2",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

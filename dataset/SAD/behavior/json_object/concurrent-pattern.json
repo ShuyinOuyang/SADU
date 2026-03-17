@@ -1,0 +1,156 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Input"
+        },
+        "entity_1": {
+            "name": "Initiator and collector agent"
+        },
+        "entity_2": {
+            "name": "Aggregated result based on combined, compared, and selected results"
+        },
+        "entity_3": {
+            "name": "Agent 1"
+        },
+        "entity_4": {
+            "name": "Intermediate result"
+        },
+        "entity_5": {
+            "name": "Agent 2"
+        },
+        "entity_6": {
+            "name": "Intermediate result"
+        },
+        "entity_7": {
+            "name": "..."
+        },
+        "entity_8": {
+            "name": "Intermediate result(s)"
+        },
+        "entity_9": {
+            "name": "Agent n"
+        },
+        "entity_10": {
+            "name": "Intermediate result"
+        },
+        "entity_11": {
+            "name": "Sub agent 1.1"
+        },
+        "entity_12": {
+            "name": "Sub agent 1.2"
+        },
+        "entity_13": {
+            "name": "Model, knowledge, and tools"
+        },
+        "entity_14": {
+            "name": "Model, knowledge, and tools"
+        },
+        "entity_15": {
+            "name": "Model, knowledge, and tools"
+        },
+        "entity_16": {
+            "name": "Model, knowledge, and tools"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_7",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_9",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_11",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_12",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_13",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_14",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_15",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_10",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_16",
+            "name": "",
+            "direction": "none"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "behavior"
+}

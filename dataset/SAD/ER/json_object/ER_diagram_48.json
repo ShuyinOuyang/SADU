@@ -1,0 +1,420 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "patient",
+            "attribute": [
+                [
+                    "int",
+                    "p_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "age",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "gender",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(15)",
+                    "mob_no",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "dob",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "doctor",
+            "attribute": [
+                [
+                    "int",
+                    "d_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "dept",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "qualification",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(15)",
+                    "mob_no",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "state",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "city",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "pin_no",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "nurse",
+            "attribute": [
+                [
+                    "int",
+                    "e_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "sex",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "salary",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(15)",
+                    "mob_no",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "address",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "receptionist",
+            "attribute": [
+                [
+                    "int",
+                    "e_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "sex",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "salary",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "rooms",
+            "attribute": [
+                [
+                    "int",
+                    "r_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "type",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "capacity",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "availability",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "test_report",
+            "attribute": [
+                [
+                    "int",
+                    "t_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "p_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "r_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "test_type",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "result",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "bills",
+            "attribute": [
+                [
+                    "int",
+                    "b_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "p_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "amount",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "records",
+            "attribute": [
+                [
+                    "int",
+                    "record_no",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "app_no",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "p_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_8": {
+            "name": "employee",
+            "attribute": [
+                [
+                    "int",
+                    "e_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "sex",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "salary",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(15)",
+                    "mob_no",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "state",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "city",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "pin_no",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "patient_consults_doctor",
+            "type": "non-identifying",
+            "source_cardinality": "one or more",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_6",
+            "name": "patient_pays_bills",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "patient_has_test_reports",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "doctor_assigned_to_rooms",
+            "type": "non-identifying",
+            "source_cardinality": "one or more",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "patient_assigned_room",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "nurse_governs_rooms",
+            "type": "non-identifying",
+            "source_cardinality": "one or more",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_7",
+            "name": "receptionist_maintains_records",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_2",
+            "name": "employee_is_nurse",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_3",
+            "name": "employee_is_receptionist",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

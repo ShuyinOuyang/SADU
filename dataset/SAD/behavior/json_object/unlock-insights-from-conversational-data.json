@@ -1,0 +1,158 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Call audio files"
+        },
+        "entity_1": {
+            "name": "Call transcripts"
+        },
+        "entity_2": {
+            "name": "Sync call data"
+        },
+        "entity_3": {
+            "name": "Storage account"
+        },
+        "entity_4": {
+            "name": "Azure AI Content Understanding"
+        },
+        "entity_5": {
+            "name": "Azure AI Search"
+        },
+        "entity_6": {
+            "name": "Azure SQL Database"
+        },
+        "entity_7": {
+            "name": "Topic modeling"
+        },
+        "entity_8": {
+            "name": "Azure AI Foundry"
+        },
+        "entity_9": {
+            "name": "Container Registry"
+        },
+        "entity_10": {
+            "name": "App Service"
+        },
+        "entity_11": {
+            "name": "App Service"
+        },
+        "entity_12": {
+            "name": "Semantic Kernel"
+        },
+        "entity_13": {
+            "name": "Web front end to explore call insights, chat to ask questions, and chart generations"
+        },
+        "entity_14": {
+            "name": "Azure Cosmos DB"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "",
+            "include_entity": [
+                "entity_5",
+                "entity_6"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "Process data pipeline",
+            "include_entity": [
+                "entity_2",
+                "entity_3",
+                "entity_4",
+                "entity_5",
+                "entity_6",
+                "entity_7",
+                "entity_8"
+            ],
+            "include_cluster": [
+                "cluster_0"
+            ]
+        },
+        "cluster_2": {
+            "name": "Orchestration to handle chat requests",
+            "include_entity": [
+                "entity_10",
+                "entity_12"
+            ],
+            "include_cluster": []
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_2",
+            "target": "entity_0",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "cluster_0",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_7",
+            "target": "cluster_0",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_2",
+            "target": "cluster_0",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_9",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_11",
+            "target": "cluster_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_13",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_14",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "behavior"
+}

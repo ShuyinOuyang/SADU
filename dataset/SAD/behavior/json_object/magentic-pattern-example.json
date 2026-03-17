@@ -1,0 +1,184 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Model"
+        },
+        "entity_1": {
+            "name": "Input"
+        },
+        "entity_2": {
+            "name": "SRE automation manager agent"
+        },
+        "entity_3": {
+            "name": "Resolution approach plan"
+        },
+        "entity_4": {
+            "name": "Resolution tasks statuses"
+        },
+        "entity_5": {
+            "name": "Live-site issue resolved?"
+        },
+        "entity_6": {
+            "name": "Human participant"
+        },
+        "entity_7": {
+            "name": "Result"
+        },
+        "entity_8": {
+            "name": "Diagnotics agent"
+        },
+        "entity_9": {
+            "name": "Model and log & metrics knowledge"
+        },
+        "entity_10": {
+            "name": "Infrastructure agent"
+        },
+        "entity_11": {
+            "name": "Model, graph knowledge, and CLI tools"
+        },
+        "entity_12": {
+            "name": "Rollback agent"
+        },
+        "entity_13": {
+            "name": "Model, Git access, CLI tools"
+        },
+        "entity_14": {
+            "name": "Communication agent"
+        },
+        "entity_15": {
+            "name": "Model and communication API access"
+        },
+        "entity_16": {
+            "name": "Workload systems"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "Task and progress ledger",
+            "include_entity": [
+                "entity_3",
+                "entity_4",
+                "entity_5"
+            ],
+            "include_cluster": []
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "cluster_0",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "Evaluate goal loop",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_2",
+            "name": "No",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_8",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_10",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_12",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_14",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_7",
+            "name": "Yes",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_0",
+            "target": "entity_6",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_9",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_11",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_13",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_15",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_16",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_16",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_16",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "behavior"
+}

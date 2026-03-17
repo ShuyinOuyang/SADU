@@ -1,0 +1,762 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Category",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(25)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "Film_Category",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "FilmID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "CategoryID",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "Film",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "LanguageID",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Title",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Description",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(4)",
+                    "Release_Year",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Rental_Duration",
+                    "",
+                    ""
+                ],
+                [
+                    "numeric",
+                    "Rental_Rate",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(2)",
+                    "Length",
+                    "",
+                    ""
+                ],
+                [
+                    "numeric",
+                    "Replacement_Cost",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Rating",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Special_Features",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Fulltext",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "Language",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "Film_Actor",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "FilmID",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "ActorID",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "Inventory",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "FilmID",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "Rental",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "StaffID",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "CustomerID",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "InventoryID",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Rental_Date",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Return_Date",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "Payment",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "RentalID",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "CustomerID",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "StaffID",
+                    "",
+                    ""
+                ],
+                [
+                    "numeric",
+                    "Amount",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Payment_Date",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_8": {
+            "name": "Staff",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "AddressID",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "StoreID",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "PaymentID",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "First_Name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Last_Name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "Email",
+                    "",
+                    ""
+                ],
+                [
+                    "chat(1)",
+                    "Active",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(16)",
+                    "Username",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(40)",
+                    "Password",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(80)",
+                    "PictureURL",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_9": {
+            "name": "Actor",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "First_Name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Last_Name",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_10": {
+            "name": "Customer",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "AddressID",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "AddressColumn",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "First_Name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Last_Name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "Email",
+                    "",
+                    ""
+                ],
+                [
+                    "char(1)",
+                    "Active",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Create_Date",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_11": {
+            "name": "Customer",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "AddressID",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "AddressColumn",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "First_Name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Last_Name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "Email",
+                    "",
+                    ""
+                ],
+                [
+                    "char(1)",
+                    "Active",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Create_Date",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_12": {
+            "name": "Address",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "CityID",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "Address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "Address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "District",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "Postal_Code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "Phone",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_13": {
+            "name": "City",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "CountryID",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_14": {
+            "name": "Store",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "AddressID",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Last_Update",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_6",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_7",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_7",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_6",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_4",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_6",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_7",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_10",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_8",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_14",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or one"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_11",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_12",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_8",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "ER"
+}

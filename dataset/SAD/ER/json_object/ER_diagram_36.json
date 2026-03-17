@@ -1,0 +1,377 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "student",
+            "attribute": [
+                [
+                    "int",
+                    "student_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "contact_number",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "email",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "password",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "year",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "additional_info",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "book",
+            "attribute": [
+                [
+                    "int",
+                    "book_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "title",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "edition",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "author",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "category",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "price",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "status",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "additional_info",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "users",
+            "attribute": [
+                [
+                    "int",
+                    "staff_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "contact_number",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "email",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "password",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "role",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "additional_info",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "borrowers_record",
+            "attribute": [
+                [
+                    "int",
+                    "borrow_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "book_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "student_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "date",
+                    "issue_date",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "return_date",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "fine",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "notes",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "bookreturn_record",
+            "attribute": [
+                [
+                    "int",
+                    "return_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "borrow_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "book_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "student_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "date",
+                    "return_date",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "late_fee",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "notes",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "reports",
+            "attribute": [
+                [
+                    "int",
+                    "report_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "report_type",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "generated_date",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "student_records",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "book_records",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "additional_info",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "student_borrows_books",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "student_return_records",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "book_in_borrowers_record",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "book_return_records",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "borrow_return_record",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or one"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "student_to_book_via_borrows",
+            "type": "non-identifying",
+            "source_cardinality": "zero or more",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "student_to_book_via_returns",
+            "type": "non-identifying",
+            "source_cardinality": "zero or more",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "print_return_book_records",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_5",
+            "name": "print_borrowed_book_records",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or one"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

@@ -1,0 +1,200 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "bank",
+            "attribute": [
+                [
+                    "int",
+                    "bank_code",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "address",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "branch",
+            "attribute": [
+                [
+                    "int",
+                    "branch_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "address",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "bank_code",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "customer",
+            "attribute": [
+                [
+                    "int",
+                    "cust_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(15)",
+                    "phone",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "account",
+            "attribute": [
+                [
+                    "int",
+                    "account_no",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "acc_type",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "balance",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "branch_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "cust_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "loan",
+            "attribute": [
+                [
+                    "int",
+                    "loan_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "loan_type",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "amount",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "branch_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "cust_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "bank_has_branches",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "branch_maintains_accounts",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "branch_offers_loans",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "customer_holds_accounts",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "customer_availed_loans",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

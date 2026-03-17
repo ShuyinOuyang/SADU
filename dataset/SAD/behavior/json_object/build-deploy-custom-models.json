@@ -1,0 +1,146 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Email servers"
+        },
+        "entity_1": {
+            "name": "FTP server"
+        },
+        "entity_2": {
+            "name": "Web apps"
+        },
+        "entity_3": {
+            "name": "Logic Apps"
+        },
+        "entity_4": {
+            "name": "Azure Data Factory"
+        },
+        "entity_5": {
+            "name": "Azure Functions"
+        },
+        "entity_6": {
+            "name": "Blob Storage"
+        },
+        "entity_7": {
+            "name": "Data Lake Storage"
+        },
+        "entity_8": {
+            "name": "Document Intelligence Studio"
+        },
+        "entity_9": {
+            "name": "Language Studio"
+        },
+        "entity_10": {
+            "name": "Machine Learning studio"
+        },
+        "entity_11": {
+            "name": "Document Intelligence (custom model parameters)"
+        },
+        "entity_12": {
+            "name": "Azure AI Language (custom model parameters)"
+        },
+        "entity_13": {
+            "name": "Azure Kubernetes Service"
+        },
+        "entity_14": {
+            "name": "Batch and online managed endpoints"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "Source",
+            "include_entity": [
+                "entity_0",
+                "entity_1",
+                "entity_2"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "Data ingestion and orchestration",
+            "include_entity": [
+                "entity_3",
+                "entity_4",
+                "entity_5"
+            ],
+            "include_cluster": []
+        },
+        "cluster_2": {
+            "name": "Data store",
+            "include_entity": [
+                "entity_6",
+                "entity_7"
+            ],
+            "include_cluster": []
+        },
+        "cluster_3": {
+            "name": "Labeling, tagging, and training",
+            "include_entity": [
+                "entity_8",
+                "entity_9",
+                "entity_10"
+            ],
+            "include_cluster": []
+        },
+        "cluster_4": {
+            "name": "",
+            "include_entity": [
+                "entity_13",
+                "entity_14"
+            ],
+            "include_cluster": []
+        },
+        "cluster_5": {
+            "name": "Deployment",
+            "include_entity": [
+                "entity_11",
+                "entity_12",
+                "entity_13",
+                "entity_14"
+            ],
+            "include_cluster": [
+                "cluster_4"
+            ]
+        }
+    },
+    "relation": [
+        {
+            "source": "cluster_0",
+            "target": "cluster_1",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_1",
+            "target": "cluster_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "cluster_3",
+            "target": "cluster_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_11",
+            "name": "Built-in deployment",
+            "direction": "single"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_12",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_10",
+            "target": "cluster_4",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "medium",
+    "diagram_type": "behavior"
+}

@@ -1,0 +1,267 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "customer",
+            "attribute": [
+                [
+                    "int",
+                    "customer_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "fname",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "lname",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(25)",
+                    "phone",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "email",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "order_header",
+            "attribute": [
+                [
+                    "int",
+                    "order_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "date",
+                    "order_date",
+                    "",
+                    ""
+                ],
+                [
+                    "time",
+                    "order_time",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "customer_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "order_line",
+            "attribute": [
+                [
+                    "int",
+                    "line_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "order_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "pizza_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "quantity",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "pizza",
+            "attribute": [
+                [
+                    "int",
+                    "pizza_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "specification",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "price",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "delivery",
+            "attribute": [
+                [
+                    "int",
+                    "delivery_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "order_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(30)",
+                    "type",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(30)",
+                    "status",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "departure",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "arrival",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "payment",
+            "attribute": [
+                [
+                    "int",
+                    "payment_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "date",
+                    "pdate",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(30)",
+                    "type",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "order_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "customer_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "total",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "customer_places_orders",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "order_has_lines",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "pizza_in_order_lines",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "order_has_delivery",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or one"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_5",
+            "name": "order_has_payment",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or one"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "customer_makes_payments",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

@@ -1,0 +1,210 @@
+[
+    {
+        "question": "How many entities are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            11
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_entity_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relations are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            10
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_relation_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many entities have more than one relation?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            3
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "entities_have_more_than_one_relations",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many clusters are in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            0
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "total_cluster_number",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many entities are not contained in any cluster?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            11
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_entities_not_in_clusters",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relations have a label?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            0
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_relations_have_label",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many clusters contain at least one sub-cluster (nested clusters)?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            0
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_clusters_have_clusters_within",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "How many relation types appear in the diagram?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            2
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_relation_types",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "Which entity has a relation with Entity 'Report'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Cost",
+            "Detailed_solution",
+            "Equity",
+            "Planner",
+            "Pollution",
+            "Summary_executive"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_statement",
+            "difficulty": "basic"
+        }
+    },
+    {
+        "question": "What attributes does Entity 'Planner' have?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "E-mail",
+            "Id",
+            "Last name",
+            "Name",
+            "Phone",
+            "Salary"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "entity_contains_certain_attribute",
+            "difficulty": "intermediate"
+        }
+    },
+    {
+        "question": "What methods does Entity 'Planner' have? Please only the return function names.\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Bizuize_record_traffic",
+            "Change_address_lane",
+            "Close_road",
+            "Do_report",
+            "Estimate",
+            "Increase_traffic",
+            "Look for_issues",
+            "Look for_road",
+            "Look for_solution",
+            "Model_broken",
+            "Model_semaforos",
+            "Modify_boundaries_speed",
+            "Planner",
+            "Simulate_crisis",
+            "Visualize_level_traffic",
+            "Warn_condition"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "entity_contains_certain_method",
+            "difficulty": "intermediate"
+        }
+    },
+    {
+        "question": "How many attributes does Entity 'Planner' have?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            6
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_attributes_certain_entity_has",
+            "difficulty": "intermediate"
+        }
+    },
+    {
+        "question": "How many methods does Entity 'Planner' have?\nRequired Output Format (strict).\n[start]\n{\"answer\": x}\n[end]\nThe answer MUST be a valid JSON object.\nx must be a number.\n",
+        "answer": [
+            16
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "how_many_methods_certain_entity_has",
+            "difficulty": "intermediate"
+        }
+    },
+    {
+        "question": "What is the type of the relation between Entity 'Report' and Entity 'Pollution'? (e.g., association, inheritance, composition, dependency, and aggregation)\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "inheritance"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "type_on_the_relation",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity is the source in a relation to Entity 'Pollution'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Report"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_source",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    },
+    {
+        "question": "Which entity is the target in a relation from Entity 'Report'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Cost",
+            "Detailed_solution",
+            "Equity",
+            "Pollution",
+            "Summary_executive"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_target",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    }
+]

@@ -1,0 +1,152 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Administrator",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Administrator",
+                "Add_information",
+                "Block_user",
+                "See_statistics",
+                "Communicate_with_facilities"
+            ]
+        },
+        "entity_1": {
+            "name": "Executive",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Executive",
+                "See_data_company"
+            ]
+        },
+        "entity_2": {
+            "name": "Counter",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Counter",
+                "See_rates"
+            ]
+        },
+        "entity_3": {
+            "name": "Resources",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Resources",
+                "List_employees"
+            ]
+        },
+        "entity_4": {
+            "name": "Representative",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Resources",
+                "Update_information",
+                "See_statistics",
+                "See_schedules"
+            ]
+        },
+        "entity_5": {
+            "name": "Facility",
+            "attribute": [
+                "Address"
+            ],
+            "method": [
+                "Facility",
+                "Communicate_with_administrator"
+            ]
+        },
+        "entity_6": {
+            "name": "User",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "User",
+                "See_address",
+                "Get into_zip_code",
+                "List_facilities_close",
+                "Select_recyclable",
+                "See_map_containers",
+                "See_map_deliveries",
+                "See_map_elimination",
+                "Post_comment",
+                "List_facilitates"
+            ]
+        },
+        "entity_7": {
+            "name": "Superusutory",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Superusutory",
+                "Update_information",
+                "See_statistics"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_7",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_5",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_6",
+            "name": "",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

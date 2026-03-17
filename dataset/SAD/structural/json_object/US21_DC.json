@@ -1,0 +1,324 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Member_cornell",
+            "attribute": [
+                "Name",
+                "Last name",
+                "E-mail"
+            ],
+            "method": [
+                "Member_cornell",
+                "Accerder_repository",
+                "Carry_data",
+                "Associate_publication",
+                "Look for_publication",
+                "Notify_discharge",
+                "Assign_license",
+                "Discharge_data",
+                "Share",
+                "Associate_research"
+            ]
+        },
+        "entity_1": {
+            "name": "Researcher",
+            "attribute": [
+                "Name",
+                "Last name",
+                "E-mail"
+            ],
+            "method": [
+                "Researcher",
+                "Look for_repository",
+                "Promote_job",
+                "Share_job",
+                "Receive_notification_update"
+            ]
+        },
+        "entity_2": {
+            "name": "Member_faculty",
+            "attribute": [
+                "E-mail",
+                "Last name",
+                "Name",
+                "Faculty"
+            ],
+            "method": [
+                "Member_faculty",
+                "Accerder_repository",
+                "Access_collection",
+                "Increase_job",
+                "Associate_archives"
+            ]
+        },
+        "entity_3": {
+            "name": "Medium",
+            "attribute": [
+                "Name",
+                "Last name"
+            ],
+            "method": [
+                "Medium",
+                "Export_data",
+                "Move_collection",
+                "Rename_collection"
+            ]
+        },
+        "entity_4": {
+            "name": "Staff_library",
+            "attribute": [
+                "Name",
+                "E-mail",
+                "Last name"
+            ],
+            "method": [
+                "Staff_library",
+                "Apply_embargo",
+                "Remove_embargo",
+                "See_statistics",
+                "Increase_items",
+                "Create_collection",
+                "Increase_material",
+                "Create_fields_metadata"
+            ]
+        },
+        "entity_5": {
+            "name": "External",
+            "attribute": [],
+            "method": [
+                "External",
+                "Look for_issue",
+                "Show_information_issue"
+            ]
+        },
+        "entity_6": {
+            "name": "Student",
+            "attribute": [
+                "Name",
+                "Last name",
+                "E-mail",
+                "Code"
+            ],
+            "method": [
+                "Student",
+                "See_involved",
+                "Increase_data"
+            ]
+        },
+        "entity_7": {
+            "name": "Curator_data",
+            "attribute": [
+                "Name"
+            ],
+            "method": [
+                "Curator_data",
+                "Look for_element",
+                "Update_element",
+                "Program_record"
+            ]
+        },
+        "entity_8": {
+            "name": "User",
+            "attribute": [
+                "Name",
+                "Last name",
+                "E-mail",
+                "User",
+                "Password"
+            ],
+            "method": [
+                "User",
+                "Look for_report",
+                "Obtain_report",
+                "Visualize_report",
+                "See_versions_report",
+                "Create_account",
+                "Inform_mistake"
+            ]
+        },
+        "entity_9": {
+            "name": "Educator_extension",
+            "attribute": [
+                "Name",
+                "Last name"
+            ],
+            "method": [
+                "Educator_extension",
+                "Store_items"
+            ]
+        },
+        "entity_10": {
+            "name": "Administration",
+            "attribute": [
+                "Name",
+                "Last name",
+                "E-mail",
+                "Id",
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Administration",
+                "Get_name",
+                "Get_last name",
+                "Get_e-mail",
+                "Get_id",
+                "Get_user",
+                "Get_password"
+            ]
+        },
+        "entity_11": {
+            "name": "Administrator",
+            "attribute": [
+                "User_id"
+            ],
+            "method": [
+                "Administrator",
+                "See_statistics_follow-up",
+                "Spread_jobs"
+            ]
+        },
+        "entity_12": {
+            "name": "Administrator_assets",
+            "attribute": [
+                "State"
+            ],
+            "method": [
+                "Administrator_asset",
+                "Create_copy_security",
+                "Verify_threats",
+                "Review_monitoring",
+                "Create_list_asset",
+                "Take out_asset",
+                "Create_plan_provision_assets",
+                "Transfer_property"
+            ]
+        },
+        "entity_13": {
+            "name": "Administrator_extension",
+            "attribute": [
+                "Area"
+            ],
+            "method": [
+                "Administrator_extension",
+                "Receive_reminder",
+                "Create_flow_job"
+            ]
+        },
+        "entity_14": {
+            "name": "Administrator_db_go",
+            "attribute": [
+                "User_special",
+                "Password_special"
+            ],
+            "method": [
+                "Administrator_db_go",
+                "Start_session",
+                "Edit_password",
+                "List_administrators",
+                "Look for_administrator",
+                "List_subscribers_report",
+                "Manage_cluster",
+                "Manage_qualifications",
+                "Create_report",
+                "Edit_report",
+                "Eliminate_publication"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_11",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_6",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_7",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_9",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_10",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_11",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_12",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_14",
+            "name": "",
+            "type": "inheritance"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

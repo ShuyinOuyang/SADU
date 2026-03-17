@@ -1,0 +1,334 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "customer",
+            "attribute": [
+                [
+                    "int(11)",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "surname",
+                    "",
+                    ""
+                ],
+                [
+                    "enum",
+                    "category",
+                    "",
+                    ""
+                ],
+                [
+                    "int(11)",
+                    "billing_address_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int(11)",
+                    "shipping_address_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "cart",
+            "attribute": [
+                [
+                    "int(11)",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int(11)",
+                    "customer_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "created",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "total_value",
+                    "",
+                    ""
+                ],
+                [
+                    "longtext",
+                    "products",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "order",
+            "attribute": [
+                [
+                    "int(11)",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int(11)",
+                    "customer_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "placed",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "paid",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "total_value",
+                    "",
+                    ""
+                ],
+                [
+                    "enum",
+                    "status",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "address",
+            "attribute": [
+                [
+                    "int(11)",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "street",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "city",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "zip_code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "country",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "ordered_products",
+            "attribute": [
+                [
+                    "int(11)",
+                    "product_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int(11)",
+                    "order_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "price",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "discount",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "product",
+            "attribute": [
+                [
+                    "int(11)",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int(11)",
+                    "vendor_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "sku",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "price",
+                    "",
+                    ""
+                ],
+                [
+                    "int(11)",
+                    "stock_qty",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "vendor",
+            "attribute": [
+                [
+                    "int(11)",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "company_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(250)",
+                    "email",
+                    "",
+                    ""
+                ],
+                [
+                    "enum",
+                    "category",
+                    "",
+                    ""
+                ],
+                [
+                    "tinyint(1)",
+                    "is_active",
+                    "",
+                    ""
+                ],
+                [
+                    "int(11)",
+                    "contact_address_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_0",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_6",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

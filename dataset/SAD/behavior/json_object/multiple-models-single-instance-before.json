@@ -1,0 +1,84 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Client A"
+        },
+        "entity_1": {
+            "name": "Client B"
+        },
+        "entity_2": {
+            "name": "gpt-4"
+        },
+        "entity_3": {
+            "name": "gpt-35-turbo (60K TPM)"
+        },
+        "entity_4": {
+            "name": "gpt-35-turbo (0613 | 30K TPM)"
+        },
+        "entity_5": {
+            "name": "gpt-35-turbo (1106 | 30K TPM)"
+        },
+        "entity_6": {
+            "name": "Azure OpenAI"
+        },
+        "entity_7": {
+            "name": "Azure RBAC for API access"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "",
+            "include_entity": [
+                "entity_2",
+                "entity_3",
+                "entity_4",
+                "entity_5",
+                "entity_6",
+                "entity_7"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_2",
+                "entity_3",
+                "entity_4",
+                "entity_5",
+                "entity_6",
+                "entity_7"
+            ],
+            "include_cluster": [
+                "cluster_0"
+            ]
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "behavior"
+}

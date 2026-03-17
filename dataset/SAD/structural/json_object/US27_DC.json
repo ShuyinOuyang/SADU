@@ -1,0 +1,325 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Person_system",
+            "attribute": [
+                "Name",
+                "Id",
+                "Sex",
+                "Stature",
+                "Date_birth",
+                "User",
+                "Clue"
+            ],
+            "method": [
+                "Authenticate",
+                "Start_session",
+                "Close_session"
+            ]
+        },
+        "entity_1": {
+            "name": "Receptionist",
+            "attribute": [
+                "Id_patient"
+            ],
+            "method": [
+                "Identify_patients",
+                "Access_schedule_doctor",
+                "Relate_patients",
+                "Obtain_description_room"
+            ]
+        },
+        "entity_2": {
+            "name": "Pharmacist",
+            "attribute": [],
+            "method": [
+                "Review_data_patient"
+            ]
+        },
+        "entity_3": {
+            "name": "Administrator_system",
+            "attribute": [],
+            "method": [
+                "Adjust_rights_access",
+                "Start_session",
+                "Authenticate"
+            ]
+        },
+        "entity_4": {
+            "name": "Appointment_medical",
+            "attribute": [
+                "Id_appointment",
+                "Date",
+                "Patient",
+                "Doctor"
+            ],
+            "method": [
+                "Update_appointment",
+                "Consult_appointment",
+                "Prioritize_appointment"
+            ]
+        },
+        "entity_5": {
+            "name": "Technical_laboratory",
+            "attribute": [],
+            "method": [
+                "Obtain_description_evidence",
+                "Review_proof",
+                "Receive_notifications",
+                "Get into_results",
+                "Attach_grades_evidence"
+            ]
+        },
+        "entity_6": {
+            "name": "Proof_laboratory",
+            "attribute": [
+                "Guy_sample",
+                "Result",
+                "Cluster_ethnic",
+                "Place",
+                "Instruction",
+                "State"
+            ],
+            "method": [
+                "Analyze",
+                "Diagnose",
+                "See_results"
+            ]
+        },
+        "entity_7": {
+            "name": "Patient",
+            "attribute": [
+                "Dose_medicine",
+                "Medicine_prescribed",
+                "Diagnosis"
+            ],
+            "method": [
+                "Access_history_clinic",
+                "Share_data",
+                "Control_access_data",
+                "State_evidence_laboratory",
+                "Program_quotes",
+                "Renew_recipes"
+            ]
+        },
+        "entity_8": {
+            "name": "Pharmacy",
+            "attribute": [
+                "Medicine",
+                "Pre -registration"
+            ],
+            "method": []
+        },
+        "entity_9": {
+            "name": "Record",
+            "attribute": [],
+            "method": [
+                "Matter",
+                "Provide_access",
+                "Add",
+                "Edit",
+                "Eliminate",
+                "Update",
+                "Keep"
+            ]
+        },
+        "entity_10": {
+            "name": "Doctor",
+            "attribute": [
+                "Specialty"
+            ],
+            "method": [
+                "Share_data",
+                "Matter_results",
+                "Access_records",
+                "Add_data",
+                "Create_agenda",
+                "Request_evidence",
+                "Send_recipe",
+                "Review_medications",
+                "Review_pre -registration",
+                "Obtain_description_general",
+                "Grant_control_partial",
+                "Review_state_evidence",
+                "Attach_grades_evidence"
+            ]
+        },
+        "entity_11": {
+            "name": "Nurse",
+            "attribute": [],
+            "method": [
+                "Edit_record",
+                "Review_information_medical"
+            ]
+        },
+        "entity_12": {
+            "name": "History_clinic",
+            "attribute": [
+                "Id_diagnosis"
+            ],
+            "method": [
+                "Consult_history"
+            ]
+        },
+        "entity_13": {
+            "name": "Pharmacy_external",
+            "attribute": [
+                "Name",
+                "Address",
+                "Number_contact"
+            ],
+            "method": []
+        },
+        "entity_14": {
+            "name": "Customer",
+            "attribute": [],
+            "method": [
+                "Program",
+                "Agendar"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_7",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_11",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_7",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_6",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_14",
+            "name": "",
+            "type": "dependency"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_7",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_4",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_12",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_9",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_10",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_6",
+            "name": "",
+            "type": "composition"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_8",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_9",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_13",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_6",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_9",
+            "name": "",
+            "type": "aggregation"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "medium"
+}

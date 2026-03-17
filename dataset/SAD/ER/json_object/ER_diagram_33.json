@@ -1,0 +1,282 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Person.ContactType",
+            "attribute": [
+                [
+                    "int",
+                    "ContactTypeID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "Name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "HumanResources.Employee",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(15)",
+                    "NationalIDNumber",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(256)",
+                    "LoginID",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "OrganizationNode",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "OrganizationLevel",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "JobTitle",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "Person.Password",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(128)",
+                    "PasswordHash",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "Person.BusinessEntityContact",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "PersonID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "ContactTypeID",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "Person.Person",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(2)",
+                    "PersonType",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "FirstName",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "LastName",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "Person.PersonPhone",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(25)",
+                    "PhoneNumber",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "PhoneNumberTypeID",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "Person.BusinessEntity",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "PK",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "Person.EmailAddress",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "EmailAddressID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "EmailAddress",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_8": {
+            "name": "Person.PhoneNumberType",
+            "attribute": [
+                [
+                    "int",
+                    "PhoneNumberTypeID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "Name",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_7",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or one"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

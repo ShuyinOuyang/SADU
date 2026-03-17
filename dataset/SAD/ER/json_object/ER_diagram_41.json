@@ -1,0 +1,428 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "tournament",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "start_date",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "end_date",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "location",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "description",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "match",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "tournament_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "date",
+                    "match_date",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "round",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "status",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "standing",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "tournament_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "team_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "played",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "won",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "drawn",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "lost",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "goals_for",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "goals_against",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "points",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "team",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "coach",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "founded_year",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "player",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "first_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "last_name",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "date_of_birth",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "nationality",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "position",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "team_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "match_team",
+            "attribute": [
+                [
+                    "int",
+                    "match_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "team_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "boolean",
+                    "is_home",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "score",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "referee",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "first_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "last_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "nationality",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "match_referee",
+            "attribute": [
+                [
+                    "int",
+                    "match_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "referee_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "role",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_8": {
+            "name": "match_player_stats",
+            "attribute": [
+                [
+                    "int",
+                    "match_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "player_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "minutes_played",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "goals",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "yellow_cards",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "red_cards",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "tournament_has_matches",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "tournament_has_standings",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "team_in_standings",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_5",
+            "name": "match_has_teams",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_5",
+            "name": "team_participates_in_match",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "team_has_players",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_7",
+            "name": "match_has_referees",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_7",
+            "name": "referee_in_matches",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_8",
+            "name": "match_has_player_stats",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_8",
+            "name": "player_has_match_stats",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

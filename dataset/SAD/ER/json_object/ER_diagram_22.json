@@ -1,0 +1,222 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "asset_types",
+            "attribute": [
+                [
+                    "varchar(20)",
+                    "asset_type_code",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "asset_type_description",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "it_assets",
+            "attribute": [
+                [
+                    "bigint",
+                    "asset_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "asset_type_code",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "other_details",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "it_asset_inventory",
+            "attribute": [
+                [
+                    "bigint",
+                    "it_asset_inventory_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "asset_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "date",
+                    "inventory_date",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "number_assigned",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "number_in_stock",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "other_details",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "employee_assets",
+            "attribute": [
+                [
+                    "bigint",
+                    "asset_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "employee_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "date",
+                    "date_out",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "date_returned",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "condition_out",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "condition_returned",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "other_details",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "employees",
+            "attribute": [
+                [
+                    "bigint",
+                    "employee_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "first_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "last_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "department",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "extension",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "email_address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "other_details",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

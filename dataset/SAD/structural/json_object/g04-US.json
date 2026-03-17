@@ -1,0 +1,225 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Urban mobility planner",
+            "color": "green"
+        },
+        "entity_1": {
+            "name": "Urban mobility proposal",
+            "color": "green"
+        },
+        "entity_2": {
+            "name": "Solution /  measure",
+            "color": "green"
+        },
+        "entity_3": {
+            "name": "Effect",
+            "color": "red"
+        },
+        "entity_4": {
+            "name": "Speed limits",
+            "color": "yellow"
+        },
+        "entity_5": {
+            "name": "Revertible lanes direction",
+            "color": "green"
+        },
+        "entity_6": {
+            "name": "Roundabouts",
+            "color": "green"
+        },
+        "entity_7": {
+            "name": "Adaptive traffic lights",
+            "color": "green"
+        },
+        "entity_8": {
+            "name": "Road closure",
+            "color": "yellow"
+        },
+        "entity_9": {
+            "name": "Crowded event",
+            "color": "red"
+        },
+        "entity_10": {
+            "name": "Traffic  level",
+            "color": "green"
+        },
+        "entity_11": {
+            "name": "Fairness",
+            "color": "yellow"
+        },
+        "entity_12": {
+            "name": "Environmental effect",
+            "color": "green"
+        },
+        "entity_13": {
+            "name": "Pollution sensor",
+            "color": "green"
+        },
+        "entity_14": {
+            "name": "Traffic sensor",
+            "color": "green"
+        },
+        "entity_15": {
+            "name": "Past traffic situation",
+            "color": "red"
+        },
+        "entity_16": {
+            "name": "Cost",
+            "color": "yellow"
+        },
+        "entity_17": {
+            "name": "Scenario",
+            "color": "white"
+        },
+        "entity_18": {
+            "name": "Crisis  situation",
+            "color": "red"
+        },
+        "entity_19": {
+            "name": "Executive  summary",
+            "color": "green"
+        },
+        "entity_20": {
+            "name": "Traffic congestion",
+            "color": "red"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_17",
+            "name": "simulates",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "models",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "validates",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_19",
+            "name": "summarized in",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_16",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "lead to",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_1",
+            "name": "reported in",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_17",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_14",
+            "name": "measured via",
+            "type": "association"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_13",
+            "name": "measured via",
+            "type": "association"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_17",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_17",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_20",
+            "target": "entity_17",
+            "name": "",
+            "type": "inheritance"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "difficult"
+}

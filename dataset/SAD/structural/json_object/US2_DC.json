@@ -1,0 +1,328 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Member",
+            "attribute": [
+                "User",
+                "Name",
+                "Last name",
+                "E-mail",
+                "Password"
+            ],
+            "method": [
+                "Member"
+            ]
+        },
+        "entity_1": {
+            "name": "Customer",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone",
+                "E-mail",
+                "Password",
+                "User"
+            ],
+            "method": [
+                "Customer",
+                "Create_account",
+                "State_account",
+                "Start_session",
+                "Perform transaction",
+                "Request_inspection"
+            ]
+        },
+        "entity_2": {
+            "name": "Candidate_potential",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone"
+            ],
+            "method": [
+                "Candidate_potential",
+                "Investigate_services",
+                "Select_service"
+            ]
+        },
+        "entity_3": {
+            "name": "Applicant",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone",
+                "E-mail",
+                "Application"
+            ],
+            "method": [
+                "Applicant",
+                "Create_application",
+                "Look for_application",
+                "Edit_application",
+                "Pay_fee",
+                "Verify_state",
+                "Request_meeting",
+                "Post_projects"
+            ]
+        },
+        "entity_4": {
+            "name": "Staff",
+            "attribute": [],
+            "method": [
+                "Member_staff",
+                "Manage_ordinances",
+                "Manage_calendars",
+                "Setfechas_hearings",
+                "Getfechas_hearings",
+                "Create_meeting",
+                "Create_report",
+                "Look for_information",
+                "Close_application",
+                "Send_citation",
+                "Getcitation",
+                "Post_citation",
+                "Process_appeal",
+                "Register_decision",
+                "Send_answer",
+                "Revision_integrity",
+                "Create_retention",
+                "Look for_retention",
+                "Eliminate_retention"
+            ]
+        },
+        "entity_5": {
+            "name": "Planning",
+            "attribute": [],
+            "method": [
+                "Member_planning",
+                "Register_job",
+                "Register_information",
+                "Register_results"
+            ]
+        },
+        "entity_6": {
+            "name": "Development",
+            "attribute": [],
+            "method": [
+                "Member_development",
+                "Issue_warning_development"
+            ]
+        },
+        "entity_7": {
+            "name": "Inspection",
+            "attribute": [],
+            "method": [
+                "Member_inspection",
+                "Assign_inspector",
+                "Create_inspection",
+                "Assess_coherence"
+            ]
+        },
+        "entity_8": {
+            "name": "Compliance",
+            "attribute": [],
+            "method": [
+                "Member_development",
+                "Issue_warning_infringement"
+            ]
+        },
+        "entity_9": {
+            "name": "Revision_plan",
+            "attribute": [],
+            "method": [
+                "Member_revision_plan",
+                "Carry out_follow-up",
+                "Carry out_meeting",
+                "Register_results",
+                "Obtain_results",
+                "Review_modifications",
+                "Associate_project"
+            ]
+        },
+        "entity_10": {
+            "name": "Revision_plans",
+            "attribute": [],
+            "method": [
+                "Member_revision_plans",
+                "Trigger_information",
+                "Assign_plans",
+                "Review_plans"
+            ]
+        },
+        "entity_11": {
+            "name": "Zoning",
+            "attribute": [],
+            "method": [
+                "Member_zoning",
+                "Process_application",
+                "Send_release",
+                "Issue_permission"
+            ]
+        },
+        "entity_12": {
+            "name": "Staff_county",
+            "attribute": [],
+            "method": [
+                "Member_staff_county",
+                "Carry out_consultation_personalized",
+                "Carry out_report_personalized"
+            ]
+        },
+        "entity_13": {
+            "name": "User",
+            "attribute": [
+                "Name"
+            ],
+            "method": [
+                "User",
+                "Look for_information"
+            ]
+        },
+        "entity_14": {
+            "name": "Employee",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Id",
+                "E-mail",
+                "Phone"
+            ],
+            "method": [
+                "Employee"
+            ]
+        },
+        "entity_15": {
+            "name": "Technical",
+            "attribute": [],
+            "method": [
+                "Technical",
+                "Update_pin_transactional",
+                "Update_chalk_property_management"
+            ]
+        },
+        "entity_16": {
+            "name": "Inspector",
+            "attribute": [],
+            "method": [
+                "Inspector",
+                "Carry out_inspection"
+            ]
+        },
+        "entity_17": {
+            "name": "Supervisor",
+            "attribute": [],
+            "method": [
+                "Supervisor",
+                "Manage_burden_job",
+                "Assign_inspection"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_13",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_14",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_17",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_16",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_15",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_12",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_11",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_9",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_7",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "",
+            "type": "inheritance"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "medium"
+}

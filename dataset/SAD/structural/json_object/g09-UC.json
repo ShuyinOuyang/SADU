@@ -1,0 +1,213 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Urban planning department",
+            "color": "green"
+        },
+        "entity_1": {
+            "name": "Citizen",
+            "color": "green"
+        },
+        "entity_2": {
+            "name": "UP department member",
+            "color": "yellow"
+        },
+        "entity_3": {
+            "name": "Urban mobility simulator",
+            "color": "green"
+        },
+        "entity_4": {
+            "name": "City map with traffic",
+            "color": "green"
+        },
+        "entity_5": {
+            "name": "Real-time data",
+            "color": "green"
+        },
+        "entity_6": {
+            "name": "Sensor",
+            "color": "green"
+        },
+        "entity_7": {
+            "name": "Traffic congestion",
+            "color": "green"
+        },
+        "entity_8": {
+            "name": "Traffic data",
+            "color": "green"
+        },
+        "entity_9": {
+            "name": "Most recent data",
+            "color": "red"
+        },
+        "entity_10": {
+            "name": "Maintenance team",
+            "color": "green"
+        },
+        "entity_11": {
+            "name": "Police",
+            "color": "red"
+        },
+        "entity_12": {
+            "name": "Stakeholder workshop",
+            "color": "red"
+        },
+        "entity_13": {
+            "name": "Environment measures",
+            "color": "green"
+        },
+        "entity_14": {
+            "name": "CO2 Level",
+            "color": "yellow"
+        },
+        "entity_15": {
+            "name": "Noise level",
+            "color": "yellow"
+        },
+        "entity_16": {
+            "name": "Pollution",
+            "color": "yellow"
+        },
+        "entity_17": {
+            "name": "Station",
+            "color": "green"
+        },
+        "entity_18": {
+            "name": "Historical data",
+            "color": "green"
+        },
+        "entity_19": {
+            "name": "Calculated measures",
+            "color": "green"
+        },
+        "entity_20": {
+            "name": "External organization",
+            "color": "green"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_11",
+            "name": "consults",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_12",
+            "name": "plans long term via",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_0",
+            "name": "participates in",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_7",
+            "name": "looks for",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "uses",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "populates",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "visualizes",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_13",
+            "name": "updated with",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_19",
+            "name": "updated with",
+            "type": "association"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_6",
+            "name": "gathered from",
+            "type": "association"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_1",
+            "name": "reported by",
+            "type": "association"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_6",
+            "name": "fixes",
+            "type": "association"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_17",
+            "name": "fixes",
+            "type": "association"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_19",
+            "target": "entity_20",
+            "name": "provided by",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "medium"
+}

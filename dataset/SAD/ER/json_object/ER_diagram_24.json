@@ -1,0 +1,592 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Person.ContactType",
+            "attribute": [
+                [
+                    "int",
+                    "ContactTypeID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "nvarchar(50)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "ModifiedDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "Person.Address",
+            "attribute": [
+                [
+                    "int",
+                    "AddressID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "nvarchar(60)",
+                    "AddressLine1",
+                    "",
+                    ""
+                ],
+                [
+                    "nvarchar(60)",
+                    "AddressLine2",
+                    "",
+                    ""
+                ],
+                [
+                    "nvarchar(30)",
+                    "City",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "StateProvinceID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "nvarchar(15)",
+                    "PostalCode",
+                    "",
+                    ""
+                ],
+                [
+                    "uniqueidentifier",
+                    "rowguid",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "ModifiedDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "Person.BusinessEntityContact",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "PersonID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "ContactTypeID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "uniqueidentifier",
+                    "rowguid",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "ModifiedDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "Person.BusinessEntity",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "uniqueidentifier",
+                    "rowguid",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "ModifiedDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "Person.BusinessEntityAddress",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "AddressID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "AddressTypeID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "uniqueidentifier",
+                    "rowguid",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "ModifiedDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "Person.StateProvince",
+            "attribute": [
+                [
+                    "int",
+                    "StateProvinceID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "nvarchar(3)",
+                    "StateProvinceCode",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "CountryRegionCode",
+                    "FK",
+                    ""
+                ],
+                [
+                    "bit",
+                    "IsOnlyStateProvinceFlag",
+                    "",
+                    ""
+                ],
+                [
+                    "nvarchar(50)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "uniqueidentifier",
+                    "rowguid",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "ModifiedDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "Person.Person",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "nvarchar(2)",
+                    "PersonType",
+                    "",
+                    ""
+                ],
+                [
+                    "bit",
+                    "NameStyle",
+                    "",
+                    ""
+                ],
+                [
+                    "nvarchar(8)",
+                    "Title",
+                    "",
+                    ""
+                ],
+                [
+                    "nvarchar(50)",
+                    "FirstName",
+                    "",
+                    ""
+                ],
+                [
+                    "nvarchar(50)",
+                    "MiddleName",
+                    "",
+                    ""
+                ],
+                [
+                    "nvarchar(50)",
+                    "LastName",
+                    "",
+                    ""
+                ],
+                [
+                    "nvarchar(10)",
+                    "Suffix",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "EmailPromotion",
+                    "",
+                    ""
+                ],
+                [
+                    "nvarchar(max)",
+                    "AdditionalContactInfo",
+                    "",
+                    ""
+                ],
+                [
+                    "nvarchar(max)",
+                    "Demographics",
+                    "",
+                    ""
+                ],
+                [
+                    "uniqueidentifier",
+                    "rowguid",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "ModifiedDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "Person.AddressType",
+            "attribute": [
+                [
+                    "int",
+                    "AddressTypeID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "nvarchar(50)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "uniqueidentifier",
+                    "rowguid",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "ModifiedDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_8": {
+            "name": "Person.CountryRegion",
+            "attribute": [
+                [
+                    "nvarchar(3)",
+                    "CountryRegionCode",
+                    "PK",
+                    ""
+                ],
+                [
+                    "nvarchar(50)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "ModifiedDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_9": {
+            "name": "Person.EmailAddress",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "EmailAddressID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "nvarchar(50)",
+                    "EmailAddress",
+                    "",
+                    ""
+                ],
+                [
+                    "nvarchar(50)",
+                    "EmailAddressText",
+                    "",
+                    ""
+                ],
+                [
+                    "uniqueidentifier",
+                    "rowguid",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "ModifiedDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_10": {
+            "name": "Person.PersonPhone",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "nvarchar(25)",
+                    "PhoneNumber",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "PhoneNumberTypeID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "ModifiedDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_11": {
+            "name": "Person.Password",
+            "attribute": [
+                [
+                    "int",
+                    "BusinessEntityID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "nvarchar(128)",
+                    "PasswordHash",
+                    "",
+                    ""
+                ],
+                [
+                    "nvarchar(10)",
+                    "PasswordSalt",
+                    "",
+                    ""
+                ],
+                [
+                    "uniqueidentifier",
+                    "rowguid",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "ModifiedDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_12": {
+            "name": "Person.PhoneNumberType",
+            "attribute": [
+                [
+                    "int",
+                    "PhoneNumberTypeID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "nvarchar(50)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "ModifiedDate",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_6",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_9",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_10",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_11",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_10",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

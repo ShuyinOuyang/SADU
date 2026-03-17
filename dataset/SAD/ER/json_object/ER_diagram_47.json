@@ -1,0 +1,302 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "books",
+            "attribute": [
+                [
+                    "int",
+                    "isbn",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "title",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "auth_no",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "price",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "category",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "edition",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "publisher_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "publisher",
+            "attribute": [
+                [
+                    "int",
+                    "publisher_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "year_of_publication",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "readers",
+            "attribute": [
+                [
+                    "int",
+                    "user_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "first_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "last_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "email",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(15)",
+                    "phone_no",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "staff",
+            "attribute": [
+                [
+                    "int",
+                    "staff_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "reports",
+            "attribute": [
+                [
+                    "int",
+                    "reg_no",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "book_no",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "user_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "issue_or_return",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "authentication_system",
+            "attribute": [
+                [
+                    "varchar(50)",
+                    "login_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "password",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "reservation",
+            "attribute": [
+                [
+                    "int",
+                    "reserve_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "user_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "isbn",
+                    "FK",
+                    ""
+                ],
+                [
+                    "date",
+                    "reserve_date",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "return_date",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "due_date",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "staff_manages_reports",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_5",
+            "name": "staff_authentication",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_0",
+            "name": "staff_maintains_books",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "staff_tracks_readers",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_6",
+            "name": "reader_reserves_books",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_6",
+            "name": "book_reserved_in_reservation",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "publisher_publishes_books",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "reader_generates_reports",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "book_in_reports",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

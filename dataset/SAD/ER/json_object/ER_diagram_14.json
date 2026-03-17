@@ -1,0 +1,173 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Customer",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Address",
+                    "",
+                    ""
+                ],
+                [
+                    "float(10)",
+                    "Balance",
+                    "",
+                    ""
+                ],
+                [
+                    "char(1)",
+                    "Type",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "Broker",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Name",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "Salary",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "Date_Employed",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "Transaction",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "CustomerID",
+                    "",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "BrokerID",
+                    "",
+                    ""
+                ],
+                [
+                    "char(1)",
+                    "Type",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Create_Time",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Execution_Time",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "Cancellation_Time",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "Stock",
+            "attribute": [
+                [
+                    "integer(10)",
+                    "ID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer(10)",
+                    "TransactionalID",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "Code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "Name",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "type": "non-identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "ER"
+}

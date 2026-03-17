@@ -1,0 +1,250 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Simulation",
+            "color": "green"
+        },
+        "entity_1": {
+            "name": "Traffic sim system",
+            "color": "red"
+        },
+        "entity_2": {
+            "name": "Data",
+            "color": "green"
+        },
+        "entity_3": {
+            "name": "Metric",
+            "color": "white"
+        },
+        "entity_4": {
+            "name": "Environmental effect",
+            "color": "yellow"
+        },
+        "entity_5": {
+            "name": "Noise effect",
+            "color": "yellow"
+        },
+        "entity_6": {
+            "name": "Effectiveness",
+            "color": "yellow"
+        },
+        "entity_7": {
+            "name": "Fairness",
+            "color": "yellow"
+        },
+        "entity_8": {
+            "name": "Event",
+            "color": "red"
+        },
+        "entity_9": {
+            "name": "Suggestion",
+            "color": "yellow"
+        },
+        "entity_10": {
+            "name": "Emergency",
+            "color": "red"
+        },
+        "entity_11": {
+            "name": "Urban planning employee",
+            "color": "yellow"
+        },
+        "entity_12": {
+            "name": "Extra flow",
+            "color": "red"
+        },
+        "entity_13": {
+            "name": "Analysis",
+            "color": "red"
+        },
+        "entity_14": {
+            "name": "Police",
+            "color": "red"
+        },
+        "entity_15": {
+            "name": "Road",
+            "color": "red"
+        },
+        "entity_16": {
+            "name": "Citizen",
+            "color": "red"
+        },
+        "entity_17": {
+            "name": "Snapshot",
+            "color": "green"
+        },
+        "entity_18": {
+            "name": "Complaint",
+            "color": "red"
+        },
+        "entity_19": {
+            "name": "Parameter",
+            "color": "green"
+        },
+        "entity_20": {
+            "name": "Obstacle",
+            "color": "red"
+        },
+        "entity_21": {
+            "name": "Speeed limit",
+            "color": "red"
+        },
+        "entity_22": {
+            "name": "Intelligent traffic light",
+            "color": "red"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_9",
+            "name": "provides",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "measures",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_17",
+            "name": "summarized by",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "retrieves",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_19",
+            "name": "tuned via",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "runs",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_12",
+            "name": "leads to",
+            "type": "association"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_3",
+            "name": "based on",
+            "type": "association"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_14",
+            "name": "contacts",
+            "type": "association"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_13",
+            "name": "performs",
+            "type": "association"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_19",
+            "name": "tunes",
+            "type": "association"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_10",
+            "name": "issues",
+            "type": "association"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_15",
+            "name": "blocks",
+            "type": "association"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_16",
+            "name": "redirect",
+            "type": "association"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_18",
+            "name": "files",
+            "type": "association"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_13",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_20",
+            "target": "entity_19",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_21",
+            "target": "entity_19",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_22",
+            "target": "entity_19",
+            "name": "",
+            "type": "inheritance"
+        }
+    ],
+    "diagram_type": "structural"
+}

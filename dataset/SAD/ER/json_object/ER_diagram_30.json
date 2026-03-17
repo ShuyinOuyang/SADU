@@ -1,0 +1,341 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "groups",
+            "attribute": [
+                [
+                    "int",
+                    "id_group",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(150)",
+                    "title",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "topics",
+            "attribute": [
+                [
+                    "int",
+                    "id_topic",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "id_user",
+                    "FK",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "date_modified",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(200)",
+                    "title",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "schedule",
+            "attribute": [
+                [
+                    "int",
+                    "id_sch",
+                    "PK",
+                    ""
+                ],
+                [
+                    "time",
+                    "time_start",
+                    "",
+                    ""
+                ],
+                [
+                    "time",
+                    "time_end",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "weekday",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(200)",
+                    "title",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "users",
+            "attribute": [
+                [
+                    "int",
+                    "id_user",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "id_group",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "first_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "fam_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "email",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "pass",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "about",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "posts",
+            "attribute": [
+                [
+                    "int",
+                    "id_post",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "id_topic",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "id_user",
+                    "FK",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "date_created",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "body",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "calendar",
+            "attribute": [
+                [
+                    "int",
+                    "id_cal",
+                    "PK",
+                    ""
+                ],
+                [
+                    "date",
+                    "date_start",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "date_end",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(200)",
+                    "title",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "pages",
+            "attribute": [
+                [
+                    "int",
+                    "id_page",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "id_user",
+                    "FK",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "date_modified",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(200)",
+                    "title",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "body",
+                    "",
+                    ""
+                ],
+                [
+                    "boolean",
+                    "is_home",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "files",
+            "attribute": [
+                [
+                    "int",
+                    "id_file",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "id_user",
+                    "FK",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "date_modified",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(200)",
+                    "title",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "filename",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "zero or more",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_0",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "zero or more",
+            "target_cardinality": "exactly one"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

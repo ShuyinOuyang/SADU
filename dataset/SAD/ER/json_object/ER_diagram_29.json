@@ -1,0 +1,311 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "person",
+            "attribute": [
+                [
+                    "int",
+                    "person_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "date_of_birth",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "email_address",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "account",
+            "attribute": [
+                [
+                    "int",
+                    "account_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "person_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "account_number",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "created_date",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "status",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "shipping_address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "payment_method",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "cart",
+            "attribute": [
+                [
+                    "int",
+                    "cart_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "account_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "status",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "created_date",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "purchased_date",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "payment_type",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "delivery_address",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "item",
+            "attribute": [
+                [
+                    "int",
+                    "item_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "cart_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "category_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "item_name",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "image",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "supplier",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "offer",
+            "attribute": [
+                [
+                    "int",
+                    "offer_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "item_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "offer_type",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "valid_from_date",
+                    "",
+                    ""
+                ],
+                [
+                    "datetime",
+                    "valid_to_date",
+                    "",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "discount",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "terms_conditions",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "category",
+            "attribute": [
+                [
+                    "int",
+                    "category_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "category_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "category_type",
+                    "",
+                    ""
+                ],
+                [
+                    "text",
+                    "category_description",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "zero or more",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "zero or more",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "zero or one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "zero or more",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "one or more",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

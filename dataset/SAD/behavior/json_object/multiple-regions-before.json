@@ -1,0 +1,232 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Client (client-side, active-active load balacing)"
+        },
+        "entity_1": {
+            "name": "gpt-4 (standard)"
+        },
+        "entity_2": {
+            "name": "Azure OpenAI"
+        },
+        "entity_3": {
+            "name": "Azure RBAC for API access"
+        },
+        "entity_4": {
+            "name": "gpt-4 (standard)"
+        },
+        "entity_5": {
+            "name": "Azure OpenAI"
+        },
+        "entity_6": {
+            "name": "Azure RBAC for API access"
+        },
+        "entity_7": {
+            "name": "Client (client-side failover)"
+        },
+        "entity_8": {
+            "name": "gpt-4 (standard)"
+        },
+        "entity_9": {
+            "name": "Azure OpenAI (Secondary)"
+        },
+        "entity_10": {
+            "name": "Azure RBAC for API access"
+        },
+        "entity_11": {
+            "name": "gpt-4 (provisioned)"
+        },
+        "entity_12": {
+            "name": "Azure OpenAI (Primary)"
+        },
+        "entity_13": {
+            "name": "Azure RBAC for API access"
+        },
+        "entity_14": {
+            "name": "US client (geo pinned)"
+        },
+        "entity_15": {
+            "name": "Germany client (geo pinned)"
+        },
+        "entity_16": {
+            "name": "gpt-4 (provisioned)"
+        },
+        "entity_17": {
+            "name": "Azure OpenAI"
+        },
+        "entity_18": {
+            "name": "Azure RBAC for API access"
+        },
+        "entity_19": {
+            "name": "gpt-4 (provisioned)"
+        },
+        "entity_20": {
+            "name": "Azure OpenAI"
+        },
+        "entity_21": {
+            "name": "Azure RBAC for API access"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_1",
+                "entity_2",
+                "entity_3"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "West US (active)",
+            "include_entity": [
+                "entity_1",
+                "entity_2",
+                "entity_3"
+            ],
+            "include_cluster": [
+                "cluster_0"
+            ]
+        },
+        "cluster_2": {
+            "name": "rg-aoai-westus",
+            "include_entity": [
+                "entity_4",
+                "entity_5",
+                "entity_6"
+            ],
+            "include_cluster": []
+        },
+        "cluster_3": {
+            "name": "East US (active)",
+            "include_entity": [
+                "entity_4",
+                "entity_5",
+                "entity_6"
+            ],
+            "include_cluster": [
+                "cluster_2"
+            ]
+        },
+        "cluster_4": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_8",
+                "entity_9",
+                "entity_10"
+            ],
+            "include_cluster": []
+        },
+        "cluster_5": {
+            "name": "West US (passive failover)",
+            "include_entity": [
+                "entity_8",
+                "entity_9",
+                "entity_10"
+            ],
+            "include_cluster": [
+                "cluster_4"
+            ]
+        },
+        "cluster_6": {
+            "name": "rg-aoai-westus",
+            "include_entity": [
+                "entity_11",
+                "entity_12",
+                "entity_13"
+            ],
+            "include_cluster": []
+        },
+        "cluster_7": {
+            "name": "East US",
+            "include_entity": [
+                "entity_11",
+                "entity_12",
+                "entity_13"
+            ],
+            "include_cluster": [
+                "cluster_6"
+            ]
+        },
+        "cluster_8": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_16",
+                "entity_17",
+                "entity_18"
+            ],
+            "include_cluster": []
+        },
+        "cluster_9": {
+            "name": "East US",
+            "include_entity": [
+                "entity_16",
+                "entity_17",
+                "entity_18"
+            ],
+            "include_cluster": [
+                "cluster_8"
+            ]
+        },
+        "cluster_10": {
+            "name": "rg-aoai-eastus",
+            "include_entity": [
+                "entity_16",
+                "entity_17",
+                "entity_18"
+            ],
+            "include_cluster": []
+        },
+        "cluster_11": {
+            "name": "East US",
+            "include_entity": [
+                "entity_19",
+                "entity_20",
+                "entity_21"
+            ],
+            "include_cluster": [
+                "cluster_10"
+            ]
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_11",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_16",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_19",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "medium",
+    "diagram_type": "behavior"
+}

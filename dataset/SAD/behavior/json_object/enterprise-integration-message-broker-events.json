@@ -1,0 +1,164 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Client apps"
+        },
+        "entity_1": {
+            "name": "Microsoft Entra ID"
+        },
+        "entity_2": {
+            "name": "API Gateway"
+        },
+        "entity_3": {
+            "name": "Logic app"
+        },
+        "entity_4": {
+            "name": "Logic app"
+        },
+        "entity_5": {
+            "name": "Logic app"
+        },
+        "entity_6": {
+            "name": "Service Bus"
+        },
+        "entity_7": {
+            "name": "Event Grid"
+        },
+        "entity_8": {
+            "name": "SaaS service"
+        },
+        "entity_9": {
+            "name": "Azure services"
+        },
+        "entity_10": {
+            "name": "Message-based service"
+        },
+        "entity_11": {
+            "name": "REST or SOAP web service"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "API Management",
+            "include_entity": [
+                "entity_2"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "Workflow and orchestration",
+            "include_entity": [
+                "entity_3",
+                "entity_4",
+                "entity_5"
+            ],
+            "include_cluster": []
+        },
+        "cluster_2": {
+            "name": "Queues, topics, subscriptions, and events",
+            "include_entity": [
+                "entity_6",
+                "entity_7"
+            ],
+            "include_cluster": []
+        },
+        "cluster_3": {
+            "name": "",
+            "include_entity": [
+                "entity_2",
+                "entity_3",
+                "entity_4",
+                "entity_5",
+                "entity_6",
+                "entity_7"
+            ],
+            "include_cluster": [
+                "cluster_0",
+                "cluster_1",
+                "cluster_2"
+            ]
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "Authentication",
+            "direction": "single"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "HTTPS",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_11",
+            "name": "HTTPS",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_8",
+            "name": "HTTPS",
+            "direction": "single"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_9",
+            "name": "HTTPS",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_8",
+            "name": "HTTPS",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_9",
+            "name": "HTTPS",
+            "direction": "single"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_7",
+            "name": "Events",
+            "direction": "single"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_10",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_6",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "behavior"
+}

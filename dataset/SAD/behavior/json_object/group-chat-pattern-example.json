@@ -1,0 +1,129 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Park development proposal"
+        },
+        "entity_1": {
+            "name": "Model"
+        },
+        "entity_2": {
+            "name": "Group chat manager"
+        },
+        "entity_3": {
+            "name": "Community engagement agent"
+        },
+        "entity_4": {
+            "name": "Environmental planning agent"
+        },
+        "entity_5": {
+            "name": "Parks budget and operations agent"
+        },
+        "entity_6": {
+            "name": "Model and civic knowledge"
+        },
+        "entity_7": {
+            "name": "Model and local environmental knowledge"
+        },
+        "entity_8": {
+            "name": "Model and city knowledge"
+        },
+        "entity_9": {
+            "name": "Chat output from civic agents"
+        },
+        "entity_10": {
+            "name": "Parks department employee"
+        },
+        "entity_11": {
+            "name": "Accumulating conversation"
+        },
+        "entity_12": {
+            "name": "Park proposal consensus"
+        },
+        "entity_13": {
+            "name": "Instructions based on accumulated context and fresh insight"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_11",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_6",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_7",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_8",
+            "name": "",
+            "direction": "none"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_11",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_11",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_11",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_12",
+            "name": "",
+            "direction": "none"
+        }
+    ],
+    "difficulty": "difficult",
+    "diagram_type": "behavior"
+}

@@ -1,0 +1,607 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "passenger_1",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "first_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "last_name",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "date_of_birth",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "no_fly_list",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "date",
+                    "active_from",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "active_to",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "no_fly_reason",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "created_at",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "updated_at",
+                    "",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "passenger_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "flight",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "departing_gate",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "arriving_gate",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "created_at",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "updated_at",
+                    "",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "airline_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "departing_airport_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "arriving_airport_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "airport",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "airport_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "country",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "state",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "city",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "created_at",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "updated_at",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "security_check",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "check_result",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(65535)",
+                    "comments",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "created_at",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "updated_at",
+                    "",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "passenger_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "baggage_check",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "check_result",
+                    "",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "created_at",
+                    "",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "updated_at",
+                    "",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "booking_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "passenger_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "flight_manifest",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "created_at",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "updated_at",
+                    "",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "booking_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "flight_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "airline",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "airline_code",
+                    "",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "airline_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "airline_country",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "created_at",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "updated_at",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_8": {
+            "name": "passenger_2",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "first_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "last_name",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "date_of_birth",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "country_of_citizenship",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "country_of_residence",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "passport_number",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "created_at",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "updated_at",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_9": {
+            "name": "booking",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "flight_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "status",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(20)",
+                    "booking_platform",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "created_at",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "updated_at",
+                    "",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "passenger_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_10": {
+            "name": "baggage",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "decimal",
+                    "weight_in_kg",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "created_at",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "updated_at",
+                    "",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "booking_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_11": {
+            "name": "boarding_pass",
+            "attribute": [
+                [
+                    "bigint",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(65535)",
+                    "qr_code",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "created_at",
+                    "",
+                    ""
+                ],
+                [
+                    "timestamp",
+                    "updated_at",
+                    "",
+                    ""
+                ],
+                [
+                    "bigint",
+                    "booking_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_6",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_9",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_5",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_6",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_10",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_11",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

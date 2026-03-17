@@ -1,0 +1,98 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Subscription"
+        },
+        "entity_1": {
+            "name": "Public IP addresses"
+        },
+        "entity_2": {
+            "name": "Application Gateway"
+        },
+        "entity_3": {
+            "name": "Web Application Firewall polices (WAF)"
+        },
+        "entity_4": {
+            "name": "API Management (Premium)"
+        },
+        "entity_5": {
+            "name": "Private endpoint"
+        },
+        "entity_6": {
+            "name": "Log Analytics workspaces"
+        },
+        "entity_7": {
+            "name": "Application Insights"
+        },
+        "entity_8": {
+            "name": "azure-api.net"
+        },
+        "entity_9": {
+            "name": "Key vaults"
+        }
+    },
+    "cluster": {
+        "cluster_0": {
+            "name": "Application Gateway subnet",
+            "include_entity": [
+                "entity_2",
+                "entity_3"
+            ],
+            "include_cluster": []
+        },
+        "cluster_1": {
+            "name": "API Management subnet",
+            "include_entity": [
+                "entity_4"
+            ],
+            "include_cluster": []
+        },
+        "cluster_2": {
+            "name": "Private endpoint subnet",
+            "include_entity": [
+                "entity_5"
+            ],
+            "include_cluster": []
+        },
+        "cluster_3": {
+            "name": "Azure API Management \u2013 Secure baseline",
+            "include_entity": [
+                "entity_2",
+                "entity_3",
+                "entity_4",
+                "entity_5",
+                "entity_6",
+                "entity_7",
+                "entity_8",
+                "entity_9"
+            ],
+            "include_cluster": [
+                "cluster_0",
+                "cluster_1",
+                "cluster_2"
+            ]
+        }
+    },
+    "relation": [
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "direction": "single"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "Enrich",
+            "direction": "double"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_9",
+            "name": "",
+            "direction": "single"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "behavior"
+}

@@ -1,0 +1,216 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Planner",
+            "attribute": [
+                "Name",
+                "Last name",
+                "Phone",
+                "E-mail",
+                "Salary",
+                "Id"
+            ],
+            "method": [
+                "Planner",
+                "Look for_issues",
+                "Look for_solution",
+                "Model_broken",
+                "Model_semaforos",
+                "Simulate_crisis",
+                "Estimate",
+                "Bizuize_record_traffic",
+                "Visualize_level_traffic",
+                "Look for_road",
+                "Close_road",
+                "Warn_condition",
+                "Increase_traffic",
+                "Do_report",
+                "Modify_boundaries_speed",
+                "Change_address_lane"
+            ]
+        },
+        "entity_1": {
+            "name": "Report",
+            "attribute": [
+                "Start",
+                "Aim_general",
+                "Aim_specific",
+                "Introduction",
+                "Body",
+                "Conclusion"
+            ],
+            "method": [
+                "Report",
+                "Get_start",
+                "Get_aim_general",
+                "Get_aim_specific",
+                "Get_introduction",
+                "Get_body",
+                "Get_conclusion"
+            ]
+        },
+        "entity_2": {
+            "name": "Pollution",
+            "attribute": [
+                "Area_affected",
+                "Number_victims"
+            ],
+            "method": [
+                "Pollution",
+                "Get_area_affected",
+                "Get_number_victims"
+            ]
+        },
+        "entity_3": {
+            "name": "Equity",
+            "attribute": [
+                "Number_beneficiaries",
+                "Locality"
+            ],
+            "method": [
+                "Equity",
+                "Get_number_beneficiaries",
+                "Get_locality"
+            ]
+        },
+        "entity_4": {
+            "name": "Cost",
+            "attribute": [
+                "Budget",
+                "Cost_extra"
+            ],
+            "method": [
+                "Cost",
+                "Get_budget",
+                "Get_cost_extra"
+            ]
+        },
+        "entity_5": {
+            "name": "Summary_executive",
+            "attribute": [
+                "Date",
+                "Id_meeting"
+            ],
+            "method": [
+                "Summary_executive",
+                "Get_date",
+                "Get_id_meeting"
+            ]
+        },
+        "entity_6": {
+            "name": "Detailed_solution",
+            "attribute": [
+                "Solution"
+            ],
+            "method": [
+                "Detailed_solution",
+                "Get_solution"
+            ]
+        },
+        "entity_7": {
+            "name": "Estimate",
+            "attribute": [
+                "Reason"
+            ],
+            "method": [
+                "Reason",
+                "Get_reason"
+            ]
+        },
+        "entity_8": {
+            "name": "Level_noise",
+            "attribute": [
+                "Scale"
+            ],
+            "method": [
+                "Level_noise",
+                "Get_scale"
+            ]
+        },
+        "entity_9": {
+            "name": "Cost_extent",
+            "attribute": [
+                "Cost"
+            ],
+            "method": [
+                "Cost_extent",
+                "Get_cost"
+            ]
+        },
+        "entity_10": {
+            "name": "Indicator_pollution",
+            "attribute": [
+                "Area_contaminated"
+            ],
+            "method": [
+                "Indicator_pollution",
+                "Get_area_contaminated"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_9",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_7",
+            "name": "",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

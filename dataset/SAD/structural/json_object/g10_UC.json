@@ -1,0 +1,195 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Patient",
+            "color": "green"
+        },
+        "entity_1": {
+            "name": "EMR",
+            "color": "green"
+        },
+        "entity_2": {
+            "name": "Nurse",
+            "color": "green"
+        },
+        "entity_3": {
+            "name": "Doctor",
+            "color": "green"
+        },
+        "entity_4": {
+            "name": "Hospital",
+            "color": "green"
+        },
+        "entity_5": {
+            "name": "Appointment",
+            "color": "green"
+        },
+        "entity_6": {
+            "name": "Receptionist",
+            "color": "green"
+        },
+        "entity_7": {
+            "name": "Sample",
+            "color": "red"
+        },
+        "entity_8": {
+            "name": "Room",
+            "color": "green"
+        },
+        "entity_9": {
+            "name": "Bed",
+            "color": "green"
+        },
+        "entity_10": {
+            "name": "Facility Manager",
+            "color": "green"
+        },
+        "entity_11": {
+            "name": "Inventory",
+            "color": "green"
+        },
+        "entity_12": {
+            "name": "Laboratory",
+            "color": "red"
+        },
+        "entity_13": {
+            "name": "Blood Pressure  Monitor",
+            "color": "green"
+        },
+        "entity_14": {
+            "name": "Medical History",
+            "color": "red"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "registers at",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_7",
+            "name": "provides",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "schedules",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "accesses",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_9",
+            "name": "assigns, cleans",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_8",
+            "name": "schedules",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_13",
+            "name": "uses",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_1",
+            "name": "accesses, updates",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_1",
+            "name": "accesses, updates",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_0",
+            "name": "examines, treats, advises",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_5",
+            "name": "accesses",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_7",
+            "name": "takes, sends",
+            "type": "association"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_7",
+            "name": "takes, sends",
+            "type": "association"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_5",
+            "name": "manages",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_4",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_8",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_11",
+            "name": "maintains",
+            "type": "association"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_4",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_7",
+            "name": "analyzes",
+            "type": "association"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_0",
+            "name": "evaluates",
+            "type": "association"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "medium"
+}

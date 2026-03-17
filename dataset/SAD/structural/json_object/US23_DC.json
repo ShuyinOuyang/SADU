@@ -1,0 +1,141 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Administrator",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Administrator",
+                "Change_people",
+                "Change_groups"
+            ]
+        },
+        "entity_1": {
+            "name": "Employee_uhope",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Uhope",
+                "Look for_fact",
+                "Get into_patient",
+                "Start_session",
+                "Look for_patient",
+                "See_patient"
+            ]
+        },
+        "entity_2": {
+            "name": "Billing",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Billing",
+                "See_appointment",
+                "See_doctor",
+                "Trigger_bill",
+                "Look for_patient",
+                "Send_bill"
+            ]
+        },
+        "entity_3": {
+            "name": "Patient",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Patient",
+                "Request_appointment",
+                "See_schedules",
+                "Cancel_appointment",
+                "See_record",
+                "See_results",
+                "Edit_data"
+            ]
+        },
+        "entity_4": {
+            "name": "Doctor",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Doctor",
+                "See_record",
+                "Edit_record",
+                "Agendar_appointment",
+                "See_reason"
+            ]
+        },
+        "entity_5": {
+            "name": "Nurse",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Nurse",
+                "Look for_record",
+                "See_record"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_3",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

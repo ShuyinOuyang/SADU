@@ -1,0 +1,204 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Supplier",
+            "attribute": [
+                [
+                    "integer",
+                    "supplierID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "companyName",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "postcode",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "contactEmail",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "Item",
+            "attribute": [
+                [
+                    "integer",
+                    "itemID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "category",
+                    "",
+                    ""
+                ],
+                [
+                    "float",
+                    "price",
+                    "",
+                    ""
+                ],
+                [
+                    "integer",
+                    "stockLevel",
+                    "",
+                    ""
+                ],
+                [
+                    "integer",
+                    "supplierID",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "OrderItem",
+            "attribute": [
+                [
+                    "integer",
+                    "orderID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "itemID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "quantity",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "Order",
+            "attribute": [
+                [
+                    "integer",
+                    "orderID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "customerID",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "orderDate",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "Customer",
+            "attribute": [
+                [
+                    "integer",
+                    "customerID",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "forename",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "surname",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar",
+                    "postcode",
+                    "",
+                    ""
+                ],
+                [
+                    "date",
+                    "DOB",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_3",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

@@ -1,0 +1,193 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Owner",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Owner",
+                "Define_schedule",
+                "Restore_values"
+            ]
+        },
+        "entity_1": {
+            "name": "User",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Developer",
+                "Trigger_archive",
+                "Validate_archive",
+                "List_archives"
+            ]
+        },
+        "entity_2": {
+            "name": "Developer",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Developer",
+                "Update_rules",
+                "Update_data",
+                "Add_data",
+                "Start_session",
+                "Create_cluster"
+            ]
+        },
+        "entity_3": {
+            "name": "Equipment_agency",
+            "attribute": [
+                "Agency"
+            ],
+            "method": [
+                "Equipment_agency",
+                "Add_case"
+            ]
+        },
+        "entity_4": {
+            "name": "Equipment_runners",
+            "attribute": [
+                "Agency"
+            ],
+            "method": [
+                "Equipment_runners",
+                "Derive_fac",
+                "Update_sql"
+            ]
+        },
+        "entity_5": {
+            "name": "User_web",
+            "attribute": [],
+            "method": [
+                "User_web",
+                "List_fabs"
+            ]
+        },
+        "entity_6": {
+            "name": "User_agency",
+            "attribute": [
+                "Agency"
+            ],
+            "method": [
+                "User_agency",
+                "See_timestamp",
+                "Detail_shipment",
+                "Assign_fao",
+                "Send_data"
+            ]
+        },
+        "entity_7": {
+            "name": "User_fabs",
+            "attribute": [],
+            "method": [
+                "User_fabs",
+                "Discharge_archive",
+                "Send_archive",
+                "Link_archive"
+            ]
+        },
+        "entity_8": {
+            "name": "User_data",
+            "attribute": [],
+            "method": [
+                "User_data",
+                "List_offices"
+            ]
+        },
+        "entity_9": {
+            "name": "Designer",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Designer",
+                "Carry_out_proof",
+                "Carry_out_report"
+            ]
+        },
+        "entity_10": {
+            "name": "Tester",
+            "attribute": [
+                "User",
+                "Password"
+            ],
+            "method": [
+                "Tester",
+                "Verify_derivation",
+                "Trigger_report"
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_4",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_5",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_6",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_7",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_8",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_9",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_10",
+            "name": "",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "easy"
+}

@@ -1,0 +1,474 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "controlheader",
+            "attribute": [
+                [
+                    "int",
+                    "control_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "depot_code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "machine_code",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "depotcodes",
+            "attribute": [
+                [
+                    "int",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "depot_code",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "description",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "duty",
+            "attribute": [
+                [
+                    "int",
+                    "duty_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "date",
+                    "duty_date",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "control_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "duty_year",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "duty_month",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "duty_day",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "duty_wday",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "duty_week",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "routes",
+            "attribute": [
+                [
+                    "int",
+                    "route_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "from",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "to",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "stages",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "journey",
+            "attribute": [
+                [
+                    "int",
+                    "journey_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "duty_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "route_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "direction",
+                    "",
+                    ""
+                ],
+                [
+                    "time",
+                    "actual_start_time",
+                    "",
+                    ""
+                ],
+                [
+                    "time",
+                    "scheduled_start_time",
+                    "",
+                    ""
+                ],
+                [
+                    "time",
+                    "finish_time",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "start_stage",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "finish_stage",
+                    "",
+                    ""
+                ],
+                [
+                    "time",
+                    "total_time",
+                    "",
+                    ""
+                ],
+                [
+                    "time",
+                    "start_hour",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_5": {
+            "name": "stage",
+            "attribute": [
+                [
+                    "int",
+                    "stage_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "int",
+                    "stage_no",
+                    "",
+                    ""
+                ],
+                [
+                    "time",
+                    "stage_time",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "journey_id",
+                    "FK",
+                    ""
+                ]
+            ]
+        },
+        "entity_6": {
+            "name": "transaction",
+            "attribute": [
+                [
+                    "int",
+                    "trans_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "ticket_id",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "ticket_type_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "stage_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "prev_mode",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "prev_route",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "prev_stage",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "new_ticket_id",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_7": {
+            "name": "validations",
+            "attribute": [
+                [
+                    "int",
+                    "validator_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "mcv_id",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "journey_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "num_of_validations",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "num_of_retries",
+                    "",
+                    ""
+                ],
+                [
+                    "int",
+                    "num_of_rejections",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_8": {
+            "name": "ticketcategory",
+            "attribute": [
+                [
+                    "varchar(50)",
+                    "category",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "description",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_9": {
+            "name": "tickettype",
+            "attribute": [
+                [
+                    "int",
+                    "ticket_type_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "ticket_type_name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "category",
+                    "FK",
+                    ""
+                ],
+                [
+                    "int",
+                    "duration",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_10": {
+            "name": "mode",
+            "attribute": [
+                [
+                    "int",
+                    "mode_id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "mode_name",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "depotcode_in_controlheader",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "controlheader_has_duties",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_4",
+            "name": "duty_has_journeys",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "route_has_journeys",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "journey_has_stages",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_7",
+            "name": "journey_has_validations",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_6",
+            "name": "stage_has_transactions",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_6",
+            "name": "tickettype_in_transactions",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_6",
+            "name": "mode_in_transactions",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_9",
+            "name": "ticketcategory_has_types",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}

@@ -1,0 +1,192 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "order_products",
+            "attribute": [
+                [
+                    "serial",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "order_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "product_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "quantity",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_1": {
+            "name": "orders",
+            "attribute": [
+                [
+                    "serial",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "user_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "date",
+                    "date",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_2": {
+            "name": "addresses",
+            "attribute": [
+                [
+                    "serial",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "integer",
+                    "user_id",
+                    "FK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "street_address",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "city",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "state",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(10)",
+                    "zip",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_3": {
+            "name": "products",
+            "attribute": [
+                [
+                    "serial",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(255)",
+                    "description",
+                    "",
+                    ""
+                ],
+                [
+                    "numeric",
+                    "price",
+                    "",
+                    ""
+                ]
+            ]
+        },
+        "entity_4": {
+            "name": "users",
+            "attribute": [
+                [
+                    "serial",
+                    "id",
+                    "PK",
+                    ""
+                ],
+                [
+                    "varchar(50)",
+                    "name",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "email",
+                    "",
+                    ""
+                ],
+                [
+                    "varchar(100)",
+                    "password",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_4",
+            "target": "entity_1",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "zero or more"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_2",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_0",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_0",
+            "name": "",
+            "type": "identifying",
+            "source_cardinality": "exactly one",
+            "target_cardinality": "one or more"
+        }
+    ],
+    "difficulty": "easy",
+    "diagram_type": "ER"
+}
