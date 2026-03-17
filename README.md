@@ -1,4 +1,4 @@
-# SADU: Software Architecture Diagram Understanding Benchmark
+# SADU: A Benchmark for Software Architecture Diagram Understanding
 
 Official repository for **SADU**, a benchmark for evaluating multimodal models on **software architecture diagram understanding**.
 
