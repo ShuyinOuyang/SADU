@@ -6,7 +6,7 @@ SADU focuses on question answering over software-engineering diagrams, with an e
 
 ---
 
-## Overview
+## 👋 Overview
 
 Software architecture diagrams are widely used to communicate system structure and behavior, but they remain challenging inputs for modern vision-language models. SADU is designed to support systematic evaluation of this problem by organizing diagram samples, question-answer pairs, model outputs, and analysis scripts in a reproducible benchmark pipeline.
 
@@ -19,7 +19,7 @@ At a high level, this repository supports four stages:
 
 ---
 
-## Repository Structure
+## 💻 Repository Structure
 
 ```text
 SADU/
@@ -88,7 +88,7 @@ This setup makes the benchmark suitable for studying both **diagram perception**
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 ### 1. Clone the repository
 
@@ -118,7 +118,7 @@ You may need additional packages depending on the benchmark-construction pipelin
 
 ---
 
-## Usage
+## 📍Usage
 
 ### Benchmark construction
 
@@ -200,7 +200,7 @@ A typical end-to-end workflow is:
 
 ---
 
-## Acknowledgement
+## 📜 Acknowledgement
 
 This repository supports research on multimodal reasoning for software engineering artifacts, with a focus on software architecture diagram understanding.
 
