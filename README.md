@@ -77,7 +77,7 @@ Stores experiment outputs, including raw model responses and evaluated results.
 
 ---
 
-## Benchmark Scope
+## 💽Benchmark Scope
 
 SADU is intended for evaluating how well multimodal models understand software-engineering diagrams rather than only reading text from images. The benchmark is organized around multiple diagram categories and supports reasoning-heavy question types such as:
 
@@ -118,7 +118,7 @@ You may need additional packages depending on the benchmark-construction pipelin
 
 ---
 
-## 📍Usage
+## 💫 Usage
 
 ### Benchmark construction
 
@@ -175,7 +175,7 @@ python src/result_analyze/retrieval_error_analysis.py
 
 ---
 
-## Expected Workflow
+## 📍 Expected Workflow
 
 A typical end-to-end workflow is:
 
@@ -206,6 +206,6 @@ This repository supports research on multimodal reasoning for software engineeri
 
 ---
 
-## Contact
+## ✍️ Contact
 
 For questions, please open an issue in the repository or contact the repository maintainers through GitHub.
