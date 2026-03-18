@@ -40,6 +40,7 @@ SADU/
 ```
 
 ### `dataset/SAD/`
+The SADU benchmark can be downloaded from here.
 Benchmark data grouped by diagram type:
 - `behavior/`
 - `structural/`
