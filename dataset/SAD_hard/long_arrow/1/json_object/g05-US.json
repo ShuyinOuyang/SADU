@@ -1,0 +1,221 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Referee",
+            "color": "green"
+        },
+        "entity_1": {
+            "name": "IFA",
+            "color": "green"
+        },
+        "entity_2": {
+            "name": "Guest Fan",
+            "color": "red"
+        },
+        "entity_3": {
+            "name": "Registered Fan",
+            "color": "green"
+        },
+        "entity_4": {
+            "name": "Game",
+            "color": "green"
+        },
+        "entity_5": {
+            "name": "Coach",
+            "color": "red"
+        },
+        "entity_6": {
+            "name": "Player",
+            "color": "green"
+        },
+        "entity_7": {
+            "name": "League",
+            "color": "yellow"
+        },
+        "entity_8": {
+            "name": "Team",
+            "color": "green"
+        },
+        "entity_9": {
+            "name": "Game Event",
+            "color": "red"
+        },
+        "entity_10": {
+            "name": "Team Manager",
+            "color": "green"
+        },
+        "entity_11": {
+            "name": "Transaction",
+            "color": "red"
+        },
+        "entity_12": {
+            "name": "Event",
+            "color": "red"
+        },
+        "entity_13": {
+            "name": "Game Schedule",
+            "color": "green"
+        },
+        "entity_14": {
+            "name": "Schedule Parameter",
+            "color": "red"
+        },
+        "entity_15": {
+            "name": "Schedule Preferences",
+            "color": "red"
+        },
+        "entity_16": {
+            "name": "Budget",
+            "color": "green"
+        },
+        "entity_17": {
+            "name": "Statistics",
+            "color": "red"
+        },
+        "entity_18": {
+            "name": "Notification",
+            "color": "red"
+        },
+        "entity_19": {
+            "name": "Profile",
+            "color": "red"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_9",
+            "name": "reports on",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_15",
+            "name": "communicates",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_18",
+            "name": "receives",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_13",
+            "name": "activate",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_14",
+            "name": "modify",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_16",
+            "name": "monitors",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_11",
+            "name": "access",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_6",
+            "name": "access",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_12",
+            "name": "access",
+            "type": "association"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_17",
+            "name": "access",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_17",
+            "name": "access",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_18",
+            "name": "receives",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_9",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_19",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_4",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_13",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_6",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_16",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_5",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_11",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_6",
+            "name": "manages",
+            "type": "association"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_8",
+            "name": "registers",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "medium"
+}

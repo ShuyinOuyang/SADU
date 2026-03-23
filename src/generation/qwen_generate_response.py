@@ -25,19 +25,6 @@ def encode_image(image_path):
 
 
 def construct_message(QA, image_path):
-    # # Prepare a chat-style multimodal message
-    # img = Image.open(image_path).convert("RGB")
-    #
-    # messages = [
-    #     {
-    #         "role": "user",
-    #         "content": [
-    #             {"type": "image", "image": img},
-    #             {"type": "text", "text": "Describe this image and answer: what is the main object doing?"},
-    #         ],
-    #     }
-    # ]
-    # image_data, _ = encode_image(image_path)
     message = [
         {
             "role": "user",
@@ -131,49 +118,6 @@ def generate_message_qa_list_add(diagram_type):
                 })
     return message_qa_list
 
-# def generate_output(message_qa, processor, model, settings):
-#     QA = message_qa['QA']
-#     message = [
-#         {
-#             "role": "user",
-#             "content": [
-#                 {
-#                     "type": "image",
-#                     "image": message_qa['image_path']
-#                 },
-#                 {
-#                     "type": "text",
-#                     "text": build_prompt(QA['question'])
-#                 }
-#             ],
-#         }
-#     ]
-#     # Build prompt
-#     text = processor.apply_chat_template(message, tokenize=False, add_generation_prompt=True)
-#
-#     # Process vision + text
-#     image_inputs, video_inputs = process_vision_info(message)
-#     inputs = processor(
-#         text=[text],
-#         images=image_inputs,
-#         videos=video_inputs,
-#         padding=True,
-#         return_tensors="pt",
-#     ).to(model.device)
-#
-#     # Generate
-#     with torch.no_grad():
-#         out = model.generate(
-#             **inputs,
-#             max_new_tokens=settings['max_completion_tokens'],
-#             do_sample=settings['do_sample'],
-#         )
-#
-#     # Decode (strip the prompt tokens)
-#     prompt_len = inputs["input_ids"].shape[1]
-#     decoded = processor.batch_decode(out[:, prompt_len:], skip_special_tokens=True)[0]
-#
-#     return decoded
 
 def generate_output(message_qa, processor, model, settings):
     QA = message_qa["QA"]

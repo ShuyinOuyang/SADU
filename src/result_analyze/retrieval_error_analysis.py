@@ -218,27 +218,6 @@ def retrieval_problem_error_analysis_by_model():
                result_dic['all']['spurious_count'],
                ))
 
-        # result_dic = {}
-        # for diagram_type in diagram_type_list:
-        #     result_dic[diagram_type] = {}
-        #
-        # for diagram_type in diagram_type_list:
-        #     exact_match, pass_with_tolerance1, pass_with_tolerance2, total = exactness_tolerance(statistic_dic, diagram_type)
-        #     result_dic[diagram_type] = {
-        #         'Exact Match': exact_match / total,
-        #         'Acc@$\pm$1': (exact_match + pass_with_tolerance1) / total,
-        #         'Acc@$\pm$2': (exact_match + pass_with_tolerance2) / total,
-        #     }
-        #     # print('%s & %.2f & %.2f & %.2f \\\\' % (diagram_type, exact_match/total, (exact_match + pass_with_tolerance1)/total, (exact_match + pass_with_tolerance2)/total))
-        #
-        # print('%s & %.2f & %.2f & %.2f & %.2f & %.2f & %.2f & %.2f & %.2f & %.2f & %.2f & %.2f & %.2f \\\\' %
-        #       (log_file_dic[file],
-        #        result_dic['behavior']['Exact Match'], result_dic['behavior']['Acc@$\pm$1'],
-        #        result_dic['behavior']['Acc@$\pm$2'],
-        #        result_dic['structural']['Exact Match'], result_dic['structural']['Acc@$\pm$1'],
-        #        result_dic['structural']['Acc@$\pm$2'],
-        #        result_dic['ER']['Exact Match'], result_dic['ER']['Acc@$\pm$1'], result_dic['ER']['Acc@$\pm$2'],
-        #        result_dic['all']['Exact Match'], result_dic['all']['Acc@$\pm$1'], result_dic['all']['Acc@$\pm$2']))
 
 retrieval_problem_error_analysis_by_model()
 
@@ -254,18 +233,3 @@ def retrieval_problem_error_analysis_by_answer_size():
         'ER': process(statistic_dic, diagram_type),
         'all': process(statistic_dic, diagram_type)
     }
-
-
-# TODO:
-#   1. set-based metrics
-#       (a) precision, recall, F1
-#       (b) exact set match, subset rate, superset rate
-#       (c) missing counting, spurious counting -> to answer “does the model mostly miss correct entities, or does it hallucinate extras?"
-#   2. slide the performance by difficulty factors
-#       (a) gold set size |G_i| (Many retrieval questions have 1 answer, some have many. Performance often collapses as |G_i| grows)
-#       (b) Diagram complexity, |V|, |E|
-#   3. Qualitative taxonomy
-#       (a) Under-retrieval, Over-retrieval
-#       (b) directionality confusion
-#       (c) Relation-type confusion
-

@@ -187,39 +187,6 @@ def generate_message_qa_list(diagram_type, prompt_type):
     return message_qa_list
 
 
-# old version
-# async def run_one(index, x, settings):
-#     completion = await client.messages.create(
-#         model=settings['model'],
-#         max_tokens=settings['max_completion_tokens'],
-#         messages=x['message'],
-#         temperature=settings['temperature']
-#     )
-#
-#     qa = x['QA']
-#     file = x['file']
-#     diagram_type = x['diagram_type']
-#
-#     res = {
-#         "index": index,
-#         "diagram_type": diagram_type,
-#         "file": file.replace("_QA.json", ""),
-#         "question": qa["question"],
-#         "response": completion.content[0].text,
-#         "answer": qa["answer"],
-#         "metadata": qa["metadata"],
-#     }
-#     print(json.dumps(res), flush=True)
-#
-# async def run_all(message_qa_list, settings):
-#     tasks = [
-#         run_one(i, message_qa, settings)
-#         for i, message_qa in enumerate(message_qa_list)
-#     ]
-#
-#     # This runs all requests concurrently (within your rate limits)
-#     await asyncio.gather(*tasks)
-
 
 def request_and_print():
     for index, x in enumerate(message_qa_list):
@@ -306,60 +273,6 @@ def _is_retryable_error(exc: Exception) -> bool:
     return any(k in msg for k in ["rate limit", "too many requests", "timeout", "temporarily", "internal server error", "503", "502", "500"])
 
 
-
-# def _is_rate_limit_error(exc: Exception) -> bool:
-#     """
-#     Best-effort check across common SDKs.
-#     Adjust if your client exposes a specific exception type.
-#     """
-#     # Many SDKs expose status_code or have message containing "rate limit"
-#     status = getattr(exc, "status_code", None) or getattr(getattr(exc, "response", None), "status_code", None)
-#     if status == 429:
-#         return True
-#     msg = str(exc).lower()
-#     return "rate limit" in msg or "too many requests" in msg or "429" in msg
-
-# async def run_one(index, x, settings):
-#     # Retry loop for transient 429s
-#     max_retries = settings.get("max_retries", 6)
-#     base_backoff = settings.get("base_backoff_s", 0.8)  # initial delay
-#     max_backoff = settings.get("max_backoff_s", 20.0)
-#
-#     for attempt in range(max_retries + 1):
-#         try:
-#             completion = await client.messages.create(
-#                 model=settings["model"],
-#                 max_tokens=settings["max_completion_tokens"],
-#                 messages=x["message"],
-#                 temperature=settings["temperature"],
-#             )
-#
-#             qa = x["QA"]
-#             file = x["file"]
-#             diagram_type = x["diagram_type"]
-#
-#             res = {
-#                 "index": index,
-#                 "diagram_type": diagram_type,
-#                 "file": file.replace("_QA.json", ""),
-#                 "question": qa["question"],
-#                 "response": completion.content[0].text,
-#                 "answer": qa["answer"],
-#                 "metadata": qa["metadata"],
-#                 "setting": settings,
-#             }
-#             print(json.dumps(res), flush=True)
-#             return
-#
-#         except Exception as e:
-#             if _is_rate_limit_error(e) and attempt < max_retries:
-#                 # Exponential backoff with jitter
-#                 backoff = min(max_backoff, base_backoff * (2 ** attempt))
-#                 backoff *= random.uniform(0.8, 1.2)
-#                 await asyncio.sleep(backoff)
-#                 continue
-#             raise
-
 async def run_one(index, x, settings, client):
     max_retries = settings.get("max_retries", 6)
     base_backoff = settings.get("base_backoff_s", 0.8)
@@ -393,7 +306,6 @@ async def run_one(index, x, settings, client):
                     "total_tokens": completion.usage.input_tokens + completion.usage.output_tokens
                 }
             }
-            # print(completion.usage, flush=True)
             print(json.dumps(res), flush=True)
             return
 
@@ -447,39 +359,14 @@ async def run_all(message_qa_list, settings, existing, client):
 
     await asyncio.gather(*(worker_loop() for _ in range(workers)))
 
-# async def run_all(message_qa_list, settings, existing):
-#     rpm = settings.get("requests_per_minute", 60)       # set to your limit
-#     workers = settings.get("max_concurrency", 5)        # in-flight requests
-#
-#     limiter = RollingWindowRateLimiter(max_calls=rpm, period_s=60.0)
-#
-#     queue = asyncio.Queue()
-#     for i, item in enumerate(message_qa_list):
-#         if i not in existing:
-#             queue.put_nowait((i, item))
-#
-#     async def worker_loop():
-#         while True:
-#             try:
-#                 i, item = queue.get_nowait()
-#             except asyncio.QueueEmpty:
-#                 return
-#
-#             # Important: rate-limit right before making the request
-#             await limiter.acquire()
-#             await run_one(i, item, settings)
-#             queue.task_done()
-#
-#     await asyncio.gather(*(worker_loop() for _ in range(workers)))
 
 
-# def main(model, temperature):
 with open(base_path + 'personal_token/claude_info.json', 'r') as f:
     info_dic = json.load(f)
 
 diagram_type_list = ['behavior', 'structural', 'ER']
 
-# hard_part = False
+
 hard_part = False
 
 settings = {
@@ -504,18 +391,6 @@ settings = {
 }
 
 
-# settings = {
-#     'model': model,
-#     'temperature': temperature,
-#     'flag_async': True,
-#     'max_completion_tokens': 256,
-#     "requests_per_minute": 50,
-#     "max_concurrency": 5,
-#     "max_retries": 6,
-#     "base_backoff_s": 0.8,
-#     "max_backoff_s": 20.0,
-# }
-
 log_file = base_path + 'experiment_result/response_result/test.log'
 existing = []
 if os.path.exists(log_file):
@@ -531,40 +406,9 @@ else:
         message_qa_list += generate_message_qa_list(diagram_type, settings['prompt_type'])
 
 
-# if settings['flag_async']:
-#     client = anthropic.AsyncAnthropic(api_key=info_dic['api_key'], http_client=anthropic.DefaultAioHttpClient(),)
-#     asyncio.run(run_all(message_qa_list, settings, existing, client))
-# else:
-#     client = anthropic.Anthropic(api_key=info_dic['api_key'])
-#     request_and_print()
-
-# message_qa_list = generate_message_qa_list_hard()
-
-
-# if __name__ == '__main__':
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument(
-#         "-f",
-#         "--function",
-#         type=str,
-#         choices=['generate_ground_truth_code', 'compilation_filter', 'deduplication'],
-#         help="Choose script function",
-#         required=True,
-#     )
-#     parser.add_argument(
-#         "-s",
-#         "--source",
-#         type=str,
-#         choices=['ds1000', 'stackoverflow'],
-#         help="Choose seed code source",
-#         required=True,
-#     )
-#     parser.add_argument(
-#         "-l",
-#         "--library",
-#         type=str,
-#         choices=['numpy', 'pandas', 'matplotlib', 'scipy', 'sklearn',
-#                  'tensorflow', 'pytorch', 'seaborn', 'keras', 'lightgbm'],
-#         help="Choose library",
-#         default='numpy'
-#     )
+if settings['flag_async']:
+    client = anthropic.AsyncAnthropic(api_key=info_dic['api_key'], http_client=anthropic.DefaultAioHttpClient(),)
+    asyncio.run(run_all(message_qa_list, settings, existing, client))
+else:
+    client = anthropic.Anthropic(api_key=info_dic['api_key'])
+    request_and_print()

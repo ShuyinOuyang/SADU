@@ -157,8 +157,8 @@ These scripts are expected to save raw outputs to `experiment_result/response_re
 Run either rule-based or LLM-based evaluation depending on your setup.
 
 ```bash
-python src/evaluation/evaluation_rule_based.py
-python src/evaluation/evaluation_llm_based.py
+python evaluation_rule_based.py -t "target_file_path" &> "log_file_path" &
+python evaluation_llm_based.py -t "target_file_path" -l "judge.log" &> "log_file_path" &
 ```
 
 Evaluated outputs can then be stored under `experiment_result/evaluation_result/`.

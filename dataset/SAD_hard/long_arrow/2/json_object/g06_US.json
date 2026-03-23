@@ -1,0 +1,269 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Patient",
+            "color": "white"
+        },
+        "entity_1": {
+            "name": "Medical Record",
+            "color": "white"
+        },
+        "entity_2": {
+            "name": "Test Result",
+            "color": "white"
+        },
+        "entity_3": {
+            "name": "Wearable Device",
+            "color": "white"
+        },
+        "entity_4": {
+            "name": "Data",
+            "color": "white"
+        },
+        "entity_5": {
+            "name": "Lab Test",
+            "color": "white"
+        },
+        "entity_6": {
+            "name": "Appointment",
+            "color": "white"
+        },
+        "entity_7": {
+            "name": "Prescription",
+            "color": "white"
+        },
+        "entity_8": {
+            "name": "Doctor",
+            "color": "white"
+        },
+        "entity_9": {
+            "name": "Schedule",
+            "color": "white"
+        },
+        "entity_10": {
+            "name": "Nurse",
+            "color": "white"
+        },
+        "entity_11": {
+            "name": "Room",
+            "color": "white"
+        },
+        "entity_12": {
+            "name": "Receptionist",
+            "color": "white"
+        },
+        "entity_13": {
+            "name": "Lab Technician",
+            "color": "white"
+        },
+        "entity_14": {
+            "name": "Laboratory",
+            "color": "white"
+        },
+        "entity_15": {
+            "name": "Internal Lab",
+            "color": "white"
+        },
+        "entity_16": {
+            "name": "External Lab",
+            "color": "white"
+        },
+        "entity_17": {
+            "name": "Pharmacist",
+            "color": "white"
+        },
+        "entity_18": {
+            "name": "Medication Stock",
+            "color": "white"
+        },
+        "entity_19": {
+            "name": "HMS",
+            "color": "white"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_11",
+            "name": "assigned to",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_3",
+            "name": "wears",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "reviews",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_5",
+            "name": "reviews",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_7",
+            "name": "renews",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_6",
+            "name": "schedules",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_19",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_2",
+            "target": "entity_5",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_4",
+            "name": "collects",
+            "type": "association"
+        },
+        {
+            "source": "entity_3",
+            "target": "entity_0",
+            "name": "monitors",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_1",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_19",
+            "name": "accesses",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_1",
+            "name": "accesses, updates",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_18",
+            "name": "views",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_7",
+            "name": "sends out",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_5",
+            "name": "requests, views, updates",
+            "type": "association"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_8",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_1",
+            "name": "partially control, edit",
+            "type": "association"
+        },
+        {
+            "source": "entity_10",
+            "target": "entity_11",
+            "name": "prepares",
+            "type": "association"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_9",
+            "name": "accesses",
+            "type": "association"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_11",
+            "name": "views",
+            "type": "association"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_6",
+            "name": "schedules",
+            "type": "association"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_14",
+            "name": "works for",
+            "type": "association"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_5",
+            "name": "views, performs",
+            "type": "association"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_4",
+            "name": "accesses",
+            "type": "association"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_14",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_14",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_17",
+            "target": "entity_7",
+            "name": "receives,",
+            "type": "association"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_17",
+            "name": "",
+            "type": "aggregation"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "medium"
+}

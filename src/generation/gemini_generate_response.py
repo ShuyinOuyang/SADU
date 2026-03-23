@@ -101,26 +101,6 @@ def generate_message_qa_list(diagram_type, prompt_type):
             })
     return message_qa_list
 
-# def generate_message_qa_list_add(diagram_type):
-#     message_qa_list = []
-#     qa_path = base_path + 'dataset/SAD/' + diagram_type + '/QA/'
-#     img_path = base_path + 'dataset/SAD/' + diagram_type + '/Diagram/'
-#
-#     for file in os.listdir(qa_path):
-#         with open(os.path.join(qa_path, file), "r") as f:
-#             qa_list = json.load(f)
-#         image_path = os.path.join(img_path, file.replace("_QA.json", ".png"))
-#
-#         for qa in qa_list:
-#             if qa['metadata']['sub_type'] == 'label_on_the_relation_target':
-#                 message = construct_message(qa, image_path)
-#                 message_qa_list.append({
-#                     'QA': qa,
-#                     'message': message,
-#                     'file': file,
-#                     'diagram_type': diagram_type
-#                 })
-#     return message_qa_list
 
 async def run_one_gemini(index, message_qa, settings):
     # response = await client.models.generate_content(
@@ -186,9 +166,6 @@ async def run_all_gemini(message_qa_list, settings, existing):
 
 def request_and_print():
     for index, message_qa in enumerate(message_qa_list):
-        # if index <= 1263:
-        #     continue
-        # response = model.generate_content(message_qa['message'])
         response = client.models.generate_content(
             model=settings["model"],
             contents=message_qa['message'],
@@ -253,9 +230,9 @@ else:
     for diagram_type in diagram_type_list:
         message_qa_list += generate_message_qa_list(diagram_type, settings['prompt_type'])
 
-# if settings["flag_async"]:
-#     asyncio.run(run_all_gemini(message_qa_list, settings, existing))
-#     pass
-# else:
-#     # request_and_print()
-#     pass
+if settings["flag_async"]:
+    asyncio.run(run_all_gemini(message_qa_list, settings, existing))
+    pass
+else:
+    # request_and_print()
+    pass

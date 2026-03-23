@@ -1,0 +1,19 @@
+[
+    {
+        "question": "Which entity is the source in a relation to Entity 'Solution /  measure'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Adaptive traffic lights",
+            "Revertible lanes direction",
+            "Road closure",
+            "Roundabouts",
+            "Speed limits",
+            "Urban mobility planner"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_source",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    }
+]

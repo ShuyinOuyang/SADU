@@ -1,0 +1,185 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "Urban mobility planner",
+            "color": "green"
+        },
+        "entity_1": {
+            "name": "Solution / flow improvement",
+            "color": "red"
+        },
+        "entity_2": {
+            "name": "Urban mobility situation",
+            "color": "red"
+        },
+        "entity_3": {
+            "name": "Improvement  report",
+            "color": "red"
+        },
+        "entity_4": {
+            "name": "Emergency services",
+            "color": "red"
+        },
+        "entity_5": {
+            "name": "Congested  areas",
+            "color": "red"
+        },
+        "entity_6": {
+            "name": "Sensor data",
+            "color": "red"
+        },
+        "entity_7": {
+            "name": "Traffic flow",
+            "color": "green"
+        },
+        "entity_8": {
+            "name": "Historic data",
+            "color": "yellow"
+        },
+        "entity_9": {
+            "name": "Urban traffic simulator",
+            "color": "green"
+        },
+        "entity_10": {
+            "name": "Metric",
+            "color": "white"
+        },
+        "entity_11": {
+            "name": "Noise",
+            "color": "green"
+        },
+        "entity_12": {
+            "name": "Pollution",
+            "color": "green"
+        },
+        "entity_13": {
+            "name": "Cost",
+            "color": "red"
+        },
+        "entity_14": {
+            "name": "People  affected",
+            "color": "red"
+        },
+        "entity_15": {
+            "name": "Plan of action",
+            "color": "red"
+        },
+        "entity_16": {
+            "name": "Resident",
+            "color": "red"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "finds",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "analyzes",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_9",
+            "name": "feeds_into",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "reported in",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_2",
+            "name": "improves",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_10",
+            "name": "measured via",
+            "type": "association"
+        },
+        {
+            "source": "entity_4",
+            "target": "entity_5",
+            "name": "avoid",
+            "type": "association"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "based on",
+            "type": "association"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_1",
+            "name": "suggests",
+            "type": "association"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_6",
+            "name": "retrieves",
+            "type": "association"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_5",
+            "name": "shows",
+            "type": "association"
+        },
+        {
+            "source": "entity_9",
+            "target": "entity_7",
+            "name": "shows",
+            "type": "association"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_14",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_3",
+            "name": "",
+            "type": "aggregation"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_0",
+            "name": "files_to",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "medium"
+}

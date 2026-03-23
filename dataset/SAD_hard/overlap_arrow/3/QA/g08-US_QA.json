@@ -1,0 +1,17 @@
+[
+    {
+        "question": "Which entity is the target in a relation from Entity 'Fan'?\nRequired Output Format (strict).\n[start]\n{\"answer\": [\"x1\", \"x2\", ...]}\n[end]\nThe answer MUST be a valid JSON object.Replace \"x1\", \"x2\", ... with the actual answer strings.",
+        "answer": [
+            "Resource",
+            "Schedule",
+            "Team",
+            "Player"
+        ],
+        "metadata": {
+            "type": "fill_in_the_blank",
+            "sub_type": "relation_target",
+            "difficulty": "intermediate",
+            "challenge": "label_detection"
+        }
+    }
+]

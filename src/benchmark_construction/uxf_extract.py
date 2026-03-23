@@ -12,7 +12,6 @@ import math
 from pprint import pprint
 from typing import Tuple, Dict, List
 
-# TODO: '  ' into ' '
 
 def color_to_hex(s: str) -> str:
     if not s:
@@ -165,8 +164,3 @@ json_object = {
     'cluster': {},
     'relation': relation
 }
-
-# with open(uxf_path.replace('.uxf', '.json'), 'w') as f:
-#     f.write(json.dumps(json_object))
-
-# TODO: translate the spanish into english and make the json into diagram

@@ -418,26 +418,8 @@ def draw_plot(file_dic, save):
     draw_one_plot(file_dic, res_list, "counting", save=save)
     draw_one_plot(file_dic, res_list, "retrieval", save=save)
 
-def RQ2_subtype_display():
-    subtype_display_list = {
-        '512/gemini-2.5-flash-lite_response_0223_t_0.log': 'gemini-2.5-flash-lite',
-        '512/gemini-2.5-flash_response_0223_t_0.log': 'gemini-2.5-flash',
-        '512/gemini-3.1-flash-lite-preview_response_0223_t_0.log': 'gemini-3.1-flash-lite-preview',
-        '512/gemini-3-flash-preview_response_0223_t_0.log': 'gemini-3-flash-preview',
 
-        '512/claude-haiku-4-5_response_0223_t_0.log': 'claude-haiku-4.5',
-        '512/claude-sonnet-4-5_response_0223_t_0.log': 'claude-sonnet-4.5',
-
-        '512/gpt-5-nano_response_0223_t_1.log': 'gpt-5-nano',
-        '512/gpt-4o-mini_response_0223_t_0.log': 'gpt-4o-mini',
-
-        '512/qwen_2.5-VL-32B_response_0223_t_0.log': 'qwen-2.5-VL-32B',
-        '512/qwen_2.5-VL-7B_response_0223_t_0.log': 'qwen-2.5-VL-7B',
-        '512/qwen_2.5-VL-3B_response_0223_t_0.log': 'qwen-2.5-VL-3B'
-    }
-
-
-def RQ2_subtype_plot_display():
+def RQ1_subtype_plot_display():
     # file = '512/gemini-3-flash-preview_judge_0223_t_0.log'
     file_dic = {
         # '512/gemini-2.5-flash-lite_judge_0223_t_0.log': 'gemini-2.5-flash-lite',

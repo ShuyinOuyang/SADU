@@ -16,20 +16,6 @@ retrieval_format_instruction = ('Required Output Format (strict).\n'
                                 'The answer MUST be a valid JSON object.'
                                 'Replace "x1", "x2", ... with the actual answer strings.')
 
-# counting_format_instruction_oneshot = ('The response should be a JSON object and strictly adhere to the following example output format, where x is a number.\n'
-#                                '[start]\n'
-#                                '{"answer": x}\n'
-#                                '[end]\n')
-
-
-
-# retrieval_format_instruction_oneshot = ('The response should be a JSON object and strictly adhere to the following example output format, '
-#                                 'where x1, x2, ... should be one or more names of the retrieved object. '
-#                                 'The answer should be case sensitive. \n'
-#                                 '[start]\n'
-#                                 '{"answer": ["x1", "x2", ...]}\n'
-#                                 '[end]\n')
-
 # How many entities are in the diagram (do not include the cluster)
 def generate_total_entity_number(json_object):
     QA_list = []
@@ -886,54 +872,6 @@ def generate_relation_target(json_object):
 
     return QA_list
 
-
-# ---------------------multiple elements in the answer-------------------------------
-
-# # Entity A has relations with Entities _____.
-# def generate_certain_entity_has_relations_with(json_object):
-#     QA_list = []
-#
-#     ans_pair_list = find_certain_entity_has_a_relation_with_others(json_object)
-#     for ans_pair in ans_pair_list:
-#         entity_name, ans_list, wrong_options_list = ans_pair
-#         ans_list = sorted(list(set(ans_list)))
-#         QA_ = {
-#             'question': 'Entity \'%s\' has relations with Entities _____. (Please specify all the entities)' % (json_object['entity'][entity_name]['name']),
-#             'answer': [ans_list],
-#             'metadata': {
-#                 'type': 'fill_in_the_blank',
-#                 'sub_type': 'certain_entity_has_relations_with',
-#                 'difficulty': 'basic',
-#                 'multiple_elements': True,
-#             }
-#         }
-#         QA_list.append(QA_)
-#
-#     return QA_list
-
-# # Cluster A contains Entities _____.
-# def generate_certain_cluster_contains_entities(json_object):
-#     QA_list = []
-#
-#     for cluster in json_object['cluster']:
-#         if json_object['cluster'][cluster]['name']:
-#             ans_list = [json_object['entity'][x]['name'] for x in json_object['cluster'][cluster]['include_entity']]
-#             ans_list = sorted(list(set(ans_list)))
-#             QA_ = {
-#                 'question': 'Cluster \'%s\' contains Entities ______. (Please specify all the entities)' %
-#                             (json_object['cluster'][cluster]['name']),
-#                 'answer': [ans_list],
-#                 'metadata': {
-#                     'type': 'fill_in_the_blank',
-#                     'sub_type': 'certain_cluster_contains_entities',
-#                     'difficulty': 'intermediate',
-#                     'multiple_elements': True,
-#                 }
-#             }
-#             QA_list.append(QA_)
-#
-#     return QA_list
-
 # Which relation has the label 'search'? ______
 def generate_which_relation_has_certain_label(json_object):
     QA_list = []
@@ -973,11 +911,6 @@ def length_control(x_list, target_len=1):
     return x_list
 
 
-# with open('./dataset/SAD_backup/behavior/ai-search-skillsets.json', 'r') as f:
-#     json_object = json.load(f)
-
-
-# QA_list0 = generate_fill_in_the_blank_relation_source(json_object)
 
 def main():
     options = [
@@ -1007,12 +940,10 @@ def main():
         'generate_relation_target',
         'generate_which_relation_has_certain_label'
     ]
-    prompt_option = 'zero-shot' # 'one-shot', 'few-shot'
 
-    # QA_list = []
     sum = 0
     diagram_type_list = ['behavior', 'structural', 'ER']
-    # diagram_type_list = ['ER']
+
     for diagram_type in diagram_type_list:
         path = f'../../dataset/SAD/{diagram_type}/json_object/'
         file_list = os.listdir(path)

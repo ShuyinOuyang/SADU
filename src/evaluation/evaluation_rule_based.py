@@ -234,9 +234,108 @@ def get_statistic_table(file):
 
     return QA_response_list
 
+def return_accuracy(file, diagram_type):
+    QA_response_list = []
+    with open(file, 'r') as f:
+        for line in f.readlines():
+            content = json.loads(line)
+            QA_response_list.append(content)
+            # print(content['response'])
+
+
+    for i, QA_response in enumerate(QA_response_list):
+        # print(i)
+        # if QA_response['file'] in special_file_list:
+        response_final = response_processing(QA_response['response'])
+        # response_final = QA_response['response']
+        try:
+            response = json.loads(response_final)['answer']
+        except:
+            # print(i, 'ERROR')
+            QA_response['evaluation_result'] = 'Parse Error'
+            continue
+        answer = QA_response['answer']
+        # print(i, response, answer)
+        if check_counting_or_retrieval(QA_response['metadata']['sub_type']) == 'counting':
+            if response == answer[0]:
+                QA_response['evaluation_result'] = 'True'
+            else:
+                QA_response['evaluation_result'] = 'False'
+        # retrieval problem
+        if check_counting_or_retrieval(QA_response['metadata']['sub_type']) == 'retrieval':
+            if QA_response['metadata']['sub_type'] in ['type_on_the_relation'] and QA_response['diagram_type'] == 'ER':
+                if response == answer[0]:
+                    QA_response['evaluation_result'] = 'True'
+                else:
+                    QA_response['evaluation_result'] = 'False'
+
+            elif QA_response['metadata']['sub_type'] in ['entity_contains_certain_method']:
+                response = [x.replace('()', '') for x in response]
+                if sorted(response) == sorted(answer):
+                    QA_response['evaluation_result'] = 'True'
+                else:
+                    QA_response['evaluation_result'] = 'False'
+            elif QA_response['metadata']['sub_type'] in ['which_relation_has_certain_label']:
+                try:
+                    if isinstance(response, list) and len(response) > 0:
+                        response = response[0]
+                    if isinstance(response, str) and '[' in response and ']' in response:
+                        response = eval(response)
+                except:
+                    QA_response['evaluation_result'] = 'Parse Error'
+                    continue
+                    # response = [x[0].replace('()', '') for x in response]
+                if response == answer[0]:
+                    QA_response['evaluation_result'] = 'True'
+                else:
+                    QA_response['evaluation_result'] = 'False'
+            else:
+                if sorted(response) == sorted(answer):
+                    QA_response['evaluation_result'] = 'True'
+                else:
+                    QA_response['evaluation_result'] = 'False'
+
+
+
+    statistic_dict = {
+        'behavior': {},
+        'structural': {},
+        'ER': {},
+        'all': {}
+    }
+
+    sub_types = load_sub_types()
+    for x in sub_types:
+        for key in statistic_dict:
+            statistic_dict[key][x] = []
+
+    for QA_response in QA_response_list:
+        statistic_dict[QA_response['diagram_type']][QA_response["metadata"]['sub_type']].append(QA_response['evaluation_result'])
+        statistic_dict['all'][QA_response["metadata"]['sub_type']].append(QA_response['evaluation_result'])
+
+
+    for QA_sub_type in statistic_dict[diagram_type]:
+        if statistic_dict[diagram_type][QA_sub_type] == []:
+            # print(QA_sub_type)
+            pass
+        else:
+            true_rate = statistic_dict[diagram_type][QA_sub_type].count('True') / len(
+                statistic_dict[diagram_type][QA_sub_type])
+            false_rate = statistic_dict[diagram_type][QA_sub_type].count('False') / len(
+                statistic_dict[diagram_type][QA_sub_type])
+            parse_error_rate = statistic_dict[diagram_type][QA_sub_type].count('Parse Error') / len(
+                statistic_dict[diagram_type][QA_sub_type])
+
+
+    sum_total = sum([len(statistic_dict[diagram_type][QA_sub_type]) for QA_sub_type in statistic_dict[diagram_type]])
+    sum_true = sum([statistic_dict[diagram_type][QA_sub_type].count('True') for QA_sub_type in statistic_dict[diagram_type]])
+    # sum_false = sum([statistic_dict[diagram_type][QA_sub_type].count('False') for QA_sub_type in statistic_dict[diagram_type]])
+    # sum_error = sum([statistic_dict[diagram_type][QA_sub_type].count('Parse Error') for QA_sub_type in statistic_dict[diagram_type]])
+    return sum_true/sum_total * 100
+
 def statistic_table(file, diagram_type, only_total=True):
     QA_response_list = []
-    with open(base_path + 'experiment_result/response_result/%s' % (file), 'r') as f:
+    with open(file, 'r') as f:
         for line in f.readlines():
             content = json.loads(line)
             QA_response_list.append(content)
@@ -397,271 +496,18 @@ def statistic_table(file, diagram_type, only_total=True):
                ))
     return QA_response_list
 
-def return_accuray(file, diagram_type):
-    QA_response_list = []
-    with open(base_path + 'experiment_result/response_result/%s' % (file), 'r') as f:
-        for line in f.readlines():
-            content = json.loads(line)
-            QA_response_list.append(content)
-            # print(content['response'])
 
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-t",
+        "--target",
+        type=str,
+        help="Choose target file",
+        required=True,
+    )
+    args = parser.parse_args()
+    statistic_table(args.target, "all", False)
 
-    for i, QA_response in enumerate(QA_response_list):
-        # print(i)
-        # if QA_response['file'] in special_file_list:
-        response_final = response_processing(QA_response['response'])
-        # response_final = QA_response['response']
-        try:
-            response = json.loads(response_final)['answer']
-        except:
-            # print(i, 'ERROR')
-            QA_response['evaluation_result'] = 'Parse Error'
-            continue
-        answer = QA_response['answer']
-        # print(i, response, answer)
-        if check_counting_or_retrieval(QA_response['metadata']['sub_type']) == 'counting':
-            if response == answer[0]:
-                QA_response['evaluation_result'] = 'True'
-            else:
-                QA_response['evaluation_result'] = 'False'
-        # retrieval problem
-        if check_counting_or_retrieval(QA_response['metadata']['sub_type']) == 'retrieval':
-            if QA_response['metadata']['sub_type'] in ['type_on_the_relation'] and QA_response['diagram_type'] == 'ER':
-                if response == answer[0]:
-                    QA_response['evaluation_result'] = 'True'
-                else:
-                    QA_response['evaluation_result'] = 'False'
-
-            elif QA_response['metadata']['sub_type'] in ['entity_contains_certain_method']:
-                response = [x.replace('()', '') for x in response]
-                if sorted(response) == sorted(answer):
-                    QA_response['evaluation_result'] = 'True'
-                else:
-                    QA_response['evaluation_result'] = 'False'
-            elif QA_response['metadata']['sub_type'] in ['which_relation_has_certain_label']:
-                try:
-                    if isinstance(response, list) and len(response) > 0:
-                        response = response[0]
-                    if isinstance(response, str) and '[' in response and ']' in response:
-                        response = eval(response)
-                except:
-                    QA_response['evaluation_result'] = 'Parse Error'
-                    continue
-                    # response = [x[0].replace('()', '') for x in response]
-                if response == answer[0]:
-                    QA_response['evaluation_result'] = 'True'
-                else:
-                    QA_response['evaluation_result'] = 'False'
-            else:
-                if sorted(response) == sorted(answer):
-                    QA_response['evaluation_result'] = 'True'
-                else:
-                    QA_response['evaluation_result'] = 'False'
-
-
-
-    statistic_dict = {
-        'behavior': {},
-        'structural': {},
-        'ER': {},
-        'all': {}
-    }
-
-    sub_types = load_sub_types()
-    for x in sub_types:
-        for key in statistic_dict:
-            statistic_dict[key][x] = []
-
-    for QA_response in QA_response_list:
-        statistic_dict[QA_response['diagram_type']][QA_response["metadata"]['sub_type']].append(QA_response['evaluation_result'])
-        statistic_dict['all'][QA_response["metadata"]['sub_type']].append(QA_response['evaluation_result'])
-
-
-    for QA_sub_type in statistic_dict[diagram_type]:
-        if statistic_dict[diagram_type][QA_sub_type] == []:
-            # print(QA_sub_type)
-            pass
-        else:
-            true_rate = statistic_dict[diagram_type][QA_sub_type].count('True') / len(
-                statistic_dict[diagram_type][QA_sub_type])
-            false_rate = statistic_dict[diagram_type][QA_sub_type].count('False') / len(
-                statistic_dict[diagram_type][QA_sub_type])
-            parse_error_rate = statistic_dict[diagram_type][QA_sub_type].count('Parse Error') / len(
-                statistic_dict[diagram_type][QA_sub_type])
-
-
-    sum_total = sum([len(statistic_dict[diagram_type][QA_sub_type]) for QA_sub_type in statistic_dict[diagram_type]])
-    sum_true = sum([statistic_dict[diagram_type][QA_sub_type].count('True') for QA_sub_type in statistic_dict[diagram_type]])
-    # sum_false = sum([statistic_dict[diagram_type][QA_sub_type].count('False') for QA_sub_type in statistic_dict[diagram_type]])
-    # sum_error = sum([statistic_dict[diagram_type][QA_sub_type].count('Parse Error') for QA_sub_type in statistic_dict[diagram_type]])
-    return sum_true/sum_total * 100
-
-
-def RQ1():
-    diagram_type_list = ["behavior", "structural", "ER", "all"]
-    diagram_type = diagram_type_list[3]
-    file = '512/gemini-2.5-flash_response_0223_t_0.log'
-    # file = 'hard_claude-haiku-4-5_response_0223_t_0.log'
-    # file = 'hard_gpt-4o-mini_response_0223_t_0.log'
-    # file = 'hard_qwen_2.5-VL-7B_response_0223_t_0.log'
-
-
-    # RQ3: Prompt
-    RQ3_file_list = {
-        'different_prompt/gemini-2.5-flash-lite_response_0223_t_0.log': 'full & gemini-2.5-flash-lite',
-        'different_prompt/gemini-2.5-flash_response_0223_t_0.log': 'full & gemini-2.5-flash',
-        'different_prompt/gemini-3.1-flash-lite-preview_response_0223_t_0.log': 'full & gemini-3.1-flash-lite-preview',
-        'different_prompt/gemini-3-flash-preview_response_0223_t_0.log': 'full & gemini-3-flash-preview',
-
-        'different_prompt/without_definition_gemini-2.5-flash-lite_response_0306_t_0.log': 'without definition & gemini-2.5-flash-lite',
-        'different_prompt/without_definition_gemini-2.5-flash_response_0306_t_0.log': 'without definition & gemini-2.5-flash',
-        'different_prompt/without_definition_gemini-3.1-flash-lite-preview_response_0306_t_0.log': 'without definition & gemini-3.1-flash-lite-preview',
-        'different_prompt/without_definition_gemini-3-flash-preview_response_0306_t_0.log': 'without definition & gemini-3-flash-preview',
-
-        'different_prompt/without_rules_gemini-2.5-flash-lite_response_0306_t_0.log': 'without rules & gemini-2.5-flash-lite',
-        'different_prompt/without_rules_gemini-2.5-flash_response_0306_t_0.log': 'without rules & gemini-2.5-flash',
-        'different_prompt/without_rules_gemini-3.1-flash-lite-preview_response_0306_t_0.log': 'without rules & gemini-3.1-flash-lite-preview',
-        'different_prompt/without_rules_gemini-3-flash-preview_response_0306_t_0.log': 'without rules & gemini-3-flash-preview',
-
-        'different_prompt/only_question_gemini-2.5-flash-lite_response_0306_t_0.log': 'only question & gemini-2.5-flash-lite',
-        'different_prompt/only_question_gemini-2.5-flash_response_0306_t_0.log': 'only question & gemini-2.5-flash',
-        'different_prompt/only_question_gemini-3.1-flash-lite-preview_response_0306_t_0.log': 'only question & gemini-3.1-flash-lite-preview',
-        'different_prompt/only_question_gemini-3-flash-preview_response_0306_t_0.log': 'only question & gemini-3-flash-preview',
-    }
-
-
-    RQ1_file_list = {
-        '512/gemini-2.5-flash-lite_response_0223_t_0.log': 'gemini-2.5-flash-lite',
-        '512/gemini-2.5-flash_response_0223_t_0.log': 'gemini-2.5-flash',
-        '512/gemini-3.1-flash-lite-preview_response_0223_t_0.log': 'gemini-3.1-flash-lite-preview',
-        '512/gemini-3-flash-preview_response_0223_t_0.log': 'gemini-3-flash-preview',
-
-        '512/claude-haiku-4-5_response_0223_t_0.log': 'claude-haiku-4.5',
-        '512/claude-sonnet-4-5_response_0223_t_0.log': 'claude-sonnet-4.5',
-
-        '512/gpt-5-nano_response_0223_t_1.log': 'gpt-5-nano',
-        '512/gpt-4o-mini_response_0223_t_0.log': 'gpt-4o-mini',
-
-        '512/qwen_2.5-VL-32B_response_0223_t_0.log': 'qwen-2.5-VL-32B',
-        '512/qwen_2.5-VL-7B_response_0223_t_0.log': 'qwen-2.5-VL-7B',
-        '512/qwen_2.5-VL-3B_response_0223_t_0.log': 'qwen-2.5-VL-3B'
-    }
-
-    for x in RQ1_file_list:
-        behavior_acc = return_accuray(x, 'behavior')
-        structural_acc = return_accuray(x, 'structural')
-        ER_acc = return_accuray(x, 'ER')
-        all_acc = return_accuray(x, 'all')
-
-        print('%s & %.2f\%% & %.2f\%% & %.2f\%% & %.2f\%% \\\\' % (
-            RQ1_file_list[x], behavior_acc, structural_acc, ER_acc, all_acc
-        ))
-
-
-def RQ3():
-    diagram_type_list = ["behavior", "structural", "ER", "all"]
-    diagram_type = diagram_type_list[3]
-    file = '512/gemini-2.5-flash_response_0223_t_0.log'
-    # file = 'hard_claude-haiku-4-5_response_0223_t_0.log'
-    # file = 'hard_gpt-4o-mini_response_0223_t_0.log'
-    # file = 'hard_qwen_2.5-VL-7B_response_0223_t_0.log'
-
-    # RQ3: Prompt
-    RQ3_file_list = {
-        'different_prompt/gemini-2.5-flash-lite_response_0223_t_0.log': 'full & gemini-2.5-flash-lite',
-        'different_prompt/gemini-2.5-flash_response_0223_t_0.log': 'full & gemini-2.5-flash',
-        'different_prompt/gemini-3.1-flash-lite-preview_response_0223_t_0.log': 'full & gemini-3.1-flash-lite-preview',
-        'different_prompt/gemini-3-flash-preview_response_0223_t_0.log': 'full & gemini-3-flash-preview',
-
-        'different_prompt/without_definition_gemini-2.5-flash-lite_response_0306_t_0.log': 'without definition & gemini-2.5-flash-lite',
-        'different_prompt/without_definition_gemini-2.5-flash_response_0306_t_0.log': 'without definition & gemini-2.5-flash',
-        'different_prompt/without_definition_gemini-3.1-flash-lite-preview_response_0306_t_0.log': 'without definition & gemini-3.1-flash-lite-preview',
-        'different_prompt/without_definition_gemini-3-flash-preview_response_0306_t_0.log': 'without definition & gemini-3-flash-preview',
-
-        'different_prompt/without_rules_gemini-2.5-flash-lite_response_0306_t_0.log': 'without rules & gemini-2.5-flash-lite',
-        'different_prompt/without_rules_gemini-2.5-flash_response_0306_t_0.log': 'without rules & gemini-2.5-flash',
-        'different_prompt/without_rules_gemini-3.1-flash-lite-preview_response_0306_t_0.log': 'without rules & gemini-3.1-flash-lite-preview',
-        'different_prompt/without_rules_gemini-3-flash-preview_response_0306_t_0.log': 'without rules & gemini-3-flash-preview',
-
-        'different_prompt/only_question_gemini-2.5-flash-lite_response_0306_t_0.log': 'only question & gemini-2.5-flash-lite',
-        'different_prompt/only_question_gemini-2.5-flash_response_0306_t_0.log': 'only question & gemini-2.5-flash',
-        'different_prompt/only_question_gemini-3.1-flash-lite-preview_response_0306_t_0.log': 'only question & gemini-3.1-flash-lite-preview',
-        'different_prompt/only_question_gemini-3-flash-preview_response_0306_t_0.log': 'only question & gemini-3-flash-preview',
-    }
-
-    for x in RQ3_file_list:
-        behavior_acc = return_accuray(x, 'behavior')
-        structural_acc = return_accuray(x, 'structural')
-        ER_acc = return_accuray(x, 'ER')
-        all_acc = return_accuray(x, 'all')
-
-        print('%s & %.2f\%% & %.2f\%% & %.2f\%% & %.2f\%% \\\\' % (
-            RQ3_file_list[x], behavior_acc, structural_acc, ER_acc, all_acc
-        ))
-
-
-def hard_evaluation():
-    diagram_type_list = ["behavior", "structural", "ER", "all"]
-    diagram_type = diagram_type_list[3]
-    # file = '512/gemini-2.5-flash_response_0223_t_0.log'
-    # # file = 'hard_claude-haiku-4-5_response_0223_t_0.log'
-    # # file = 'hard_gpt-4o-mini_response_0223_t_0.log'
-    # # file = 'hard_qwen_2.5-VL-7B_response_0223_t_0.log'
-    file_list = {
-        'sythesis/hard_gemini-2.5-flash-lite_response_0223_t_0.log': 'gemini-2.5-flash-lite',
-        'sythesis/hard_gemini-2.5-flash_response_0223_t_0.log': 'gemini-2.5-flash',
-        'sythesis/hard_gemini-3.1-flash-lite-preview_response_0223_t_0.log': 'gemini-3.1-flash-lite-preview',
-        'sythesis/hard_gemini-3-flash-preview_response_0223_t_0.log': 'gemini-3-flash-preview',
-
-        'sythesis/hard_claude-haiku-4-5_response_0223_t_0.log': 'claude-haiku-4.5',
-        'sythesis/hard_claude-sonnet-4-5_response_0223_t_0.log': 'claude-sonnet-4.5',
-
-        'sythesis/hard_gpt-4o-mini_response_0223_t_0.log': 'gpt-4o-mini',
-        'sythesis/hard_gpt-5-nano_response_0223_t_1.log': 'gpt-5-nano',
-
-        'sythesis/hard_qwen_2.5-VL-3B_response_0223_t_0.log': 'qwen-2.5-VL-3B',
-        'sythesis/hard_qwen_2.5-VL-7B_response_0223_t_0.log': 'qwen-2.5-VL-7B',
-        'sythesis/hard_qwen_2.5-VL-32B_response_0223_t_0.log': 'qwen-2.5-VL-32B'
-
-    }
-    for file in file_list:
-        QA_response_list = get_statistic_table(file)
-        # for hard only
-        long_arrow = []
-        multi_arrow = []
-        not_right_arrow = []
-        overlap_arrow = []
-        for i, x in enumerate(QA_response_list):
-            if i < 5:
-                if x['evaluation_result'] == 'True':
-                    long_arrow.append(1)
-                else:
-                    long_arrow.append(0)
-            elif i < 10:
-                if x['evaluation_result'] == 'True':
-                    multi_arrow.append(1)
-                else:
-                    multi_arrow.append(0)
-            elif i < 15:
-                if x['evaluation_result'] == 'True':
-                    not_right_arrow.append(1)
-                else:
-                    not_right_arrow.append(0)
-            else:
-                if x['evaluation_result'] == 'True':
-                    overlap_arrow.append(1)
-                else:
-                    overlap_arrow.append(0)
-        print('%s & %.2f\%% & %.2f\%% & %.2f\%% & %.2f\%% \\\\' % (
-            file_list[file],
-            np.mean(long_arrow) * 100,
-            np.mean(multi_arrow) * 100,
-            np.mean(not_right_arrow) * 100,
-            np.mean(overlap_arrow) * 100
-        ))
-
-
-# diagram_type = 'all'
 # file = '512/gemini-3-flash-preview_response_0223_t_0.log'
-# statistic_table(file, diagram_type, False)
-
+# statistic_table(file, "all", False)

@@ -1,39 +1,6 @@
 import random
 random.seed(42)
 
-def generate_multi_choice_option(answer, type='numerical', candidate_list=None):
-    # type='numerical'
-    # candidate_set = ['A', 'B', 'C', 'D', 'E', 'F', 'Z']
-    # # answer = 3
-    # answer = 'Z'
-    options = []
-    if type == 'numerical':
-        random_ = random.random()
-        if random_ < 0.25:
-            options = [answer, answer + 1, answer + 2, answer + 3]
-
-        elif random_ < 0.5:
-            options = [answer - 1, answer, answer + 1, answer + 2]
-        elif random_ < 0.75:
-            options = [answer - 2, answer - 1, answer, answer + 1]
-        else:
-            options = [answer - 3, answer - 2, answer - 1, answer]
-
-        for option in options:
-            if option <= 0:
-                options = [answer, answer + 1, answer + 2, answer + 3]
-                break
-    elif type == 'categorical':
-        candidate_set = list(set(candidate_list))
-        options.append(answer)
-        candidate_set.pop(candidate_set.index(answer))
-        subset = random.sample(candidate_set, min(3, len(candidate_set)))
-        for x in subset:
-            options.append(x)
-        options = random.sample(options, len(options))
-    answer_id = chr(ord('A') + options.index(answer))
-    return options, answer_id
-
 
 def calculate_how_many_entities_have_more_than_one_relations(json_object):
     record_dict = {}

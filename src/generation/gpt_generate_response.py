@@ -16,62 +16,6 @@ base_path = '../../'
 # generate prompt
 
 
-# Function to encode the image
-# def encode_image(image_path):
-#     with open(image_path, "rb") as image_file:
-#         return base64.standard_b64encode(image_file.read()).decode("utf-8")
-
-# def single_request(input_text, image_path):
-#     # input_text = "what's in this image?"
-#     # image_path = base_path + "dataset/SAD/behavior/Diagram/ai-search-skillsets.png"
-#
-#     # Getting the Base64 string
-#     base64_image = encode_image(image_path)
-#
-#     response = client.responses.create(
-#         model="gpt-4o-mini",
-#         input=[
-#             {
-#                 "role": "user",
-#                 "content": [
-#                     {
-#                         "type": "input_text",
-#                         "text": input_text
-#                     },
-#                     {
-#                         "type": "input_image",
-#                         "image_url": f"data:image/png;base64,{base64_image}",
-#                     },
-#                 ],
-#             }
-#         ],
-#     )
-#
-#     print(response.output_text)
-
-
-# async def generate_response(x, setting):
-#     chat_completion = await client.chat.completions.create(
-#         messages=x['message'],
-#         model=setting['model'],
-#         temperature=setting['temperature'],
-#     )
-#
-#     res = {
-#         'completion': chat_completion.choices[0].message.content,
-#         # 'completion': chat_completion,
-#         'task_name': x['task_name'],
-#         'QA': x['QA'],
-#         'message': x['message'],
-#     }
-#     return res
-#
-#
-# async def generate_responses(message_list, setting):
-#     # run all prompts concurrently
-#     results = await asyncio.gather(*(generate_response(x, setting) for x in message_list))
-#     return results
-
 def _extract_content(chat_completion) -> str:
     """
     Safely extract model text from ChatCompletions response.
@@ -291,64 +235,6 @@ async def run_all_gpt(message_qa_list, settings, existing):
     # This runs all requests concurrently (within your rate limits)
     await asyncio.gather(*tasks)
 
-# async def run_one_gpt(index, message_qa, settings, *, semaphore: asyncio.Semaphore, client):
-#     async with semaphore:
-#         qa = message_qa["QA"]
-#         file = message_qa["file"]
-#         diagram_type = message_qa["diagram_type"]
-#
-#         try:
-#             response_text = await _chat_create_with_retries(
-#                 client,
-#                 model=settings["model"],
-#                 messages=message_qa["message"],
-#                 max_completion_tokens=settings["max_completion_tokens"],
-#                 temperature=settings["temperature"],
-#                 request_timeout_s=settings.get("request_timeout_s", 30.0),
-#                 max_attempts=settings.get("max_attempts", 6),
-#             )
-#
-#             res = {
-#                 "index": index,
-#                 "diagram_type": diagram_type,
-#                 "file": file.replace("_QA.json", ""),
-#                 "question": qa["question"],
-#                 "response": response_text,
-#                 "answer": qa["answer"],
-#                 "metadata": qa["metadata"],
-#                 "setting": settings,
-#                 "ok": True,
-#             }
-#         except Exception as e:
-#             # Do not kill the run; print failure info
-#             res = {
-#                 "index": index,
-#                 "diagram_type": diagram_type,
-#                 "file": file.replace("_QA.json", ""),
-#                 "question": qa.get("question"),
-#                 "response": "",
-#                 "answer": qa.get("answer"),
-#                 "metadata": qa.get("metadata"),
-#                 "setting": settings,
-#                 "ok": False,
-#                 "error": repr(e),
-#             }
-#
-#         print(json.dumps(res), flush=True)
-#
-#
-# async def run_all_gpt(message_qa_list, settings, existing, client):
-#     concurrency = int(settings.get("concurrency", 16))
-#     semaphore = asyncio.Semaphore(concurrency)
-#
-#     tasks = []
-#     for i, message_qa in enumerate(message_qa_list):
-#         if i in existing:
-#             continue
-#         tasks.append(run_one_gpt(i, message_qa, settings, semaphore=semaphore, client=client))
-#
-#     # Critical: prevent one exception from cancelling all tasks
-#     await asyncio.gather(*tasks, return_exceptions=True)
 
 diagram_type_list = ['behavior', 'structural', 'ER']
 # diagram_type_list = ['behavior']
@@ -361,17 +247,6 @@ settings = {
     'max_completion_tokens': 512
 }
 
-# settings = {
-#     "model": "gpt-5-nano",
-#     "temperature": 1,
-#     "flag_async": True,
-#     "max_completion_tokens": 256,
-#
-#     # NEW:
-#     "concurrency": 16,          # start 8~32 depending on rate limits / stability
-#     "max_attempts": 6,          # retries per item (includes empty-output retries)
-#     "request_timeout_s": 30.0,  # per request timeout
-# }
 
 if 'gpt' in settings['model']:
     with open(base_path + 'personal_token/gpt_info.json', 'r') as f:
@@ -386,7 +261,7 @@ if 'gpt' in settings['model']:
             api_key=info_dic['api_key']
         )
 
-    hard_part = True
+    hard_part = False
     if hard_part:
         message_qa_list = generate_message_qa_list_hard()
     else:

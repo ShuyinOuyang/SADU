@@ -1,0 +1,307 @@
+{
+    "entity": {
+        "entity_0": {
+            "name": "IFA Adminstrator",
+            "color": "green"
+        },
+        "entity_1": {
+            "name": "League",
+            "color": "green"
+        },
+        "entity_2": {
+            "name": "Budget Managenment susyem",
+            "color": "green"
+        },
+        "entity_3": {
+            "name": "Team Ranking Rule",
+            "color": "green"
+        },
+        "entity_4": {
+            "name": "Scheduling Rule",
+            "color": "green"
+        },
+        "entity_5": {
+            "name": "Team",
+            "color": "green"
+        },
+        "entity_6": {
+            "name": "Player",
+            "color": "yellow"
+        },
+        "entity_7": {
+            "name": "Schedule",
+            "color": "green"
+        },
+        "entity_8": {
+            "name": "Match",
+            "color": "green"
+        },
+        "entity_9": {
+            "name": "Personal Schedule",
+            "color": "green"
+        },
+        "entity_10": {
+            "name": "Event",
+            "color": "yellow"
+        },
+        "entity_11": {
+            "name": "Goal",
+            "color": "yellow"
+        },
+        "entity_12": {
+            "name": "Card",
+            "color": "yellow"
+        },
+        "entity_13": {
+            "name": "Overtime",
+            "color": "yellow"
+        },
+        "entity_14": {
+            "name": "Notification",
+            "color": "green"
+        },
+        "entity_15": {
+            "name": "Statistics",
+            "color": "green"
+        },
+        "entity_16": {
+            "name": "Stakeholder",
+            "color": "red"
+        },
+        "entity_17": {
+            "name": "Fan",
+            "color": "green"
+        },
+        "entity_18": {
+            "name": "IFA Auditor",
+            "color": "green"
+        },
+        "entity_19": {
+            "name": "Audit",
+            "color": "yellow"
+        },
+        "entity_20": {
+            "name": "Team Manager",
+            "color": "green"
+        },
+        "entity_21": {
+            "name": "Resource",
+            "color": "yellow"
+        },
+        "entity_22": {
+            "name": "Coach",
+            "color": "yellow"
+        },
+        "entity_23": {
+            "name": "Stadium",
+            "color": "yellow"
+        },
+        "entity_24": {
+            "name": "Budget",
+            "color": "yellow"
+        },
+        "entity_25": {
+            "name": "Transaction",
+            "color": "yellow"
+        },
+        "entity_26": {
+            "name": "Referee",
+            "color": "green"
+        },
+        "entity_27": {
+            "name": "Ranking",
+            "color": "green"
+        }
+    },
+    "cluster": {},
+    "relation": [
+        {
+            "source": "entity_0",
+            "target": "entity_16",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_2",
+            "name": "selects",
+            "type": "association"
+        },
+        {
+            "source": "entity_0",
+            "target": "entity_1",
+            "name": "starts",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_4",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_3",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_27",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_7",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_1",
+            "target": "entity_5",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_16",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_20",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_5",
+            "target": "entity_21",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_6",
+            "target": "entity_21",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_7",
+            "target": "entity_8",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_26",
+            "name": "has",
+            "type": "association"
+        },
+        {
+            "source": "entity_8",
+            "target": "entity_10",
+            "name": "enters",
+            "type": "association"
+        },
+        {
+            "source": "entity_11",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_12",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_13",
+            "target": "entity_10",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_21",
+            "name": "refers",
+            "type": "association"
+        },
+        {
+            "source": "entity_15",
+            "target": "entity_8",
+            "name": "refers",
+            "type": "association"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_14",
+            "name": "subscribes",
+            "type": "association"
+        },
+        {
+            "source": "entity_16",
+            "target": "entity_15",
+            "name": "checks",
+            "type": "association"
+        },
+        {
+            "source": "entity_17",
+            "target": "entity_16",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_16",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_18",
+            "target": "entity_19",
+            "name": "initiates",
+            "type": "association"
+        },
+        {
+            "source": "entity_19",
+            "target": "entity_5",
+            "name": "",
+            "type": "association"
+        },
+        {
+            "source": "entity_22",
+            "target": "entity_21",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_23",
+            "target": "entity_21",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_24",
+            "target": "entity_21",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_25",
+            "target": "entity_21",
+            "name": "",
+            "type": "inheritance"
+        },
+        {
+            "source": "entity_26",
+            "target": "entity_9",
+            "name": "sets",
+            "type": "association"
+        }
+    ],
+    "diagram_type": "structural",
+    "difficulty": "difficult"
+}
