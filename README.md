@@ -136,6 +136,8 @@ Typical tasks include:
 - generating question-answer pairs,
 - validating output formats.
 
+Annotation Guideline could be found in [SADU label guide.pdf](src/benchmark_construction/labeling_scripts/)
+
 Example:
 
 ```bash
