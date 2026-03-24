@@ -24,10 +24,10 @@ At a high level, this repository supports four stages:
 ```text
 SADU/
 ├── dataset/
-│   └── SAD/
-│       ├── behavior/
-│       ├── structural/
-│       └── ER/
+│   ├── SAD/
+│   │   ├── behavior/
+│   │   ├── structural/
+│   │   └── ER/
 │   └── SAD_hard/
 │       ├── long_arrow/
 │       ├── multiple_arrow/
