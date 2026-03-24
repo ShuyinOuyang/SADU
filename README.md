@@ -51,6 +51,14 @@ Benchmark data grouped by diagram type:
 - `structural/`
 - `ER/`
 
+### `dataset/SAD_hard/`
+It stores the hard examples we used for the case study.
+Benchmark data grouped by diagram type:
+- `long_arrow/`
+- `multiple_arrow/`
+- `not_right_arrow/`
+- `overlap_arrow/`
+
 ### `src/benchmark_construction/`
 Utilities for building and processing the benchmark, including scripts for:
 - diagram extraction and conversion,
