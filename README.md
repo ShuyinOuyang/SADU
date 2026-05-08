@@ -233,8 +233,3 @@ A typical end-to-end workflow is:
 
 This repository supports research on multimodal reasoning for software engineering artifacts, with a focus on software architecture diagram understanding.
 
----
-
-## ✍️ Contact
-
-For questions, please open an issue in the repository or contact the repository maintainers through GitHub.
