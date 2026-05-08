@@ -216,6 +216,19 @@ A typical end-to-end workflow is:
 
 ---
 
+## ✍️ Citation & license
+
+```bibtex
+@article{ouyang2026benchmarking,
+  title={Benchmarking and Evaluating VLMs for Software Architecture Diagram Understanding},
+  author={Ouyang, Shuyin and Zhang, Jie M and Gong, Jingzhi and Jahangirova, Gunel and Mousavi, Mohammad Reza and Johns, Jack and Lee, Beum Seuk and Ziolkowski, Adam and Virginas, Botond and Noppen, Joost},
+  journal={arXiv preprint arXiv:2604.04009},
+  year={2026}
+}
+```
+
+---
+
 ## 📜 Acknowledgement
 
 This repository supports research on multimodal reasoning for software engineering artifacts, with a focus on software architecture diagram understanding.
